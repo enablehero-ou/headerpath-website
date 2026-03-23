@@ -1,0 +1,59 @@
+---
+import Container from '../ui/Container.astro';
+import FAQAccordion from './FAQAccordion';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const faqs = [
+  {
+    question: 'Is this a tool or an agency?',
+    answer:
+      "It's both. You get a platform (the academy software) and a team to help you design, build, and run your education program. You can use just the platform, just the services, or both together.",
+  },
+  {
+    question: 'Who is this for?',
+    answer:
+      "Organizations that need to educate people at scale — whether that's your internal team, your channel partners, or your customers. We work with companies ranging from 50 to 50,000 employees.",
+  },
+  {
+    question: 'How is this different from what we already have?',
+    answer:
+      "Most LMS tools give you a place to store content. We help you design programs that actually change behavior. That means outcomes-focused curriculum design, engagement mechanics, and ongoing measurement — not just content upload.",
+  },
+  {
+    question: 'Do we need to start using new tools?',
+    answer:
+      "Not necessarily. We can work with your existing SSO, HRIS, CRM, and other tools. The academy integrates with most modern SaaS stacks so learners don't need to manage yet another login.",
+  },
+  {
+    question: 'What kind of support do we get?',
+    answer:
+      "On the Starter plan you get platform support. On Custom plans you also get dedicated education design support, regular strategy calls, and direct access to our team.",
+  },
+  {
+    question: 'How quickly will we see results?',
+    answer:
+      "You can launch a first program in weeks. Results depend on the program design and your audience, but most clients see measurable improvement in their target outcomes within 60-90 days of launch.",
+  },
+];
+---
+
+<section class="bg-bg-primary py-20 lg:py-28">
+  <Container>
+    <div class="mx-auto max-w-2xl">
+      <div class="mb-10 text-center">
+        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
+          {t.home.faqLabel}
+        </p>
+        <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+          {t.home.faqTitle}
+        </h2>
+      </div>
+
+      <FAQAccordion client:visible items={faqs} />
+    </div>
+  </Container>
+</section>

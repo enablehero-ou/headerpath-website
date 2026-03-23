@@ -1,0 +1,90 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import MobileNav from './MobileNav';
+import { brand } from '../../config/brand';
+import { nav } from '../../config/navigation';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border/50 bg-bg-primary/80 backdrop-blur-md"
+>
+  <Container>
+    <nav class="flex h-16 items-center justify-between gap-8">
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center gap-2 text-text-primary no-underline"
+        aria-label={brand.name}
+      >
+        <span class="text-lg font-semibold tracking-tight">{brand.name}</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden items-center gap-1 lg:flex list-none m-0 p-0">
+        {
+          nav.main.map((item) =>
+            'children' in item ? (
+              <li class="relative group">
+                <button class="flex items-center gap-1 rounded-md px-3 py-2 text-sm text-text-secondary transition-colors hover:text-text-primary cursor-pointer bg-transparent border-none">
+                  {item.label}
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    class="transition-transform group-hover:rotate-180"
+                  >
+                    <path
+                      d="M2 4l4 4 4-4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <ul class="absolute top-full left-0 mt-1 hidden group-hover:block min-w-48 rounded-lg border border-border bg-bg-secondary p-1 shadow-xl list-none">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.href}
+                        class="block rounded-md px-3 py-2 text-sm text-text-secondary no-underline transition-colors hover:bg-bg-tertiary hover:text-text-primary"
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <a
+                  href={item.href}
+                  class="rounded-md px-3 py-2 text-sm text-text-secondary no-underline transition-colors hover:text-text-primary block"
+                >
+                  {item.label}
+                </a>
+              </li>
+            )
+          )
+        }
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="hidden items-center gap-3 lg:flex">
+        <Button href={nav.cta.href} variant="primary" size="sm">
+          {t.nav.bookCall}
+        </Button>
+      </div>
+
+      <!-- Mobile nav (React island) -->
+      <MobileNav client:load navItems={nav.main} ctaHref={nav.cta.href} ctaLabel={t.nav.bookCall} openLabel={t.nav.openMenu} closeLabel={t.nav.closeMenu} />
+    </nav>
+  </Container>
+</header>

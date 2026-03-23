@@ -1,0 +1,105 @@
+---
+import Container from '../ui/Container.astro';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const steps = [
+  {
+    number: 'Step 1',
+    outcome: 'Outcome',
+    title: 'We map your goals, audience, and existing content',
+    description:
+      'We start by understanding your current state, your goal, and what success looks like — then define your audience, who\'s involved, and the knowledge you already have to work with.',
+    items: [
+      { label: 'Discovery workshop', detail: 'A focused session to align on goals, audience, and outcomes.' },
+      { label: 'Content audit', detail: 'We review what you already have and identify gaps.' },
+    ],
+  },
+  {
+    number: 'Step 2',
+    outcome: 'Design',
+    title: 'We design the curriculum and learning experience',
+    description:
+      'Using the outcomes defined in Step 1, we design a structured curriculum with the right mix of formats, activities, and assessments.',
+    items: [
+      { label: 'Curriculum blueprint', detail: 'A module-by-module plan with outcomes and formats.' },
+      { label: 'Experience design', detail: 'Learner journey mapping and engagement mechanics.' },
+    ],
+  },
+  {
+    number: 'Step 3',
+    outcome: 'Launch',
+    title: 'We build, launch, and keep improving',
+    description:
+      'We build the program on your academy, launch with your audience, and iterate based on real usage data and feedback.',
+    items: [
+      { label: 'Academy setup', detail: 'Fully configured platform with your brand.' },
+      { label: 'Ongoing optimization', detail: 'Regular reviews to improve completion and outcomes.' },
+    ],
+  },
+];
+---
+
+<section class="bg-bg-primary py-20 lg:py-28">
+  <Container>
+    <div class="mb-12 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
+        {t.home.howItWorksLabel}
+      </p>
+      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+        {t.home.howItWorksTitle}
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {
+        steps.map((step, i) => (
+          <details
+            class="group rounded-xl border border-border bg-bg-card overflow-hidden"
+            open={i === 0}
+          >
+            <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 select-none list-none">
+              <div class="flex items-center gap-4">
+                <span class="inline-flex rounded-full bg-bg-tertiary px-3 py-1 text-sm font-medium text-text-secondary">
+                  {step.number}
+                </span>
+                <span class="font-medium text-text-primary">{step.title}</span>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                class="shrink-0 text-text-muted transition-transform group-open:rotate-180"
+              >
+                <path d="M3 5.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+
+            <div class="grid gap-6 px-6 pb-6 pt-2 md:grid-cols-2">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-widest text-accent">
+                  {step.outcome}
+                </span>
+                <p class="mt-3 text-text-secondary text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+              <div class="space-y-4">
+                {step.items.map((item) => (
+                  <div>
+                    <p class="font-medium text-text-primary text-sm">{item.label}</p>
+                    <p class="text-sm text-text-muted mt-0.5">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </Container>
+</section>

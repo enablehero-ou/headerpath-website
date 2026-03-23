@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/layout/BaseHead.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonicalUrl?: string;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale ?? 'en'}>
+  <head>
+    <BaseHead {...props} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">
+      {Astro.currentLocale === 'es' ? 'Ir al contenido' : Astro.currentLocale === 'fr' ? 'Aller au contenu' : 'Skip to content'}
+    </a>
+    <slot />
+  </body>
+</html>
