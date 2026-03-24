@@ -1,9 +1,9 @@
 import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
 import { brand } from '../config/brand';
 
 const base = brand.websiteUrl;
 
-// Static pages with their priorities and change frequencies
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
@@ -31,11 +31,38 @@ function urlEntry(path: string, priority: string, changefreq: string, lastmod?: 
 }
 
 export const GET: APIRoute = async () => {
-  // Dynamic pages from content collections will be added in Phase 2
-  // when content collections are created. For now, static pages only.
-  const entries = staticPages.map(({ path, priority, changefreq }) =>
-    urlEntry(path, priority, changefreq)
-  );
+  const [blogPosts, alternatives, techniques, integrations] = await Promise.all([
+    getCollection('blog', ({ data }) => !data.draft),
+    getCollection('alternatives', ({ data }) => !data.draft),
+    getCollection('techniques', ({ data }) => !data.draft),
+    getCollection('integrations', ({ data }) => !data.draft),
+    // proposals intentionally excluded
+  ]);
+
+  const entries = [
+    ...staticPages.map(({ path, priority, changefreq }) => urlEntry(path, priority, changefreq)),
+
+    ...blogPosts.map((p) =>
+      urlEntry(
+        `/blog/${p.id.replace(/^[a-z]{2}\//, '')}`,
+        '0.7',
+        'monthly',
+        p.data.date.toISOString().split('T')[0]
+      )
+    ),
+
+    ...alternatives.map((p) =>
+      urlEntry(`/alternatives/${p.id.replace(/^[a-z]{2}\//, '')}`, '0.7', 'monthly')
+    ),
+
+    ...techniques.map((p) =>
+      urlEntry(`/techniques/${p.id.replace(/^[a-z]{2}\//, '')}`, '0.6', 'monthly')
+    ),
+
+    ...integrations.map((p) =>
+      urlEntry(`/integrations/${p.id.replace(/^[a-z]{2}\//, '')}`, '0.6', 'monthly')
+    ),
+  ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

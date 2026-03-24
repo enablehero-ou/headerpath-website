@@ -1,0 +1,34 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Container from '../../components/ui/Container.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('legal');
+  return items.map((item) => {
+    const slug = item.id.replace(/^[a-z]{2}\//, '');
+    return { params: { slug }, props: { item } };
+  });
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const formatted = item.data.lastUpdated.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<PageLayout title={item.data.title}>
+  <Container class="py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-3xl font-semibold text-text-primary">{item.data.title}</h1>
+      <p class="mt-2 text-sm text-text-muted">Last updated: {formatted}</p>
+      <div class="prose mt-10">
+        <Content />
+      </div>
+    </div>
+  </Container>
+</PageLayout>

@@ -1,0 +1,36 @@
+---
+import PageLayout from './PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  backHref?: string;
+  backLabel?: string;
+}
+
+const { title, description, image, backHref, backLabel } = Astro.props;
+---
+
+<PageLayout title={title} description={description} image={image}>
+  <Container class="py-16 lg:py-24">
+    {
+      backHref && (
+        <a
+          href={backHref}
+          class="mb-8 inline-flex items-center gap-1.5 text-sm text-text-muted no-underline hover:text-text-primary transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {backLabel}
+        </a>
+      )
+    }
+
+    <div class="prose mx-auto max-w-3xl">
+      <slot />
+    </div>
+  </Container>
+</PageLayout>

@@ -1,0 +1,54 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+import { brand } from '../config/brand';
+---
+
+<PageLayout
+  title="Become a partner"
+  description={`Partner with ${brand.name} to deliver AI-native education to your clients.`}
+>
+  <Container class="py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-4xl font-semibold text-text-primary">Become a partner</h1>
+      <p class="mt-4 text-lg text-text-secondary">
+        We partner with consultants, agencies, and education providers who want to deliver
+        high-impact learning programs to their clients — powered by our platform and methodology.
+      </p>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        {[
+          {
+            title: 'Reseller',
+            description: 'Sell our platform to your clients and earn recurring revenue.',
+          },
+          {
+            title: 'Implementation partner',
+            description: 'Design and deliver education programs for your clients using our methodology.',
+          },
+          {
+            title: 'Technology partner',
+            description: 'Integrate your tools with our platform to offer joint solutions.',
+          },
+        ].map((type) => (
+          <div class="rounded-xl border border-border bg-bg-card p-6">
+            <h3 class="font-semibold text-text-primary">{type.title}</h3>
+            <p class="mt-2 text-sm text-text-secondary">{type.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-xl border border-border bg-bg-card p-8">
+        <h2 class="text-xl font-semibold text-text-primary mb-6">Apply to become a partner</h2>
+        <p class="text-text-secondary text-sm mb-6">
+          Tell us about your business and what kind of partnership you have in mind.
+          We'll follow up within 2 business days.
+        </p>
+        <Button href={`mailto:${brand.email.partners}?subject=Partnership inquiry`} variant="primary" size="lg">
+          Get in touch →
+        </Button>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import { brand } from '../config/brand';
+---
+
+<PageLayout
+  title="Schedule a call"
+  description={`Book a call with the ${brand.name} team to discuss your education program.`}
+>
+  <Container class="py-16 lg:py-20">
+    <div class="mx-auto max-w-3xl text-center mb-10">
+      <h1 class="text-4xl font-semibold text-text-primary">Schedule a call</h1>
+      <p class="mt-4 text-text-secondary">
+        Let's talk about your program, your audience, and what success looks like for you.
+      </p>
+    </div>
+
+    <!-- Cal.com or Calendly embed — replace with your actual embed snippet -->
+    <div class="mx-auto max-w-3xl rounded-xl border border-border bg-bg-card overflow-hidden">
+      <!-- TODO: Replace with actual Cal.com / Calendly embed script -->
+      <div class="flex min-h-96 items-center justify-center p-12 text-center">
+        <div>
+          <p class="text-text-muted text-sm">Booking calendar loading...</p>
+          <p class="mt-2 text-xs text-text-muted">
+            Or email us directly at <a href={`mailto:${brand.email.sales}`} class="text-accent">{brand.email.sales}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

@@ -1,0 +1,91 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+import { brand } from '../config/brand';
+import { useTranslations } from '../i18n/translations';
+import type { Locale } from '../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+const starterFeatures = [
+  'Up to 3 courses',
+  'Up to 500 active learners',
+  'Custom domain',
+  'White-label branding',
+  'AI course generator',
+  'Core analytics',
+  'Email support',
+];
+
+const customFeatures = [
+  'Unlimited courses',
+  'Unlimited learners',
+  'Multiple academies',
+  'SSO / SCIM integration',
+  'Education design support',
+  'Dedicated success manager',
+  'Custom SLA',
+  'Everything in Starter',
+];
+---
+
+<PageLayout
+  title={t.pricing.title}
+  description={t.pricing.subtitle}
+>
+  <Container class="py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <h1 class="text-4xl font-semibold text-text-primary">{t.pricing.title}</h1>
+      <p class="mt-4 text-lg text-text-secondary">{t.pricing.subtitle}</p>
+    </div>
+
+    <div class="mx-auto max-w-4xl grid gap-6 sm:grid-cols-2">
+      <!-- Starter -->
+      <div class="rounded-2xl border border-border bg-bg-card p-8">
+        <h2 class="text-lg font-semibold text-text-primary">{t.pricing.starter.name}</h2>
+        <p class="mt-2 text-sm text-text-secondary">{t.pricing.starter.description}</p>
+        <div class="mt-6 flex items-baseline gap-1">
+          <span class="text-4xl font-semibold text-text-primary">{t.pricing.starter.price}</span>
+          <span class="text-text-muted">{t.pricing.starter.period}</span>
+        </div>
+        <Button href="/signup" variant="primary" class="mt-6 w-full" size="lg">
+          {t.pricing.starter.cta}
+        </Button>
+        <ul class="mt-8 space-y-3">
+          {starterFeatures.map((f) => (
+            <li class="flex items-center gap-2.5 text-sm text-text-secondary">
+              <svg class="shrink-0 text-accent" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Custom -->
+      <div class="rounded-2xl border border-accent/30 bg-accent/5 p-8">
+        <h2 class="text-lg font-semibold text-text-primary">{t.pricing.custom.name}</h2>
+        <p class="mt-2 text-sm text-text-secondary">{t.pricing.custom.description}</p>
+        <div class="mt-6 flex items-baseline">
+          <span class="text-2xl font-semibold text-text-primary">{t.pricing.custom.price}</span>
+        </div>
+        <Button href="/schedule" variant="secondary" class="mt-6 w-full" size="lg">
+          {t.pricing.custom.cta}
+        </Button>
+        <ul class="mt-8 space-y-3">
+          {customFeatures.map((f) => (
+            <li class="flex items-center gap-2.5 text-sm text-text-secondary">
+              <svg class="shrink-0 text-accent" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {f}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

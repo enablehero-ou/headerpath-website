@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import SignupForm from '../components/signup/SignupForm';
+import { brand } from '../config/brand';
+---
+
+<BaseLayout
+  title="Sign up"
+  description={`Create your ${brand.name} academy. Takes less than 2 minutes.`}
+>
+  <Header />
+  <main id="main-content" class="min-h-screen bg-bg-primary py-20">
+    <div class="text-center mb-12 px-4">
+      <h1 class="text-3xl font-semibold text-text-primary">
+        Let's get you set up
+      </h1>
+      <p class="mt-3 text-text-secondary">A few quick questions and you'll be on your way.</p>
+    </div>
+    <SignupForm client:load />
+  </main>
+</BaseLayout>

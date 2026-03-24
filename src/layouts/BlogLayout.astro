@@ -1,0 +1,76 @@
+---
+import PageLayout from './PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Badge from '../components/ui/Badge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  category: string;
+  image?: string;
+  readingTime?: number;
+}
+
+const { title, description, date, author, category, image, readingTime } = Astro.props;
+
+const formatted = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<PageLayout title={title} description={description} image={image}>
+  <Container class="py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl">
+      <!-- Back link -->
+      <a
+        href="/blog"
+        class="mb-8 inline-flex items-center gap-1.5 text-sm text-text-muted no-underline hover:text-text-primary transition-colors"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Blog
+      </a>
+
+      <!-- Category badge -->
+      <div class="mb-4">
+        <Badge>{category}</Badge>
+      </div>
+
+      <h1 class="text-3xl font-semibold text-text-primary lg:text-4xl leading-tight">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary">{description}</p>
+
+      <div class="mt-6 flex items-center gap-4 text-sm text-text-muted border-b border-border pb-8">
+        <span>{author}</span>
+        <span>·</span>
+        <time datetime={date.toISOString()}>{formatted}</time>
+        {readingTime && (
+          <>
+            <span>·</span>
+            <span>{readingTime} min read</span>
+          </>
+        )}
+      </div>
+
+      {
+        image && (
+          <img
+            src={image}
+            alt={title}
+            class="mt-8 w-full rounded-xl border border-border object-cover aspect-video"
+          />
+        )
+      }
+
+      <div class="prose mt-10">
+        <slot />
+      </div>
+    </div>
+  </Container>
+</PageLayout>
