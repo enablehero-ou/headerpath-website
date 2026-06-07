@@ -79,12 +79,12 @@ const t = useTranslations(locale);
       <!-- Desktop CTA -->
       <div class="hidden items-center gap-3 lg:flex">
         <Button href={nav.cta.href} variant="primary" size="sm">
-          {t.nav.bookCall}
+          {t.nav.signUp}
         </Button>
       </div>
 
       <!-- Mobile nav (React island) -->
-      <MobileNav client:load navItems={nav.main} ctaHref={nav.cta.href} ctaLabel={t.nav.bookCall} openLabel={t.nav.openMenu} closeLabel={t.nav.closeMenu} />
+      <MobileNav client:load navItems={nav.main} ctaHref={nav.cta.href} ctaLabel={t.nav.signUp} openLabel={t.nav.openMenu} closeLabel={t.nav.closeMenu} />
     </nav>
   </Container>
 </header>

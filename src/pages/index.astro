@@ -1,22 +1,24 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/sections/Hero.astro';
-import Pillars from '../components/sections/Pillars.astro';
-import HowItWorks from '../components/sections/HowItWorks.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
+import ProductFeatures from '../components/sections/ProductFeatures.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import Integrations from '../components/sections/Integrations.astro';
 import FAQ from '../components/sections/FAQ.astro';
 import CTA from '../components/sections/CTA.astro';
 import { brand } from '../config/brand';
 ---
 
 <PageLayout
-  title="Education that drives real outcomes"
+  title={brand.tagline}
   description={brand.description}
 >
   <Hero />
-  <Pillars />
-  <HowItWorks />
   <Testimonials />
+  <ProductFeatures />
+  <HowItWorks />
+  <Integrations />
   <FAQ />
   <CTA />
 </PageLayout>

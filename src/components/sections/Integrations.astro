@@ -1,0 +1,51 @@
+---
+import Container from '../ui/Container.astro';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+// Representative stack — we connect broadly, so this is illustrative, not a
+// fixed catalog. No dedicated integration pages (kept deliberately generic).
+const tools = [
+  'HubSpot',
+  'Salesforce',
+  'Slack',
+  'Microsoft Teams',
+  'Zapier',
+  'Google Analytics',
+  'Zoom',
+  'Notion',
+  'Stripe',
+  'Segment',
+  'Webhooks',
+  'REST API',
+];
+---
+
+<section class="bg-bg-secondary py-20 lg:py-28">
+  <Container>
+    <div class="mb-12 max-w-2xl">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
+        {t.home.integrationsLabel}
+      </p>
+      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+        {t.home.integrationsTitle}
+      </h2>
+      <p class="mt-4 text-lg text-text-secondary">
+        {t.home.integrationsSubtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        tools.map((tool) => (
+          <div class="flex items-center justify-center rounded-xl border border-border bg-bg-card px-4 py-5 text-sm font-medium text-text-secondary">
+            {tool}
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

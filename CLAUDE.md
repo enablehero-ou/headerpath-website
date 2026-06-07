@@ -19,6 +19,10 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 - **Package manager**: pnpm (`~/.local/bin/pnpm`)
 - **Deploy**: Vercel static · Project: `qurioos-v0/website`
 
+## /research — Pure Research Mode
+
+Invoke with `/research`. Enters pure research mode (no planning, building, or tech specs). Focuses on conceptual, structural, and architectural elegance. Challenges all prior assumptions, restricts no options, and prioritizes absolute durability over quick fixes.
+
 ## Git Workflow
 
 Work on `dev`. `/ship` → PR → Vercel preview. `/main` → production deploy.
@@ -40,7 +44,9 @@ Work on `dev`. `/ship` → PR → Vercel preview. `/main` → production deploy.
 ## Content Collections
 
 Content lives in `src/content/[type]/en/` (then `es/`, `fr/` when translated).
-Types: `blog`, `alternatives`, `techniques`, `integrations`, `features`, `proposals`, `legal`
+Types: `blog`, `alternatives`, `techniques`, `integrations`, `features`, `proposals`, `legal`, `docs`
+
+`docs` articles live in `src/content/docs/en/[category]/`. Old CSV exports are in `src/content/docs/_archive/` (reference only, not rendered).
 
 Proposals MUST have `noindex: true` and NEVER appear in sitemaps or listings.
 
@@ -68,6 +74,67 @@ Proposals MUST have `noindex: true` and NEVER appear in sitemaps or listings.
 --color-accent           #10b981 (green)
 --color-border           #262626
 ```
+
+## Docs Article Conventions
+
+**File naming:** kebab-case — `user-management.md`
+
+**Required frontmatter:**
+```md
+---
+title: Article Title
+description: One sentence description.
+---
+```
+
+**Changelog entries:** `src/content/docs/en/changelog/YYYY-MM-DD-short-title.md`
+
+**Categories:** `getting-started`, `content`, `users-and-groups`, `login-and-access`, `appearance`, `settings`, `certifications`, `progress`, `localization`, `security`, `privacy`, `for-learners`, `changelog`
+
+## Docs Article Writing Guide
+
+### Tone & Voice
+
+- **Professional-casual** — confident and direct. No jargon, no corporate stiffness, no enthusiasm filler ("and more!").
+- **Second person** for the reader ("you/your"). "Qurioos" (third person) for the product. "We/our" sparingly for company voice only.
+- **Active voice** dominant (~80%). Use passive only for technical descriptions.
+
+### Length & Structure
+
+- **Target: 200–300 words.** Go longer only when the feature genuinely demands it.
+- **Opening paragraph:** 1–3 sentences of context. Never jump straight into steps or a list.
+- **Headings:** `###` (H3) as the primary section heading. `##` (H2) only in longer multi-section articles. No H1 in the body.
+
+### Formatting
+
+- **Bold** for UI element names, key terms, and emphasis.
+- **Ordered lists** only for step-by-step instructions. **Unordered** for features/benefits/tips.
+- `Code formatting` for technical values, URLs, file formats, config parameters.
+- **No screenshots** unless a visual is genuinely irreplaceable.
+
+### Copywriting Patterns
+
+- **"Need to know"** — bold-labeled callout at the end for caveats/edge cases. Format: bold heading + bullet list.
+- **Problem → solution** — open feature articles by naming the user's need.
+- **Feature-benefit pairing** — never state a feature alone; pair with its use case.
+- End with a "Need to know" block, a "Note:" block, or a link to a related article. No sign-off, no support CTA.
+
+### Terminology
+
+| Use | Avoid |
+|-----|-------|
+| Content page / content pages | Course, courses, Path, Module |
+| Page | Course |
+| Step | Lesson, Block |
+| Section step | Title step |
+| Account | Academy, workspace, organization, tenant |
+| User / users | Learner, learners, student, member |
+| Admin | Administrator |
+| Certification | Certificate (for the feature/setting) |
+
+- Product nouns capitalized: **Step**, **Page**, **Certification**, **Level**, **Subject**
+- Support contact: **support@qurioos.com**
+- External links: "Name ↗" with arrow symbol
 
 ## Key Rules
 

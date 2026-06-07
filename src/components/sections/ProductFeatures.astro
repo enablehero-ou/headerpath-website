@@ -1,0 +1,115 @@
+---
+import Container from '../ui/Container.astro';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+// Product capabilities ported from the academy platform. Icons are simple
+// stroked glyphs; keep copy to one line for the minimal grid.
+const features = [
+  {
+    title: 'Academy Building Agent',
+    description: 'AI sets up your academy with proven defaults. Click publish, go live.',
+    icon: '<path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/>',
+  },
+  {
+    title: 'Course Creation Agent',
+    description: 'Courses outlined and drafted by AI, so you never face a blank page.',
+    icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  },
+  {
+    title: 'AI Quizzes',
+    description: 'Knowledge checks written automatically from your own content.',
+    icon: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  },
+  {
+    title: 'Certifications',
+    description: 'Branded certificates learners can share straight to LinkedIn.',
+    icon: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/>',
+  },
+  {
+    title: 'Auto-Translations',
+    description: 'Translate your whole academy into 80+ languages in one click.',
+    icon: '<path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/>',
+  },
+  {
+    title: 'Localization',
+    description: 'Learners see the right language, currency, and formats automatically.',
+    icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  },
+  {
+    title: 'Videos',
+    description: 'Upload or embed video. Responsive, and private to your academy.',
+    icon: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>',
+  },
+  {
+    title: 'Custom Domain',
+    description: 'Run on your own domain with SSL. Your brand, not ours.',
+    icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  },
+  {
+    title: 'Manage Users',
+    description: 'Invite hundreds at once, assign roles, see activity in real time.',
+    icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  },
+  {
+    title: 'Track Progress',
+    description: "See who's finishing and who's stuck. Export to CSV anytime.",
+    icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  },
+  {
+    title: 'Spaced Repetition',
+    description: 'Automatic nudges resurface knowledge so it actually sticks.',
+    icon: '<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>',
+  },
+  {
+    title: 'Security',
+    description: 'Enterprise-grade encryption and access controls, standard.',
+    icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  },
+];
+---
+
+<section class="bg-bg-primary py-20 lg:py-28">
+  <Container>
+    <div class="mb-14 max-w-2xl">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
+        {t.home.featuresLabel}
+      </p>
+      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+        {t.home.featuresTitle}
+      </h2>
+      <p class="mt-4 text-lg text-text-secondary">
+        {t.home.featuresSubtitle}
+      </p>
+    </div>
+
+    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((feature) => (
+          <div>
+            <div class="mb-4 inline-flex rounded-lg bg-accent/10 p-2.5 text-accent">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                set:html={feature.icon}
+              />
+            </div>
+            <h3 class="font-semibold text-text-primary">{feature.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-text-secondary">
+              {feature.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

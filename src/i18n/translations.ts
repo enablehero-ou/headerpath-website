@@ -27,23 +27,27 @@ export const translations = {
       skipToContent: 'Skip to content',
     },
     home: {
-      heroTitle: 'Education that drives real outcomes',
+      heroTitle: 'The AI-native academy platform',
       heroSubtitle:
-        'Qurioos designs, builds, and runs custom education and training programs for organizations that need to move people to act.',
-      heroCta: 'Book a call →',
-      whatWeDoLabel: 'WHAT WE DO',
-      whatWeDoTitle: 'Your education partner',
-      whatWeDoSubtitle:
-        'Most organizations know they need education to get the expected outcome. Few have the team, the process, or the platform to achieve that properly.',
+        'Launch a branded academy, let AI build the courses, and publish. Train customers, partners, and teams — without instructional designers.',
+      heroCta: 'Get started',
+      featuresLabel: 'PRODUCT',
+      featuresTitle: 'Everything your academy needs',
+      featuresSubtitle:
+        'AI does the heavy lifting — from building courses to translating, certifying, and measuring. You stay in control.',
       howItWorksLabel: 'HOW IT WORKS',
-      howItWorksTitle: 'From kickoff to live — in weeks, not months',
+      howItWorksTitle: 'From idea to live academy in minutes',
       testimonialsLabel: 'TESTIMONIALS',
       testimonialsTitle: 'Trusted across industries',
+      integrationsLabel: 'INTEGRATIONS',
+      integrationsTitle: 'Connects to the tools you already use',
+      integrationsSubtitle:
+        'Sync your CRM, SSO, analytics, and comms. Your stack stays intact — learners get one login.',
       faqLabel: 'FAQ',
       faqTitle: 'Frequently asked questions',
-      ctaTitle: 'Ready to build education that works?',
-      ctaSubtitle: "Let's talk about your program, your audience, and what success looks like for you.",
-      ctaButton: 'Book a call →',
+      ctaTitle: 'Start your academy today',
+      ctaSubtitle: 'Create your account and launch your first academy in minutes.',
+      ctaButton: 'Get started',
     },
     pillars: {
       internal: {
@@ -68,21 +72,14 @@ export const translations = {
       },
     },
     pricing: {
-      title: 'Simple, transparent pricing',
-      subtitle: 'Start immediately. Scale as you grow.',
-      starter: {
-        name: 'Starter',
-        price: '$99',
-        period: '/mo',
-        description: 'Everything you need to launch your first academy.',
+      title: 'Simple, flat pricing',
+      subtitle: 'One plan. Everything unlimited.',
+      flat: {
+        description: 'Everything unlimited — one flat monthly price.',
         cta: 'Get started',
       },
-      custom: {
-        name: 'Custom',
-        price: 'Get pricing',
-        description: 'For organizations with advanced needs and larger teams.',
-        cta: 'Talk to us',
-      },
+      fairUsage:
+        'All "unlimited" usage is subject to our fair usage policy.',
     },
     footer: {
       copyright: 'All rights reserved.',

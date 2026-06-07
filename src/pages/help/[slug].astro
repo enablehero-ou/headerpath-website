@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import ContentLayout from '../../layouts/ContentLayout.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('docs', ({ data }) => !data.draft);
+  return articles.map((article) => {
+    // id is like "en/<category>/<slug>" — use the final segment as the URL slug
+    const slug = article.id.split('/').pop()!;
+    return { params: { slug }, props: { article } };
+  });
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ContentLayout
+  title={article.data.title}
+  description={article.data.description}
+  backHref="/help"
+  backLabel="Help center"
+>
+  <Content />
+</ContentLayout>

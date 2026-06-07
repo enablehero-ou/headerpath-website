@@ -6,15 +6,11 @@ const base = brand.websiteUrl;
 
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/about', priority: '0.8', changefreq: 'monthly' },
-  { path: '/platform', priority: '0.9', changefreq: 'weekly' },
   { path: '/pricing', priority: '0.9', changefreq: 'monthly' },
   { path: '/alternatives', priority: '0.8', changefreq: 'weekly' },
-  { path: '/integrations', priority: '0.8', changefreq: 'weekly' },
   { path: '/techniques', priority: '0.7', changefreq: 'weekly' },
   { path: '/blog', priority: '0.8', changefreq: 'daily' },
-  { path: '/signup', priority: '0.9', changefreq: 'monthly' },
-  { path: '/partner', priority: '0.6', changefreq: 'monthly' },
+  { path: '/help', priority: '0.7', changefreq: 'weekly' },
   { path: '/schedule', priority: '0.7', changefreq: 'monthly' },
   { path: '/careers', priority: '0.5', changefreq: 'monthly' },
   { path: '/legal/privacy', priority: '0.3', changefreq: 'yearly' },
@@ -31,11 +27,11 @@ function urlEntry(path: string, priority: string, changefreq: string, lastmod?: 
 }
 
 export const GET: APIRoute = async () => {
-  const [blogPosts, alternatives, techniques, integrations] = await Promise.all([
+  const [blogPosts, alternatives, techniques, docs] = await Promise.all([
     getCollection('blog', ({ data }) => !data.draft),
     getCollection('alternatives', ({ data }) => !data.draft),
     getCollection('techniques', ({ data }) => !data.draft),
-    getCollection('integrations', ({ data }) => !data.draft),
+    getCollection('docs', ({ data }) => !data.draft),
     // proposals intentionally excluded
   ]);
 
@@ -59,8 +55,8 @@ export const GET: APIRoute = async () => {
       urlEntry(`/techniques/${p.id.replace(/^[a-z]{2}\//, '')}`, '0.6', 'monthly')
     ),
 
-    ...integrations.map((p) =>
-      urlEntry(`/integrations/${p.id.replace(/^[a-z]{2}\//, '')}`, '0.6', 'monthly')
+    ...docs.map((p) =>
+      urlEntry(`/help/${p.id.split('/').pop()}`, '0.6', 'monthly')
     ),
   ];
 

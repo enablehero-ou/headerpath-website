@@ -1,11 +1,12 @@
 export const brand = {
   name: 'Qurioos',
-  tagline: 'AI-Native Education Platform',
+  tagline: 'The AI-native academy platform',
   description:
-    'Qurioos designs, builds, and runs custom education and training programs for organizations that need to move people to act.',
+    'Qurioos is the AI-native academy platform. Launch a branded learning academy, let AI build the courses, and publish — no instructional designers required.',
   domain: 'qurioos.com',
   websiteUrl: 'https://qurioos.com',
-  appUrl: 'https://academy.qurioos.com',
+  appUrl: 'https://app.qurioos.com',
+  signupUrl: 'https://app.qurioos.com/signup',
   docsUrl: 'https://help.qurioos.com',
   email: {
     support: 'support@qurioos.com',
@@ -22,14 +23,10 @@ export const brand = {
     { value: '2023', label: 'Founded' },
   ],
   pricing: {
-    starter: {
-      name: 'Starter',
-      price: '$99',
+    flat: {
+      name: 'Qurioos',
+      price: '$150',
       period: '/mo',
-    },
-    custom: {
-      name: 'Custom',
-      price: 'Get pricing',
     },
   },
 } as const;
