@@ -6,36 +6,51 @@ import type { Locale } from '../../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
+const featured = {
+  quote:
+    'Partnering with Qurioos to build the Baserow Academy has been a great decision for us. Their team brought not only technical expertise in creating a high-quality learning experience, but also deep insight into customer education.',
+  name: 'Olivier Maes',
+  title: 'Chief Revenue Officer & Co-founder, Baserow',
+  logo: '/images/webflow/baserow.svg',
+  avatar: '/images/webflow/olivier-maes.jpeg',
+};
+
 const testimonials = [
   {
     quote: 'The experience we created is both engaging and insightful!',
-    name: 'Natasha Steetz',
-    title: 'Head of Revenue at Naven',
+    name: 'Natasha Weeks',
+    title: 'Head of Operations at Tokeet',
+    avatar: '/images/webflow/natasha-weeks.jpeg',
   },
   {
-    quote: "Very excited about the way this works. The user feedback is just epic!",
-    name: 'Jim Vlachus',
-    title: 'Head of Operations at Distream',
+    quote: 'Very excited about the way this works. The user feedback is just epic!',
+    name: 'Jim Vlachos',
+    title: 'Head of Operations at Enrollhand',
+    avatar: '/images/webflow/jim-vlachos.webp',
   },
   {
-    quote: 'High quality results at a rapid pace and invaluable insights!',
+    quote: 'High-quality results at a rapid pace and invaluable insights!',
     name: 'Peter Wailes',
-    title: 'Founder & CEO at Formulize',
+    title: 'Founder & CEO at MoneyByrd',
+    avatar: '/images/webflow/peter-wailes.jpeg',
   },
   {
     quote: 'We redefined our strategy and this allowed us to move fast and get results!',
-    name: 'Franz Emparchinger',
-    title: 'Product Director at Storro',
+    name: 'Franz Emprechtinger',
+    title: 'Program Director at d.MBA',
+    avatar: '/images/webflow/franz-emprechtinger.jpeg',
   },
   {
-    quote: 'Good communication and extremely professional. This is just excellent for us.',
-    name: 'Adam Rumpus',
-    title: 'Administrator at Lynton',
+    quote: 'Great communication and extremely professional, this is just excellent for us.',
+    name: 'Adam Bumpus',
+    title: 'Co-founder at AEarth',
+    avatar: '/images/webflow/adam-bumpus.jpeg',
   },
   {
     quote: "They went above and beyond. I can't recommend this collaboration enough.",
-    name: 'Tim Elharrington-Judge',
-    title: 'Founder at Haptic Pledge',
+    name: 'Tim Etherington-Judge',
+    title: 'Founder at Healthy Hospo',
+    avatar: '/images/webflow/tim-etherington.jpg',
   },
 ];
 ---
@@ -49,6 +64,34 @@ const testimonials = [
       </h2>
     </div>
 
+    <!-- Featured testimonial -->
+    <figure class="surface mb-5 px-6 py-12 text-center lg:px-16 lg:py-16">
+      <img
+        src={featured.logo}
+        alt="Baserow"
+        class="mx-auto mb-8 h-7 w-auto"
+        loading="lazy"
+      />
+      <blockquote
+        class="mx-auto max-w-3xl font-serif text-2xl italic leading-snug text-text-primary lg:text-[1.75rem]"
+      >
+        “{featured.quote}”
+      </blockquote>
+      <figcaption class="mt-9 flex items-center justify-center gap-3">
+        <img
+          src={featured.avatar}
+          alt={featured.name}
+          class="h-11 w-11 rounded-full object-cover ring-1 ring-border"
+          loading="lazy"
+        />
+        <span class="text-left">
+          <span class="block text-sm font-semibold text-text-primary">{featured.name}</span>
+          <span class="block text-xs text-text-muted">{featured.title}</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <!-- Grid -->
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         testimonials.map((item) => (
@@ -57,9 +100,12 @@ const testimonials = [
               “{item.quote}”
             </blockquote>
             <figcaption class="mt-6 flex items-center gap-3 border-t border-border-subtle pt-5">
-              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 font-serif text-sm text-accent ring-1 ring-accent/15">
-                {item.name.charAt(0)}
-              </span>
+              <img
+                src={item.avatar}
+                alt={item.name}
+                class="h-9 w-9 shrink-0 rounded-full object-cover ring-1 ring-border"
+                loading="lazy"
+              />
               <span>
                 <span class="block text-sm font-semibold text-text-primary">{item.name}</span>
                 <span class="block text-xs text-text-muted">{item.title}</span>

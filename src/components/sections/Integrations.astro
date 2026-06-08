@@ -6,21 +6,24 @@ import type { Locale } from '../../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-// Representative stack — we connect broadly, so this is illustrative, not a
-// fixed catalog. No dedicated integration pages (kept deliberately generic).
+// Real integration marks pulled from the product site. Illustrative, not a
+// fixed catalog — anything else connects via REST API & webhooks.
 const tools = [
-  'HubSpot',
-  'Salesforce',
-  'Slack',
-  'Microsoft Teams',
-  'Zapier',
-  'Google Analytics',
-  'Zoom',
-  'Notion',
-  'Stripe',
-  'Segment',
-  'Webhooks',
-  'REST API',
+  { name: 'Microsoft', icon: '/images/webflow/int-microsoft.png' },
+  { name: 'Salesforce', icon: '/images/webflow/int-salesforce.svg' },
+  { name: 'HubSpot', icon: '/images/webflow/int-hubspot.svg' },
+  { name: 'Google Analytics', icon: '/images/webflow/int-google-analytics.svg' },
+  { name: 'Amplitude', icon: '/images/webflow/int-amplitude.png' },
+  { name: 'Segment', icon: '/images/webflow/int-segment.svg' },
+  { name: 'Zapier', icon: '/images/webflow/int-zapier.svg' },
+  { name: 'Stripe', icon: '/images/webflow/int-stripe.svg' },
+  { name: 'Twilio', icon: '/images/webflow/int-twilio.svg' },
+  { name: 'Intercom', icon: '/images/webflow/int-intercom.svg' },
+  { name: 'Help Scout', icon: '/images/webflow/int-helpscout.svg' },
+  { name: 'ActiveCampaign', icon: '/images/webflow/int-activecampaign.svg' },
+  { name: 'Notion', icon: '/images/webflow/int-notion.svg' },
+  { name: 'Typeform', icon: '/images/webflow/int-typeform.png' },
+  { name: 'Webhooks', icon: '/images/webflow/int-webhooks.svg' },
 ];
 ---
 
@@ -37,15 +40,23 @@ const tools = [
     </div>
 
     <div class="overflow-hidden rounded-3xl shadow-soft">
-      <div class="grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-4">
+      <div class="grid grid-cols-3 gap-px bg-border sm:grid-cols-4 lg:grid-cols-8">
         {
           tools.map((tool) => (
-            <div class="flex items-center justify-center gap-2 bg-bg-card px-4 py-7 text-sm font-medium text-text-secondary transition-colors duration-200 hover:bg-bg-secondary hover:text-text-primary">
-              <span class="h-1.5 w-1.5 rounded-full bg-accent/40" />
-              {tool}
+            <div class="flex aspect-square items-center justify-center bg-bg-card p-5 transition-colors duration-200 hover:bg-bg-secondary">
+              <img
+                src={tool.icon}
+                alt={tool.name}
+                title={tool.name}
+                class="h-8 w-8 object-contain"
+                loading="lazy"
+              />
             </div>
           ))
         }
+        <div class="flex aspect-square items-center justify-center bg-bg-card p-5 font-mono text-xs uppercase tracking-wider text-text-muted">
+          + more
+        </div>
       </div>
     </div>
     <p class="mt-5 font-mono text-xs uppercase tracking-wider text-text-muted">

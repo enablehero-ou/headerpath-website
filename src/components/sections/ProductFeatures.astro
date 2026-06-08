@@ -6,68 +6,182 @@ import type { Locale } from '../../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-// Product capabilities ported from the academy platform. Icons are simple
-// stroked glyphs; keep copy to one line for the minimal grid.
-const features = [
+// Full feature set + detail copy from the product platform. Icons are stroked
+// glyphs (we don't show product screenshots yet); each feature carries its
+// three supporting points.
+type Point = { label: string; detail: string };
+type Feature = { title: string; lead: string; icon: string; points: Point[] };
+
+const features: Feature[] = [
   {
-    title: 'Academy Building Agent',
-    description: 'AI sets up your academy with proven defaults. Click publish, go live.',
-    icon: '<path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/>',
+    title: 'Custom domain',
+    lead: 'Unify your brand. Deploy training, onboarding & education content under your own URL.',
+    icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+    points: [
+      { label: 'Subdomain or domain', detail: 'Connect your own domain in minutes without needing support.' },
+      { label: 'Always secure', detail: 'SSL and HTTPS included by default for safe, trusted browsing.' },
+      { label: 'Feels like you', detail: 'Learners see your brand, not ours. Only your identity up front.' },
+    ],
   },
   {
-    title: 'Course Creation Agent',
-    description: 'Courses outlined and drafted by AI, so you never face a blank page.',
-    icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+    title: 'Academy building agent',
+    lead: 'AI-assisted settings and layout, with designed learning flows that engage learners.',
+    icon: '<path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5 10.1 10.9 5.5 9l4.6-1.9z"/><path d="M5 19l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/>',
+    points: [
+      { label: 'Live in minutes', detail: 'Launch a working academy with smart defaults. No tricky setup.' },
+      { label: 'No tech hassle', detail: 'Click publish and your academy is live for learners worldwide.' },
+      { label: 'Smart defaults', detail: 'AI applies designs that are proven to engage learners.' },
+    ],
   },
   {
-    title: 'AI Quizzes',
-    description: 'Knowledge checks written automatically from your own content.',
-    icon: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
-  },
-  {
-    title: 'Certifications',
-    description: 'Branded certificates learners can share straight to LinkedIn.',
-    icon: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/>',
-  },
-  {
-    title: 'Auto-Translations',
-    description: 'Translate your whole academy into 80+ languages in one click.',
-    icon: '<path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/>',
-  },
-  {
-    title: 'Localization',
-    description: 'Learners see the right language, currency, and formats automatically.',
-    icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    title: 'Course creation agent',
+    lead: 'Automatically generate course structure, polish content & streamline assets.',
+    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/>',
+    points: [
+      { label: 'Auto-drafted for you', detail: 'Courses are instantly outlined by AI so you never face a blank page.' },
+      { label: 'Easy to edit', detail: 'Adjust content until your course feels ready, no design required.' },
+      { label: 'Instant publish', detail: 'Make live edits and publish them in seconds.' },
+    ],
   },
   {
     title: 'Videos',
-    description: 'Upload or embed video. Responsive, and private to your academy.',
-    icon: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>',
+    lead: 'Use auto-generated or self-uploaded videos and interactive content.',
+    icon: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>',
+    points: [
+      { label: 'Upload or embed', detail: 'Drop in a video, we handle the rest. Looks great in any resolution.' },
+      { label: 'Any device', detail: 'Like YouTube, videos adjust to the screen size of your learners.' },
+      { label: 'Secure videos', detail: 'Only people in your academy access your videos. No downloads.' },
+    ],
   },
   {
-    title: 'Custom Domain',
-    description: 'Run on your own domain with SSL. Your brand, not ours.',
-    icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+    title: 'Quizzes',
+    lead: 'Custom quizzes and knowledge checks that test, reinforce, and reveal learning gaps.',
+    icon: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+    points: [
+      { label: 'Auto-generated', detail: 'AI instantly writes quiz questions from your content, saving hours.' },
+      { label: 'Easy check-ups', detail: 'Learners see the correct answers and explanations immediately.' },
+      { label: 'Custom logic', detail: 'Define custom success logic for quizzes and correct answers.' },
+    ],
   },
   {
-    title: 'Manage Users',
-    description: 'Invite hundreds at once, assign roles, see activity in real time.',
+    title: 'Certifications',
+    lead: 'Offer both standard badges and tailor-made credentials to motivate learners.',
+    icon: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/>',
+    points: [
+      { label: 'Auto-create', detail: 'Generate branded certificates automatically for recognition.' },
+      { label: 'Share everywhere', detail: 'Learners export certificates to LinkedIn or download them as PDF.' },
+      { label: 'Motivation boost', detail: 'Certificates that keep learners motivated to reach the end.' },
+    ],
+  },
+  {
+    title: 'Auto-translations',
+    lead: 'Go global with AI-native translations in 80+ languages, with full control.',
+    icon: '<path d="M4 5h7M9 3v2c0 4-2 7-5 8"/><path d="M5 9c0 2 3 4 6 4"/><path d="M14 21l4-9 4 9"/><path d="M15.5 17h5"/>',
+    points: [
+      { label: 'One click', detail: 'Translate your entire academy instantly, with no copy-paste.' },
+      { label: 'Context-aware', detail: 'AI translations that sound natural and keep cultural context.' },
+      { label: 'Editable', detail: 'Make quick manual edits to fine-tune phrasing.' },
+    ],
+  },
+  {
+    title: 'Localization',
+    lead: 'Learners automatically see the version that feels local to them, with localized URLs.',
+    icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    points: [
+      { label: 'Location detection', detail: 'Learners automatically see the right language based on location.' },
+      { label: 'Feels local', detail: 'Dates, currencies, and units adapt to local norms.' },
+      { label: 'Set once', detail: 'Configure localization once and the system handles it.' },
+    ],
+  },
+  {
+    title: 'Privacy',
+    lead: 'Decide who sees what. Public or private access, with full control over settings.',
+    icon: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+    points: [
+      { label: 'Easy controls', detail: 'Decide in one click which courses are public, invite-only, or restricted.' },
+      { label: 'Public or private', detail: 'Make resources accessible to everyone or specific groups.' },
+      { label: 'Built-in compliance', detail: 'GDPR and enterprise-grade privacy controls are included.' },
+    ],
+  },
+  {
+    title: 'Manage users',
+    lead: 'Powerful admin tools to create, organize, and monitor users and permissions.',
     icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    points: [
+      { label: 'Bulk invites', detail: 'Upload a list of emails and invite hundreds of learners at once.' },
+      { label: 'Role assignment', detail: 'Assign roles in seconds so everyone has the right access.' },
+      { label: 'Clear overview', detail: "Instantly see who's active and how learners are progressing." },
+    ],
   },
   {
-    title: 'Track Progress',
-    description: "See who's finishing and who's stuck. Export to CSV anytime.",
+    title: 'Track progress',
+    lead: 'Monitor activity, identify drop-off points, and support learners at risk.',
     icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+    points: [
+      { label: 'Completion insights', detail: 'See who is finishing and who is falling behind, in real time.' },
+      { label: 'Engagement patterns', detail: 'Spot exactly where learners lose attention.' },
+      { label: 'AI-native reports', detail: 'Export the CSV and ask complex questions against your data.' },
+    ],
   },
   {
-    title: 'Spaced Repetition',
-    description: 'Automatic nudges resurface knowledge so it actually sticks.',
+    title: 'Measure outcome',
+    lead: 'Track clicks, sales, orders or anything else, and connect training to the business.',
+    icon: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+    points: [
+      { label: 'Connect the dots', detail: 'Decide which learning actions are expected to generate outcomes.' },
+      { label: 'Custom metrics', detail: 'Convert learning data points into actual success metrics.' },
+      { label: 'Track results', detail: 'Monitor the metrics in your systems natively against your goals.' },
+    ],
+  },
+  {
+    title: 'Repetitions',
+    lead: 'Use spaced repetition and review cycles to build long-term retention and mastery.',
     icon: '<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>',
+    points: [
+      { label: 'Smart reminders', detail: 'Learners get nudges at the right time to refresh knowledge.' },
+      { label: 'Build memory', detail: 'Spaced repetition ensures concepts stick long-term.' },
+      { label: 'On autopilot', detail: 'Enable once and the system handles memory reinforcement.' },
+    ],
+  },
+  {
+    title: 'Rewards',
+    lead: 'Drive engagement with built-in incentives that turn progress into tangible benefits.',
+    icon: '<polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>',
+    points: [
+      { label: 'Gifts for learning', detail: 'Motivate learners to make progress with real rewards and perks.' },
+      { label: 'Structure rewards', detail: 'Decide which rewards align with the priorities you set.' },
+      { label: 'Motivation system', detail: 'Keep learners excited and boost course completion.' },
+    ],
+  },
+  {
+    title: 'Feedback',
+    lead: "Capture learner feedback to illuminate what's working and where to adjust.",
+    icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    points: [
+      { label: 'One-click surveys', detail: 'Collect feedback instantly with polls or quick forms inside any course.' },
+      { label: 'Clear results', detail: 'Discover what learners love and where they struggle.' },
+      { label: 'Improve fast', detail: 'Use insights to refine courses without waiting for months.' },
+    ],
   },
   {
     title: 'Security',
-    description: 'Enterprise-grade encryption and access controls, standard.',
+    lead: 'Enterprise-grade safeguards, data encryption, and privacy controls as standard.',
     icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+    points: [
+      { label: 'Always protected', detail: 'Enterprise-level security and encryption come standard.' },
+      { label: 'Easy logins', detail: 'Password-based login with more options coming soon.' },
+      { label: 'Control access', detail: 'Manage who can view, edit, or share content at all levels.' },
+    ],
+  },
+  {
+    title: 'Integrations',
+    lead: 'Connect Qurioos with your tools and workflows: analytics, CRM, chat, and more.',
+    icon: '<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/>',
+    points: [
+      { label: 'Connect fast', detail: 'Link your CRM, Slack/Teams, analytics or other tools instantly.' },
+      { label: 'Seamless sync', detail: 'Data flows smoothly between Qurioos and your existing stack.' },
+      { label: 'Unified workflow', detail: 'Keep everything connected to make learning fit naturally.' },
+    ],
   },
 ];
 ---
@@ -84,13 +198,13 @@ const features = [
       </p>
     </div>
 
-    <!-- Hairline spec-grid: cells separated by 1px gaps over the border color -->
+    <!-- Hairline spec-grid of detailed feature cards -->
     <div class="overflow-hidden rounded-3xl shadow-soft">
-      <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-px bg-border md:grid-cols-2 xl:grid-cols-3">
         {
           features.map((feature) => (
-            <div class="group bg-bg-card p-7 transition-colors duration-200 hover:bg-bg-secondary lg:p-8">
-              <div class="mb-5 inline-flex rounded-xl bg-accent/8 p-2.5 text-accent ring-1 ring-accent/15 transition-transform duration-200 group-hover:-translate-y-0.5">
+            <article class="flex flex-col bg-bg-card p-7 lg:p-8">
+              <div class="mb-5 inline-flex w-fit rounded-xl bg-accent/10 p-2.5 text-accent ring-1 ring-accent/15">
                 <svg
                   width="20"
                   height="20"
@@ -103,13 +217,17 @@ const features = [
                   set:html={feature.icon}
                 />
               </div>
-              <h3 class="text-[0.95rem] font-semibold text-text-primary">
-                {feature.title}
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-text-secondary">
-                {feature.description}
-              </p>
-            </div>
+              <h3 class="text-base font-semibold text-text-primary">{feature.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">{feature.lead}</p>
+              <dl class="mt-5 space-y-3 border-t border-border-subtle pt-5">
+                {feature.points.map((p) => (
+                  <div>
+                    <dt class="text-[0.8rem] font-semibold text-text-primary">{p.label}</dt>
+                    <dd class="mt-0.5 text-[0.8rem] leading-relaxed text-text-muted">{p.detail}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
           ))
         }
       </div>
