@@ -27,25 +27,29 @@ const tools = [
 <section class="bg-bg-secondary py-20 lg:py-28">
   <Container>
     <div class="mb-12 max-w-2xl">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
-        {t.home.integrationsLabel}
-      </p>
-      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+      <p class="eyebrow eyebrow--accent mb-5">{t.home.integrationsLabel}</p>
+      <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
         {t.home.integrationsTitle}
       </h2>
-      <p class="mt-4 text-lg text-text-secondary">
+      <p class="mt-5 text-lg text-text-secondary">
         {t.home.integrationsSubtitle}
       </p>
     </div>
 
-    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-      {
-        tools.map((tool) => (
-          <div class="flex items-center justify-center rounded-xl border border-border bg-bg-card px-4 py-5 text-sm font-medium text-text-secondary">
-            {tool}
-          </div>
-        ))
-      }
+    <div class="overflow-hidden rounded-3xl shadow-soft">
+      <div class="grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-4">
+        {
+          tools.map((tool) => (
+            <div class="flex items-center justify-center gap-2 bg-bg-card px-4 py-7 text-sm font-medium text-text-secondary transition-colors duration-200 hover:bg-bg-secondary hover:text-text-primary">
+              <span class="h-1.5 w-1.5 rounded-full bg-accent/40" />
+              {tool}
+            </div>
+          ))
+        }
+      </div>
     </div>
+    <p class="mt-5 font-mono text-xs uppercase tracking-wider text-text-muted">
+      + REST API &amp; webhooks for anything else
+    </p>
   </Container>
 </section>

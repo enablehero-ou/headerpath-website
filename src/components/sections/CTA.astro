@@ -12,24 +12,32 @@ const t = useTranslations(locale);
 <section class="bg-bg-primary py-20 lg:py-28">
   <Container>
     <div
-      class="relative overflow-hidden rounded-2xl border border-border bg-bg-secondary px-8 py-16 text-center lg:px-16"
+      class="grain relative overflow-hidden rounded-[2rem] px-8 py-20 text-center lg:px-16"
+      style="background:#0c0c0c"
     >
-      <!-- Background gradient -->
+      <!-- Accent glow -->
       <div
-        class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_120%,rgba(16,185,129,0.12),transparent)]"
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_70%_at_50%_115%,rgba(16,185,129,0.30),transparent)]"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
       >
       </div>
 
-      <h2 class="relative text-3xl font-semibold text-text-primary lg:text-4xl max-w-xl mx-auto">
+      <h2 class="relative mx-auto max-w-xl text-3xl text-white lg:text-[2.75rem]">
         {t.home.ctaTitle}
       </h2>
-      <p class="relative mt-4 text-text-secondary max-w-md mx-auto">
+      <p class="relative mx-auto mt-5 max-w-md text-[15px] text-white/60">
         {t.home.ctaSubtitle}
       </p>
-      <div class="relative mt-8">
+      <div class="relative mt-9 flex flex-col items-center gap-3">
         <Button href={brand.signupUrl} variant="primary" size="lg">
           {t.home.ctaButton}
         </Button>
+        <span class="font-mono text-xs uppercase tracking-wider text-white/40">
+          {brand.pricing.flat.price}{brand.pricing.flat.period} · no credit card
+        </span>
       </div>
     </div>
   </Container>

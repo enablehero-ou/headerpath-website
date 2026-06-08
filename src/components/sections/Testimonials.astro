@@ -42,27 +42,30 @@ const testimonials = [
 
 <section class="bg-bg-secondary py-20 lg:py-28">
   <Container>
-    <div class="mb-12 text-center">
-      <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
-        {t.home.testimonialsLabel}
-      </p>
-      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+    <div class="mb-12 max-w-2xl">
+      <p class="eyebrow eyebrow--accent mb-5">{t.home.testimonialsLabel}</p>
+      <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
         {t.home.testimonialsTitle}
       </h2>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         testimonials.map((item) => (
-          <div class="rounded-xl border border-border bg-bg-card p-6">
-            <p class="text-text-secondary text-sm leading-relaxed">
-              "{item.quote}"
-            </p>
-            <div class="mt-4">
-              <p class="text-sm font-semibold text-text-primary">{item.name}</p>
-              <p class="text-xs text-text-muted">{item.title}</p>
-            </div>
-          </div>
+          <figure class="surface flex flex-col p-7">
+            <blockquote class="font-serif text-lg italic leading-snug text-text-primary">
+              “{item.quote}”
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 border-t border-border-subtle pt-5">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 font-serif text-sm text-accent ring-1 ring-accent/15">
+                {item.name.charAt(0)}
+              </span>
+              <span>
+                <span class="block text-sm font-semibold text-text-primary">{item.name}</span>
+                <span class="block text-xs text-text-muted">{item.title}</span>
+              </span>
+            </figcaption>
+          </figure>
         ))
       }
     </div>

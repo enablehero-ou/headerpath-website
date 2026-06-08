@@ -74,42 +74,45 @@ const features = [
 
 <section class="bg-bg-primary py-20 lg:py-28">
   <Container>
-    <div class="mb-14 max-w-2xl">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
-        {t.home.featuresLabel}
-      </p>
-      <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
+    <div class="mb-12 max-w-2xl">
+      <p class="eyebrow eyebrow--accent mb-5">{t.home.featuresLabel}</p>
+      <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
         {t.home.featuresTitle}
       </h2>
-      <p class="mt-4 text-lg text-text-secondary">
+      <p class="mt-5 text-lg text-text-secondary">
         {t.home.featuresSubtitle}
       </p>
     </div>
 
-    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        features.map((feature) => (
-          <div>
-            <div class="mb-4 inline-flex rounded-lg bg-accent/10 p-2.5 text-accent">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                set:html={feature.icon}
-              />
+    <!-- Hairline spec-grid: cells separated by 1px gaps over the border color -->
+    <div class="overflow-hidden rounded-3xl shadow-soft">
+      <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+        {
+          features.map((feature) => (
+            <div class="group bg-bg-card p-7 transition-colors duration-200 hover:bg-bg-secondary lg:p-8">
+              <div class="mb-5 inline-flex rounded-xl bg-accent/8 p-2.5 text-accent ring-1 ring-accent/15 transition-transform duration-200 group-hover:-translate-y-0.5">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={feature.icon}
+                />
+              </div>
+              <h3 class="text-[0.95rem] font-semibold text-text-primary">
+                {feature.title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-text-secondary">
+                {feature.description}
+              </p>
             </div>
-            <h3 class="font-semibold text-text-primary">{feature.title}</h3>
-            <p class="mt-1.5 text-sm leading-relaxed text-text-secondary">
-              {feature.description}
-            </p>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </Container>
 </section>

@@ -1,7 +1,6 @@
 ---
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
-import Badge from '../ui/Badge.astro';
 import { brand } from '../../config/brand';
 import { useTranslations } from '../../i18n/translations';
 import type { Locale } from '../../i18n/translations';
@@ -10,50 +9,54 @@ const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 ---
 
-<section class="relative overflow-hidden bg-bg-primary pt-24 pb-20 lg:pt-32 lg:pb-28">
-  <!-- Background gradient -->
+<section class="grain relative overflow-hidden bg-bg-primary pt-28 pb-20 lg:pt-40 lg:pb-28">
+  <!-- Atmospheric wash -->
+  <div class="atmosphere pointer-events-none absolute inset-0"></div>
   <div
-    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_-10%,rgba(16,185,129,0.06),transparent)]"
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
   >
   </div>
 
-  <Container>
+  <Container class="relative">
     <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
-      <!-- Badge -->
-      <div class="mb-6 animate-fade-in">
-        <Badge>✦ AI-native academy platform</Badge>
-      </div>
+      <!-- Eyebrow -->
+      <p class="eyebrow eyebrow--accent mb-8 animate-fade-in">
+        AI-native academy platform
+      </p>
 
       <!-- Headline -->
       <h1
-        class="text-4xl font-semibold leading-tight tracking-tight text-text-primary sm:text-5xl lg:text-6xl xl:text-7xl"
+        class="text-5xl text-text-primary sm:text-6xl lg:text-7xl xl:text-[5.25rem]"
       >
         {t.home.heroTitle}
       </h1>
 
       <!-- Subheading -->
-      <p class="mt-6 max-w-2xl text-lg text-text-secondary lg:text-xl">
+      <p class="mt-7 max-w-xl text-lg text-text-secondary lg:text-xl">
         {t.home.heroSubtitle}
       </p>
 
       <!-- CTA -->
-      <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+      <div class="mt-10 flex flex-col items-center gap-3">
         <Button href={brand.signupUrl} variant="primary" size="lg">
           {t.home.heroCta}
         </Button>
+        <span class="text-xs text-text-muted">No credit card required</span>
       </div>
 
       <!-- Stats -->
       <div
-        class="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4 border-t border-border pt-12"
+        class="mt-20 grid w-full grid-cols-2 gap-y-8 sm:grid-cols-4"
       >
         {
           brand.stats.map((stat) => (
-            <div class="flex flex-col items-center gap-1">
-              <span class="text-2xl font-semibold text-text-primary sm:text-3xl">
+            <div class="flex flex-col items-center gap-1.5">
+              <span class="font-serif text-3xl text-text-primary sm:text-4xl">
                 {stat.value}
               </span>
-              <span class="text-sm text-text-muted">{stat.label}</span>
+              <span class="text-xs uppercase tracking-wider text-text-muted">
+                {stat.label}
+              </span>
             </div>
           ))
         }
