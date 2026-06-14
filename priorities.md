@@ -23,8 +23,8 @@
 - [ ] Reconcile the 40 archived hand-written docs (`src/content/docs/_archive/handwritten-en/`) vs the 36 imported CSV help articles
 
 ## Infra / ops
-- [ ] Repo-specific `/ship` and `/main` skills reflecting this repo's flow (mentioned, not yet created)
-- [ ] Delete obsolete `github-pages-migration.md` (GitHub Pages approach rejected)
+- [ ] Repo-specific `/main` skill (squash-merge to `main` + hard-reset `dev` to `main`); `/ship` is already repo-specific and prunes `priorities.md`
+- [ ] Keep `GEMINI.md` in sync with the restructured `CLAUDE.md` (it still has the old structure)
 
 ## Nice-to-have
 - [ ] Add a real product screenshot/visual to the hero when available
