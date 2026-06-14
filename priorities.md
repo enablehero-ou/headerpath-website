@@ -24,7 +24,6 @@
 
 ## Infra / ops
 - [ ] Repo-specific `/main` skill (squash-merge to `main` + hard-reset `dev` to `main`); `/ship` is already repo-specific and prunes `priorities.md`
-- [ ] Keep `GEMINI.md` in sync with the restructured `CLAUDE.md` (it still has the old structure)
 
 ## Nice-to-have
 - [ ] Add a real product screenshot/visual to the hero when available
