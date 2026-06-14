@@ -27,6 +27,16 @@ Invoke with `/research`. Enters pure research mode (no planning, building, or te
 
 Work on `dev`. `/ship` → PR → Vercel preview. `/main` → production deploy.
 
+Local preview runs at `localhost:4321` via the `com.qurioos.website` launch agent
+(auto-starts, logs at `/tmp/qurioos-website-dev.log`). Use it instead of pushing
+to preview for visual checks. Restart: `launchctl kickstart -k gui/$(id -u)/com.qurioos.website`.
+
+## priorities.md
+
+`priorities.md` holds **forward-looking priorities only** — never a changelog.
+After every merge to `main`, remove the items that shipped (their record lives in
+the PR/Git history). Keep it pruned to what's still pending.
+
 ## Brand & Config
 
 - **Brand config** (`src/config/brand.ts`): All brand strings — name, tagline, URLs. Never hardcode brand name anywhere else.
