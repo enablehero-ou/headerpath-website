@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import Card from '../../components/ui/Card.astro';
+
+// Human-readable labels + display order for help categories (Webflow source).
+const categories: { slug: string; label: string }[] = [
+  { slug: 'accounts', label: 'Accounts' },
+  { slug: 'create-content', label: 'Create content' },
+  { slug: 'customize-your-headerpath-account', label: 'Customize theme' },
+  { slug: 'hosting-domains', label: 'Hosting & domains' },
+  { slug: 'localization', label: 'Localization' },
+  { slug: 'certifications', label: 'Certifications' },
+  { slug: 'progress-tracking', label: 'Progress tracking' },
+  { slug: 'reports', label: 'Reports' },
+  { slug: 'emails', label: 'Emails' },
+  { slug: 'integrations-api', label: 'Integrations & API' },
+  { slug: 'security', label: 'Security' },
+];
+
+const articles = await getCollection('docs', ({ data }) => !data.draft);
+
+const slugOf = (id: string) => id.split('/').pop()!;
+const catOf = (a: (typeof articles)[number]) =>
+  a.data.category ?? a.id.split('/')[1];
+
+const grouped = categories
+  .map((c) => ({
+    ...c,
+    items: articles
+      .filter((a) => catOf(a) === c.slug)
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+  }))
+  .filter((c) => c.items.length > 0);
+---
+
+<PageLayout
+  title="Help center"
+  description="Guides, answers, and how-tos for getting the most out of HeaderPath."
+>
+  <Container class="py-16 lg:py-24">
+    <div class="mb-12 max-w-3xl">
+      <p class="eyebrow eyebrow--accent mb-5">Help center</p>
+      <h1 class="text-4xl text-text-primary lg:text-5xl">How can we help?</h1>
+      <p class="mt-4 text-lg text-text-secondary">
+        Guides, answers, and how-tos for getting the most out of HeaderPath.
+      </p>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-[210px_1fr] lg:gap-16">
+      <!-- Category nav -->
+      <aside class="lg:sticky lg:top-24 lg:self-start">
+        <p class="eyebrow mb-4">Categories</p>
+        <nav class="flex flex-wrap gap-2 lg:flex-col lg:gap-0.5">
+          {
+            grouped.map((cat) => (
+              <a
+                href={`#${cat.slug}`}
+                class="rounded-lg px-3 py-2 text-sm text-text-secondary no-underline transition-colors hover:bg-bg-secondary hover:text-text-primary"
+              >
+                {cat.label}
+                <span class="ml-1 text-xs text-text-muted">{cat.items.length}</span>
+              </a>
+            ))
+          }
+        </nav>
+      </aside>
+
+      <!-- Articles by category -->
+      <div class="space-y-14">
+        {
+          grouped.map((cat) => (
+            <section id={cat.slug} class="scroll-mt-24">
+              <h2 class="mb-5 flex items-baseline gap-3 text-xl text-text-primary">
+                {cat.label}
+                <span class="font-mono text-xs font-normal uppercase tracking-wider text-text-muted">
+                  {cat.items.length} articles
+                </span>
+              </h2>
+              <div class="grid gap-4 sm:grid-cols-2">
+                {cat.items.map((a) => (
+                  <Card href={`/help/${slugOf(a.id)}`}>
+                    <h3 class="text-[0.95rem] font-semibold text-text-primary">{a.data.title}</h3>
+                    {a.data.description && (
+                      <p class="mt-2 text-sm text-text-secondary line-clamp-2">
+                        {a.data.description}
+                      </p>
+                    )}
+                  </Card>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</PageLayout>

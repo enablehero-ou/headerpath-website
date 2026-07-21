@@ -1,0 +1,66 @@
+---
+import Container from '../ui/Container.astro';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+// Real integration marks pulled from the product site. Illustrative, not a
+// fixed catalog — anything else connects via REST API & webhooks.
+const tools = [
+  { name: 'Microsoft', icon: '/images/webflow/int-microsoft.png' },
+  { name: 'Salesforce', icon: '/images/webflow/int-salesforce.svg' },
+  { name: 'HubSpot', icon: '/images/webflow/int-hubspot.svg' },
+  { name: 'Google Analytics', icon: '/images/webflow/int-google-analytics.svg' },
+  { name: 'Amplitude', icon: '/images/webflow/int-amplitude.png' },
+  { name: 'Segment', icon: '/images/webflow/int-segment.svg' },
+  { name: 'Zapier', icon: '/images/webflow/int-zapier.svg' },
+  { name: 'Stripe', icon: '/images/webflow/int-stripe.svg' },
+  { name: 'Twilio', icon: '/images/webflow/int-twilio.svg' },
+  { name: 'Intercom', icon: '/images/webflow/int-intercom.svg' },
+  { name: 'Help Scout', icon: '/images/webflow/int-helpscout.svg' },
+  { name: 'ActiveCampaign', icon: '/images/webflow/int-activecampaign.svg' },
+  { name: 'Notion', icon: '/images/webflow/int-notion.svg' },
+  { name: 'Typeform', icon: '/images/webflow/int-typeform.png' },
+  { name: 'Webhooks', icon: '/images/webflow/int-webhooks.svg' },
+];
+---
+
+<section class="bg-bg-secondary py-20 lg:py-28">
+  <Container>
+    <div class="mb-12 max-w-2xl">
+      <p class="eyebrow eyebrow--accent mb-5">{t.home.integrationsLabel}</p>
+      <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
+        {t.home.integrationsTitle}
+      </h2>
+      <p class="mt-5 text-lg text-text-secondary">
+        {t.home.integrationsSubtitle}
+      </p>
+    </div>
+
+    <div class="overflow-hidden rounded-3xl shadow-soft">
+      <div class="grid grid-cols-3 gap-px bg-border sm:grid-cols-4 lg:grid-cols-8">
+        {
+          tools.map((tool) => (
+            <div class="flex aspect-square items-center justify-center bg-bg-card p-5 transition-colors duration-200 hover:bg-bg-secondary">
+              <img
+                src={tool.icon}
+                alt={tool.name}
+                title={tool.name}
+                class="h-8 w-8 object-contain"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+        <div class="flex aspect-square items-center justify-center bg-bg-card p-5 font-mono text-xs uppercase tracking-wider text-text-muted">
+          + more
+        </div>
+      </div>
+    </div>
+    <p class="mt-5 font-mono text-xs uppercase tracking-wider text-text-muted">
+      + REST API &amp; webhooks for anything else
+    </p>
+  </Container>
+</section>

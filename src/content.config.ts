@@ -2,13 +2,19 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    author: z.string().default('Qurioos Team'),
-    category: z.enum(['product', 'engineering', 'education', 'company']),
+    author: z.string().default('HeaderPath Team'),
+    category: z.enum([
+      'strategy',
+      'case-studies',
+      'product-updates',
+      'tutorials',
+      'live-events',
+    ]),
     image: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
@@ -31,12 +37,14 @@ const alternatives = defineCollection({
 });
 
 const techniques = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/techniques' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/techniques' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['pedagogy', 'assessment', 'engagement', 'ai']),
+    bestFor: z.string().optional(),
+    category: z.enum(['pedagogy', 'assessment', 'engagement', 'ai']).optional(),
     image: z.string().optional(),
+    order: z.number().optional(),
     draft: z.boolean().default(false),
   }),
 });
@@ -86,6 +94,19 @@ const legal = defineCollection({
   }),
 });
 
+// Help center / docs — self-hosted. Category derived from folder, e.g.
+// src/content/docs/en/<category>/<slug>.md. _archive is excluded by the glob.
+const docs = defineCollection({
+  loader: glob({ pattern: 'en/**/*.md', base: './src/content/docs' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    category: z.string().optional(),
+    order: z.number().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   blog,
   alternatives,
@@ -94,4 +115,5 @@ export const collections = {
   features,
   proposals,
   legal,
+  docs,
 };

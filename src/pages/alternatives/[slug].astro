@@ -26,11 +26,11 @@ const { Content } = await render(item);
       <div class="not-prose mb-8 grid gap-4 sm:grid-cols-2">
         {item.data.pros.length > 0 && (
           <div class="rounded-lg border border-border bg-bg-card p-4">
-            <h3 class="mb-3 text-sm font-semibold text-accent">Why choose us</h3>
+            <h3 class="mb-3 text-sm font-semibold text-accent-fg">Why choose us</h3>
             <ul class="space-y-2">
               {item.data.pros.map((pro: string) => (
                 <li class="flex items-start gap-2 text-sm text-text-secondary">
-                  <svg class="mt-0.5 shrink-0 text-accent" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <svg class="mt-0.5 shrink-0 text-accent-fg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   {pro}
@@ -63,7 +63,7 @@ const { Content } = await render(item);
   {
     item.data.verdict && (
       <div class="not-prose mt-8 rounded-lg border border-accent/30 bg-accent/5 p-6">
-        <p class="text-sm font-semibold text-accent mb-2">Our verdict</p>
+        <p class="text-sm font-semibold text-accent-fg mb-2">Our verdict</p>
         <p class="text-sm text-text-secondary">{item.data.verdict}</p>
       </div>
     )

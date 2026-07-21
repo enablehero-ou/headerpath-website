@@ -7,53 +7,63 @@ import type { Locale } from '../../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-const faqs = [
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  items?: { question: string; answer: string }[];
+}
+
+const defaultFaqs = [
   {
-    question: 'Is this a tool or an agency?',
+    question: 'Do I need instructional designers or developers?',
     answer:
-      "It's both. You get a platform (the academy software) and a team to help you design, build, and run your education program. You can use just the platform, just the services, or both together.",
+      'No. The Academy Building Agent sets up your academy and the Course Creation Agent drafts your courses. You review, edit, and publish — no design or technical skills required.',
   },
   {
-    question: 'Who is this for?',
+    question: 'Can I use my own branding and domain?',
     answer:
-      "Organizations that need to educate people at scale — whether that's your internal team, your channel partners, or your customers. We work with companies ranging from 50 to 50,000 employees.",
+      'Yes. Every academy is fully white-labeled and runs on your own domain, with SSL included by default. Learners see your brand, not ours.',
   },
   {
-    question: 'How is this different from what we already have?',
+    question: 'What can I train people on?',
     answer:
-      "Most LMS tools give you a place to store content. We help you design programs that actually change behavior. That means outcomes-focused curriculum design, engagement mechanics, and ongoing measurement — not just content upload.",
+      'Anything — customer education, partner enablement, and employee onboarding or upskilling — all from one account.',
   },
   {
-    question: 'Do we need to start using new tools?',
+    question: 'How many languages are supported?',
     answer:
-      "Not necessarily. We can work with your existing SSO, HRIS, CRM, and other tools. The academy integrates with most modern SaaS stacks so learners don't need to manage yet another login.",
+      'Translate your entire academy into 80+ languages in one click. AI translations sound natural and stay fully editable, and learners see the right language automatically.',
   },
   {
-    question: 'What kind of support do we get?',
+    question: 'Is my content private and secure?',
     answer:
-      "On the Starter plan you get platform support. On Custom plans you also get dedicated education design support, regular strategy calls, and direct access to our team.",
+      'Yes. You choose public, invite-only, or restricted access, backed by enterprise-grade encryption and GDPR-ready privacy controls.',
   },
   {
-    question: 'How quickly will we see results?',
+    question: 'How does pricing work?',
     answer:
-      "You can launch a first program in weeks. Results depend on the program design and your audience, but most clients see measurable improvement in their target outcomes within 60-90 days of launch.",
+      'One flat plan at $150/month with everything unlimited, subject to our fair usage policy.',
   },
 ];
+
+const {
+  eyebrow = t.home.faqLabel,
+  title = t.home.faqTitle,
+  items = defaultFaqs,
+} = Astro.props;
 ---
 
 <section class="bg-bg-primary py-20 lg:py-28">
   <Container>
     <div class="mx-auto max-w-2xl">
-      <div class="mb-10 text-center">
-        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
-          {t.home.faqLabel}
-        </p>
-        <h2 class="text-3xl font-semibold text-text-primary lg:text-4xl">
-          {t.home.faqTitle}
+      <div class="mb-10">
+        <p class="eyebrow eyebrow--accent mb-5">{eyebrow}</p>
+        <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
+          {title}
         </h2>
       </div>
 
-      <FAQAccordion client:visible items={faqs} />
+      <FAQAccordion client:visible items={items} />
     </div>
   </Container>
 </section>

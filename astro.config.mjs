@@ -12,6 +12,14 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
 
+  // Permanent redirects — these pages folded into the product homepage.
+  redirects: {
+    '/about': { status: 301, destination: '/' },
+    '/platform': { status: 301, destination: '/' },
+    '/partner': { status: 301, destination: '/' },
+    '/proposals': { status: 301, destination: '/' },
+  },
+
   integrations: [mdx(), react()],
 
   vite: {
