@@ -1,7 +1,7 @@
 ---
 title: "Add your logo"
 description: "A guide to uploading and using your logo across the platform, including supported formats, dimensions, and placement."
-category: "customize-your-qurioos-account"
+category: "customize-your-headerpath-account"
 ---
 
 ### Supported image types

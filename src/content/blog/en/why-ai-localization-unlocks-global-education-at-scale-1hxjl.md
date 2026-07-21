@@ -45,7 +45,7 @@ Education becomes infrastructure, not inventory. You build it once and distribut
 
 The old model was "translation as a project." The new model is "translation as a service."
 
-Platforms like [**Qurioos the offer AI translation**](/pricing) for just **$5 per course** with pay-as-you-go versus charging per word or flat fees. If video is included, costs still remain low at $1.50-$5 per video minute compared to traditional rates of $75-$200 per video minute for dubbing and $0.15-$0.30 per word for translation.
+Platforms like [**HeaderPath the offer AI translation**](/pricing) for just **$5 per course** with pay-as-you-go versus charging per word or flat fees. If video is included, costs still remain low at $1.50-$5 per video minute compared to traditional rates of $75-$200 per video minute for dubbing and $0.15-$0.30 per word for translation.
 
 Here's what that means strategically: you move from a world where each language requires budget approval to a world where you can test any market immediately. Partner in Brazil interested? Translate your onboarding program in an afternoon. Customer segment emerging in Japan? Localize your product education before the quarter ends.
 

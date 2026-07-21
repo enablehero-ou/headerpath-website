@@ -1,4 +1,4 @@
-# CLAUDE.md — qurioos-website
+# CLAUDE.md — headerpath-website
 
 Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 
@@ -18,9 +18,9 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > scaffold and **`qurioos.com` DNS still points at Loveable**, not Vercel. The public
 > cutover is a pending item in `priorities.md`, not done.
 
-> **🔴 POSITIONING RULE — Qurioos is the product, not a service.**
+> **🔴 POSITIONING RULE — HeaderPath is the product, not a service.**
 >
-> Qurioos is an **AI-native academy SaaS** — self-serve software that builds and runs
+> HeaderPath is an **AI-native academy SaaS** — self-serve software that builds and runs
 > branded learning academies. It is **not** a service/agency that designs programs for
 > clients. All copy is product-voiced and self-serve ("launch your academy", "AI builds
 > your courses"), never done-for-you service language ("we audit", "we design your
@@ -28,16 +28,16 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 
 > **🔴 BRAND / STRINGS RULE.**
 >
-> Brand name is **Qurioos** (capitalized). Never hardcode it — pull from `brand.ts`.
+> Brand name is **HeaderPath** (capitalized). Never hardcode it — pull from `brand.ts`.
 > Every user-visible string comes from `src/i18n/translations.ts`, never inline in a
 > component. All brand URLs/emails/pricing from `brand.ts`.
 
 GTM-style note: this is a static marketing site, so the "things that run" are pages and
 content, not workflows. The doc below is the reference map for those.
 
-## About Qurioos
+## About HeaderPath
 
-Qurioos is the **AI-native academy platform** — organizations launch a branded learning
+HeaderPath is the **AI-native academy platform** — organizations launch a branded learning
 academy, AI drafts the courses, and they publish on their own domain. Audiences: customer
 education, partner enablement, employee onboarding/upskilling. One flat plan ($150/mo,
 everything unlimited, fair-usage). The product app lives at `app.qurioos.com`; this repo
@@ -54,10 +54,10 @@ is the **marketing website** only.
 
 | Surface | Role | Details |
 |---|---|---|
-| **Vercel** | Hosting | Project `qurioos-v0/website`. Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-qurioos.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
-| **GitHub** | Source / CI | `qurioos-v0/website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
-| **app.qurioos.com** | Product app | Signup CTAs link to `app.qurioos.com/signup` (`brand.signupUrl`). Not built by this repo. |
-| **academy.qurioos.com** | Legacy signup API | The orphaned local `/signup` form POSTs to `academy.qurioos.com/api/signup-request` (slated for removal — see priorities). |
+| **Vercel** | Hosting | Project `qurioos-v0/website` (project + preview URL not yet renamed — see `notes/rebrand-transition.md`). Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-qurioos.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
+| **GitHub** | Source / CI | `qurioos-v0/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
+| **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
+| **Signup** | Stubbed | `brand.signupUrl` → local `/signup`; the form is a stub (no live API). Waiting on the app-side provisioning API — see `notes/rebrand-transition.md`. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
 | **Google Fonts** | Webfonts | Inter, Fraunces, JetBrains Mono — loaded in `BaseHead.astro`. |
 | **Webflow / Loveable** | Retiring | Old site (`quriooscom.webflow.io`) was the content + asset source — all assets are now copied into `public/images/` so nothing depends on it. Loveable still serves the live `qurioos.com` until cutover. |
@@ -83,10 +83,10 @@ contract.)
 ~/.local/bin/pnpm preview  # Preview the build
 ```
 
-Local preview also runs continuously at `localhost:4321` via the `com.qurioos.website`
-launch agent (auto-starts, `KeepAlive`, logs `/tmp/qurioos-website-dev.log`). Use it for
+Local preview also runs continuously at `localhost:4321` via the `com.headerpath.website`
+launch agent (auto-starts, `KeepAlive`, logs `/tmp/headerpath-website-dev.log`). Use it for
 visual checks instead of pushing to preview. Restart:
-`launchctl kickstart -k gui/$(id -u)/com.qurioos.website`.
+`launchctl kickstart -k gui/$(id -u)/com.headerpath.website`.
 
 ## Brand & Config
 
@@ -164,7 +164,7 @@ BaseHead, MobileNav, FAQAccordion).
 **Required frontmatter:** `title`, `description` (one sentence). Optional: `category`, `order`.
 
 **Live categories** (from the imported help center): `accounts`, `create-content`,
-`customize-your-qurioos-account`, `hosting-domains`, `localization`, `certifications`,
+`customize-your-headerpath-account`, `hosting-domains`, `localization`, `certifications`,
 `progress-tracking`, `reports`, `emails`, `integrations-api`, `security`. Labels/order are
 set in `src/pages/help/index.astro`. (The archived hand-written set used a different
 taxonomy — see Content Collections.)
@@ -173,7 +173,7 @@ taxonomy — see Content Collections.)
 
 ### Tone & Voice
 - **Professional-casual** — confident and direct. No jargon, no corporate stiffness, no enthusiasm filler ("and more!").
-- **Second person** for the reader ("you/your"). "Qurioos" (third person) for the product. "We/our" sparingly for company voice only.
+- **Second person** for the reader ("you/your"). "HeaderPath" (third person) for the product. "We/our" sparingly for company voice only.
 - **Active voice** dominant (~80%). Use passive only for technical descriptions.
 
 ### Length & Structure
@@ -207,7 +207,7 @@ taxonomy — see Content Collections.)
 | Certification | Certificate (for the feature/setting) |
 
 - Product nouns capitalized: **Step**, **Page**, **Certification**, **Level**, **Subject**
-- Support contact: **support@qurioos.com**
+- Support contact: **support@headerpath.com**
 - External links: "Name ↗" with arrow symbol
 
 ## Naming Conventions
@@ -221,7 +221,7 @@ taxonomy — see Content Collections.)
 ## Repo Structure
 
 ```
-qurioos-website/
+headerpath-website/
 ├── CLAUDE.md                 # This file — infrastructure + system context
 ├── priorities.md             # Forward-only backlog (no logs); pruned every /ship
 ├── README.md

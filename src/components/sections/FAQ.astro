@@ -7,7 +7,13 @@ import type { Locale } from '../../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-const faqs = [
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  items?: { question: string; answer: string }[];
+}
+
+const defaultFaqs = [
   {
     question: 'Do I need instructional designers or developers?',
     answer:
@@ -39,19 +45,25 @@ const faqs = [
       'One flat plan at $150/month with everything unlimited, subject to our fair usage policy.',
   },
 ];
+
+const {
+  eyebrow = t.home.faqLabel,
+  title = t.home.faqTitle,
+  items = defaultFaqs,
+} = Astro.props;
 ---
 
 <section class="bg-bg-primary py-20 lg:py-28">
   <Container>
     <div class="mx-auto max-w-2xl">
       <div class="mb-10">
-        <p class="eyebrow eyebrow--accent mb-5">{t.home.faqLabel}</p>
+        <p class="eyebrow eyebrow--accent mb-5">{eyebrow}</p>
         <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
-          {t.home.faqTitle}
+          {title}
         </h2>
       </div>
 
-      <FAQAccordion client:visible items={faqs} />
+      <FAQAccordion client:visible items={items} />
     </div>
   </Container>
 </section>

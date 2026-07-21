@@ -1,16 +1,16 @@
 ---
 title: "Content overview"
-description: "See how Qurioos organizes learning from top-level Subjects down to interactive microlearning Steps."
+description: "See how HeaderPath organizes learning from top-level Subjects down to interactive microlearning Steps."
 category: "create-content"
 ---
 
-### Understanding the Qurioos content structure
+### Understanding the HeaderPath content structure
 
-Qurioos organizes all learning experiences with a simple, flexible hierarchy. This structure works for anything — from a single course to a multi-track certification program — all within one account.
+HeaderPath organizes all learning experiences with a simple, flexible hierarchy. This structure works for anything — from a single course to a multi-track certification program — all within one account.
 
 ### **Account**
 
-Your Qurioos account contains all of your content.
+Your HeaderPath account contains all of your content.
 
 ### **Subjects**
 

@@ -1,12 +1,12 @@
 ---
 title: "Backup & recovery policy"
-description: "Daily automated backups ensure that all Qurioos account data is safe and can be restored in case of issues, with an additional off-site copy for disaster recovery."
+description: "Daily automated backups ensure that all HeaderPath account data is safe and can be restored in case of issues, with an additional off-site copy for disaster recovery."
 category: "security"
 ---
 
 ### ‍**How backups work**
 
-Qurioos uses a two-layer backup system to keep data safe:
+HeaderPath uses a two-layer backup system to keep data safe:
 
 ### **1. Operational backups (Railway)**
 

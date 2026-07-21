@@ -1,12 +1,12 @@
 ---
 title: "AI-powered translation methodology"
-description: "Qurioos has developed a proprietary AI translation system specifically optimized for educational content. Unlike generic translation tools, our system understands:"
+description: "HeaderPath has developed a proprietary AI translation system specifically optimized for educational content. Unlike generic translation tools, our system understands:"
 category: "localization"
 ---
 
 ### Proprietary AI translation system
 
-Qurioos has developed a proprietary AI translation system specifically optimized for educational content. Unlike generic translation tools, our system understands:
+HeaderPath has developed a proprietary AI translation system specifically optimized for educational content. Unlike generic translation tools, our system understands:
 
 - Educational terminology and pedagogy
 - Assessment language and quiz structures
@@ -15,7 +15,7 @@ Qurioos has developed a proprietary AI translation system specifically optimized
 
 ### The 4-stage translation process
 
-Qurioos uses a proprietary 4-stage AI system built specifically for educational content:
+HeaderPath uses a proprietary 4-stage AI system built specifically for educational content:
 
 **Stage 1: Answer a few questions to build a glossary**
 

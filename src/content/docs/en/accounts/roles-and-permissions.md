@@ -1,12 +1,12 @@
 ---
 title: "Roles and permissions"
-description: "Understand the different roles in Qurioos and what admins and users can do."
+description: "Understand the different roles in HeaderPath and what admins and users can do."
 category: "accounts"
 ---
 
-### Roles and permissions in Qurioos
+### Roles and permissions in HeaderPath
 
-Qurioos accounts have two types of users: **admins** and **users**. Each type has different levels of access and control over the account.
+HeaderPath accounts have two types of users: **admins** and **users**. Each type has different levels of access and control over the account.
 
 ### Admins
 

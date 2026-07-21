@@ -65,6 +65,6 @@ The success of the Aesculap Academy demonstrates that when companies invest in t
 
 ## Next steps
 
-- [**Study/Framework:** Understanding Coursera’s 2025 Learner Outcomes Report](https://www.qurioos.com/blog/coursere-2025-learner-outcomes-report?)
-- [**Case Study**: Roche trains 7,500 Healthcare Providers](https://www.qurioos.com/blog/case-study-roche-trains-7-500-healthcare-providers)
-- [Book your demo](https://www.qurioos.com/schedule) to see how to build your own global education engine with Qurioos.
+- [**Study/Framework:** Understanding Coursera’s 2025 Learner Outcomes Report](https://www.headerpath.com/blog/coursere-2025-learner-outcomes-report?)
+- [**Case Study**: Roche trains 7,500 Healthcare Providers](https://www.headerpath.com/blog/case-study-roche-trains-7-500-healthcare-providers)
+- [Book your demo](https://www.headerpath.com/schedule) to see how to build your own global education engine with HeaderPath.

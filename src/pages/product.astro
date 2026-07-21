@@ -1,0 +1,82 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+import ProductFeatures from '../components/sections/ProductFeatures.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import CTA from '../components/sections/CTA.astro';
+import { brand } from '../config/brand';
+import { useTranslations } from '../i18n/translations';
+import type { Locale } from '../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+// Feature-focused FAQ — answers the "how does it actually work" questions a
+// buyer asks while scanning the capability wall above.
+const productFaqs = [
+  {
+    question: 'How does the AI build courses?',
+    answer:
+      'The Course Creation Agent reads your material — docs, slides, video — and drafts a structured course: outline, sections, and steps. You edit anything before it goes live, so the AI saves the hours without taking away control.',
+  },
+  {
+    question: 'Can I build a course manually instead?',
+    answer:
+      'Yes. Every course is fully editable, and you can build one from scratch step by step. AI generation is a starting point, never a requirement.',
+  },
+  {
+    question: 'What content formats can learners consume?',
+    answer:
+      'Text, images, video, quizzes, and knowledge checks — all mobile-ready with secure, adaptive playback. Videos stream like YouTube but stay inside your academy.',
+  },
+  {
+    question: 'How do certifications work?',
+    answer:
+      'Generate branded certificates automatically when learners complete a path. They can download a PDF or share the credential straight to LinkedIn.',
+  },
+  {
+    question: 'How many languages are supported?',
+    answer:
+      'Translate your entire academy into 80+ languages in one click. Translations sound natural, stay fully editable, and learners see the right language automatically.',
+  },
+  {
+    question: 'How do I measure impact?',
+    answer:
+      'Track real-time progress and engagement per learner, then connect learning actions to business metrics like clicks, sales, or orders. Export the data and query it directly.',
+  },
+];
+---
+
+<PageLayout title={t.product.heroTitle} description={t.product.heroSubtitle}>
+  <!-- Product hero -->
+  <section class="grain relative overflow-hidden bg-bg-primary pt-28 pb-16 lg:pt-36 lg:pb-20">
+    <div class="atmosphere pointer-events-none absolute inset-0"></div>
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
+    >
+    </div>
+
+    <Container class="relative">
+      <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+        <p class="eyebrow eyebrow--accent mb-8">{t.product.heroEyebrow}</p>
+        <h1 class="text-4xl text-text-primary sm:text-5xl lg:text-6xl">
+          {t.product.heroTitle}
+        </h1>
+        <p class="mt-7 max-w-xl text-lg text-text-secondary">
+          {t.product.heroSubtitle}
+        </p>
+        <div class="mt-10 flex flex-col items-center gap-3">
+          <Button href={brand.signupUrl} variant="primary" size="lg">
+            {t.product.heroCta}
+          </Button>
+          <span class="text-xs text-text-muted">No credit card required</span>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <ProductFeatures />
+  <FAQ eyebrow={t.product.faqLabel} title={t.product.faqTitle} items={productFaqs} />
+  <CTA />
+</PageLayout>

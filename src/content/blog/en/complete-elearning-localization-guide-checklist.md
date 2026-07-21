@@ -11,7 +11,7 @@ So you've built an amazing online academy, eLearning program, or course library�
 
 This guide gives you a practical, copyable template to prepare for, execute, and maintain your eLearning localization project. Whether you're a VP of Learning & Development, a business owner, or a senior manager tackling this for the first time, this checklist will keep you on track.
 
-**Tip:** [**Qurioos AI localization**](/pricing) **is 100x times cheaper and 1000x faster than human translators.**
+**Tip:** [**HeaderPath AI localization**](/pricing) **is 100x times cheaper and 1000x faster than human translators.**
 
 ## Common pitfalls to avoid
 
@@ -26,9 +26,9 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 ## The 4-step process
 
 1. Decide what you want to localize, in which languages and for which locations.
-2. Translate the interface (pages, buttons, emails, etc.) and all the course texts and scripts ([**Qurioos**](/) does this in 1-click)
-3. Translate the audio files and videos automatically or semi-automatically (The [**Qurioos**](/) team can handle this for you)
-4. Launch your academy and online courses in as many languages as you need! ([**Qurioos**](/) allows you to do this in a few clicks)
+2. Translate the interface (pages, buttons, emails, etc.) and all the course texts and scripts ([**HeaderPath**](/) does this in 1-click)
+3. Translate the audio files and videos automatically or semi-automatically (The [**HeaderPath**](/) team can handle this for you)
+4. Launch your academy and online courses in as many languages as you need! ([**HeaderPath**](/) allows you to do this in a few clicks)
 
 ## Phase 1: Before you start
 
@@ -37,7 +37,7 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 1. Set clear objectives (e.g., increase engagement by 30%, expand to 3 new markets)
 2. Identify any legal and compliance requirements
 3. Survey or interview potential learners about their expectation
-4. Identify key roles for texts, videos, images, and the learning platform ([**Qurioos**](/) does everything in one platform)
+4. Identify key roles for texts, videos, images, and the learning platform ([**HeaderPath**](/) does everything in one platform)
 
 ### **Setup the content**
 
@@ -55,7 +55,7 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 1. Activate the language on your learning platform
 2. Answer a few questions to create a glossary of terms, product names, cultural details etc.
 3. Select the course your want to localize
-4. Click AI translate ([Qurioos](/) supports 1-click [localization with automated proofreading](https://www.qurioos.com/help/ai-powered-translation-methodology))
+4. Click AI translate ([HeaderPath](/) supports 1-click [localization with automated proofreading](https://www.headerpath.com/help/ai-powered-translation-methodology))
 
 ### **Localize media**
 
@@ -65,14 +65,14 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 
 ### **Localize interface**
 
-1. Check if your LMS or online course tool supports multilingual setups ([**Qurioos**](/) supports unlimited languages for free)
+1. Check if your LMS or online course tool supports multilingual setups ([**HeaderPath**](/) supports unlimited languages for free)
 2. Activate the languages on your platform
 
 ## Phase 3: Testing and feedback
 
 1. Test that the user flow works perfectly for some languages just to ensure everything is as expected.
 2. You can have native speakers conduct in-context review for any final tweaks
-3. Functional testing should be solved by your platform ([**Qurioos**](/) has built-in defaults that don't allow you to mess up the flow or the content)
+3. Functional testing should be solved by your platform ([**HeaderPath**](/) has built-in defaults that don't allow you to mess up the flow or the content)
 4. Get feedback from your team and an initial group of end-users if possible
 
 ## Phase 4: Launch
@@ -106,18 +106,18 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 
 - ‍**Start small:**Begin with one high-value course and one key market. Run a pilot to refine your process before scaling up.**‍**
 - **Don't skip the human touch:**While AI and machine translation are helpful, always have native speakers review content. Automated tools miss cultural nuances that can undermine your message.**‍**
-- **Budget realistically:**If you hire human translators, make sure you understand the full scope. ([**Qurioos AI localization pricing**](/pricing) is 100x times cheaper and 1000x faster than human translators)
+- **Budget realistically:**If you hire human translators, make sure you understand the full scope. ([**HeaderPath AI localization pricing**](/pricing) is 100x times cheaper and 1000x faster than human translators)
 - **Think long term:**Build localization into your content creation process from the start. It's much cheaper to design for localization than to retrofit existing content.**‍**
 - **Measure what matters:** Track engagement and learning outcomes, not just completion rates. The goal is effective learning, not just translated words.**‍**
 - **Keep it updated:**Localization isn't one-and-done. Plan for ongoing updates as content, regulations, and cultural contexts evolve.
 
-## Localize your academy and courses with Qurioos
+## Localize your academy and courses with HeaderPath
 
-Ready to take your academy global but don't want to navigate this complex process alone? [**Qurioos** offers end-to-end eLearning localization that drives results](/).
+Ready to take your academy global but don't want to navigate this complex process alone? [**HeaderPath** offers end-to-end eLearning localization that drives results](/).
 
 ![__wf_reserved_inherit](/images/webflow/6908c9231b5dad6fe8c7b358-qurioos-com-blog-images-1620-x-1080-px-8.png)
 
-### **Why choose** [**Qurioos**](/)**?**
+### **Why choose** [**HeaderPath**](/)**?**
 
 - **Turnkey localization solution**: We handle everything from strategy and translation to technical integration and quality assurance, so you can focus on your business
 - **eLearning expertise**: Deep experience with LMS and education platforms and custom solutions
@@ -134,4 +134,4 @@ Ready to take your academy global but don't want to navigate this complex proces
 
 [**Get started today**](/)
 
-Let's discuss your localization goals and create a customized plan for your eLearning program. Whether you're localizing your first course or scaling to new markets, Qurioos has the expertise and technology to make it seamless.
+Let's discuss your localization goals and create a customized plan for your eLearning program. Whether you're localizing your first course or scaling to new markets, HeaderPath has the expertise and technology to make it seamless.

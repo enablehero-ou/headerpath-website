@@ -1,12 +1,12 @@
 ---
-title: "Signup for a Qurioos account"
-description: "As an admin, you decide how learners can join your Qurioos academy. You can make signup public (open to anyone on the internet) or private (invite-only)."
+title: "Signup for a HeaderPath account"
+description: "As an admin, you decide how learners can join your HeaderPath academy. You can make signup public (open to anyone on the internet) or private (invite-only)."
 category: "accounts"
 ---
 
-### Setting up signup access for your Qurioos account
+### Setting up signup access for your HeaderPath account
 
-As an Admin, you decide how learners can join your Qurioos account. You can make signup **public** (open to anyone on the internet) or **private** (invite-only).
+As an Admin, you decide how learners can join your HeaderPath account. You can make signup **public** (open to anyone on the internet) or **private** (invite-only).
 
 ### Public signup
 

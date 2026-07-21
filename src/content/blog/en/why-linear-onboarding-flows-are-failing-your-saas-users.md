@@ -61,7 +61,7 @@ Surface onboarding only when it’s needed—in-app, in context, and in response
 - Embedding onboarding into the UI as much as possible—not in boxes users must close
 - Letting users explore with guided nudges, not pitches
 
-At [Qurioos](https://www.qurioos.com/), this is where our platform shines. You can deliver team-specific onboarding paths that connect docs, videos, and microlearning—directly inside your product, so users stay focused and empowered. [More on that here.](https://www.qurioos.com)
+At [HeaderPath](https://www.headerpath.com/), this is where our platform shines. You can deliver team-specific onboarding paths that connect docs, videos, and microlearning—directly inside your product, so users stay focused and empowered. [More on that here.](https://www.headerpath.com)
 
 ### Education shouldn’t stop after day one
 
@@ -83,7 +83,7 @@ Instead of one long video or doc, build smaller, contextual modules. Think 2-min
 
 ### 3. Connect onboarding to behavior and timing
 
-Don’t build everything upfront. Use tools (like [Qurioos](https://www.qurioos.com/)) to trigger onboarding based on:
+Don’t build everything upfront. Use tools (like [HeaderPath](https://www.headerpath.com/)) to trigger onboarding based on:
 
 - User role (Admin, power user, etc.)
 - Actions skipped (e.g., not inviting team)
@@ -119,7 +119,7 @@ Your onboarding flow isn’t separate from your core product—it’s the first 
 
 By investing in adaptive, embedded, role-aware education—from day one through scale—you unlock better conversions, faster adoption, and more loyal users.
 
-**Want to go beyond checklists?** [**Talk to Qurioos**](https://www.qurioos.com/) **about building adaptive onboarding experiences that grow with your product—and your users.**
+**Want to go beyond checklists?** [**Talk to HeaderPath**](https://www.headerpath.com/) **about building adaptive onboarding experiences that grow with your product—and your users.**
 
 ## Frequently asked questions
 
@@ -141,4 +141,4 @@ Yes. Admins, end-users, and partners often need very different onboarding flows.
 
 ### How can I update onboarding without engineering support?
 
-Onboarding platforms like [Qurioos](https://www.qurioos.com/) let teams add onboarding layers and learning flows on top of the product—without requiring front-end changes or code releases.
+Onboarding platforms like [HeaderPath](https://www.headerpath.com/) let teams add onboarding layers and learning flows on top of the product—without requiring front-end changes or code releases.

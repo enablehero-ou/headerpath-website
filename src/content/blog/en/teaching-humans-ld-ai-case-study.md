@@ -60,7 +60,7 @@ We turned that insight into content, product feedback, and even go-to-market ide
 
 Despite the hype, AI didn’t threaten anyone’s job in our experiment. It **enhanced** it. Participants learned how to bring more context, emotion, and inclusion into their experiences by using AI strategically—not lazily.
 
-And that’s the thing founders and product teams should get: AI is not your onboarding. You still need to design the moment, the outcome, the message. And that's were Qurioos can help.
+And that’s the thing founders and product teams should get: AI is not your onboarding. You still need to design the moment, the outcome, the message. And that's were HeaderPath can help.
 
 ## The outcomes (in numbers)
 
@@ -95,12 +95,12 @@ We used a mix of targeted LinkedIn campaigns, personal messages from our team, c
 
 Courses are valuable, but interaction and challenge-based design drives higher engagement, adaptability, and viral sharing. It also creates better spaces for conversion opportunities later—not just views.
 
-### Can tools like Qurioos support this kind of learning experience?
+### Can tools like HeaderPath support this kind of learning experience?
 
-Absolutely. Qurioos is built for education and onboarding at scale. If you want to build fast-learning journeys with less manual work, or scale customer-facing experiences that convert, start with Qurioos.
+Absolutely. HeaderPath is built for education and onboarding at scale. If you want to build fast-learning journeys with less manual work, or scale customer-facing experiences that convert, start with HeaderPath.
 
 ## Ready to bring your education to life?
 
-Big ideas start small. Whether you’re launching a product, a feature, or an entirely new use case, Qurioos helps you ship experiences your users actually want to complete.
+Big ideas start small. Whether you’re launching a product, a feature, or an entirely new use case, HeaderPath helps you ship experiences your users actually want to complete.
 
-[See how Qurioos helps you build smarter →](https://www.qurioos.com)
+[See how HeaderPath helps you build smarter →](https://www.headerpath.com)

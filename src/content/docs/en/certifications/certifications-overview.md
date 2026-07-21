@@ -4,9 +4,9 @@ description: "Create, award, and share custom certifications for completed learn
 category: "certifications"
 ---
 
-### Understanding certifications in Qurioos
+### Understanding certifications in HeaderPath
 
-Certifications in Qurioos are fully customizable credentials awarded to users when they meet specific criteria. They are always tied to a **Level**, which is connected to a **Subject**, and an unlimited number of certifications can exist in an account.
+Certifications in HeaderPath are fully customizable credentials awarded to users when they meet specific criteria. They are always tied to a **Level**, which is connected to a **Subject**, and an unlimited number of certifications can exist in an account.
 
 ### Awarding certifications
 

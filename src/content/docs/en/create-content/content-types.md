@@ -1,16 +1,16 @@
 ---
 title: "Content types"
-description: "Learn about the different Step types in Qurioos and how microlearning keeps content short, focused, and effective."
+description: "Learn about the different Step types in HeaderPath and how microlearning keeps content short, focused, and effective."
 category: "create-content"
 ---
 
-### What is a Step in Qurioos
+### What is a Step in HeaderPath
 
-A Step is the smallest learning unit in Qurioos. Each Step focuses on one clear objective or idea and can use different formats to deliver or reinforce knowledge. You can mix and match Step types within a Module to create variety and maintain learner interest.
+A Step is the smallest learning unit in HeaderPath. Each Step focuses on one clear objective or idea and can use different formats to deliver or reinforce knowledge. You can mix and match Step types within a Module to create variety and maintain learner interest.
 
 ### Why small Steps work better
 
-Qurioos uses a **microlearning** approach, breaking content into short, focused Steps rather than long, overwhelming lessons. This method keeps learners engaged, improves retention, and makes it easier for them to fit learning into busy schedules. Microlearning works because it:
+HeaderPath uses a **microlearning** approach, breaking content into short, focused Steps rather than long, overwhelming lessons. This method keeps learners engaged, improves retention, and makes it easier for them to fit learning into busy schedules. Microlearning works because it:
 
 - Reduces cognitive overload: learners can focus on one idea at a time
 - Fits into daily routines: easier to complete in short bursts

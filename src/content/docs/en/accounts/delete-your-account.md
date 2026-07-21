@@ -4,13 +4,13 @@ description: "Admins can delete users directly from the Users page, while regula
 category: "accounts"
 ---
 
-### Delete a user from a Qurioos account
+### Delete a user from a HeaderPath account
 
-You can remove a user from your Qurioos account at any time. The process is slightly different depending on whether you’re an **admin** or a **regular user**.
+You can remove a user from your HeaderPath account at any time. The process is slightly different depending on whether you’re an **admin** or a **regular user**.
 
 ### For users
 
-If you want your account deleted, contact an **admin** of the Qurioos account and request removal. Once deleted, you’ll lose access to all content and data associated with that account.
+If you want your account deleted, contact an **admin** of the HeaderPath account and request removal. Once deleted, you’ll lose access to all content and data associated with that account.
 
 **Important**  
 Deleted accounts can be recovered. If you rejoin in the future, we automatically reactivate the previously deleted user account.

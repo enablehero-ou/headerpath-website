@@ -1,18 +1,18 @@
 ---
 title: "Supported videos"
-description: "Embed videos from any platform or tool without restrictions in your Qurioos Steps."
+description: "Embed videos from any platform or tool without restrictions in your HeaderPath Steps."
 category: "create-content"
 ---
 
-### Video options in Qurioos
+### Video options in HeaderPath
 
-Qurioos supports videos from **any platform or tool** without limitations, as long as the service allows standard embedding. This gives you complete freedom to choose the hosting solution that works best for your content strategy.
+HeaderPath supports videos from **any platform or tool** without limitations, as long as the service allows standard embedding. This gives you complete freedom to choose the hosting solution that works best for your content strategy.
 
-The platforms listed below are **only examples** of what you can use. If your preferred platform offers an embed code, it will work in Qurioos.
+The platforms listed below are **only examples** of what you can use. If your preferred platform offers an embed code, it will work in HeaderPath.
 
 ### How it works
 
-- Paste the video’s embed code into your Qurioos Step.
+- Paste the video’s embed code into your HeaderPath Step.
 - The video will play directly within the Step, no need for learners to leave your account.
 - Works with any Step type that supports embedded media (e.g., Video Steps).
 

@@ -103,11 +103,11 @@ Each core action should have its own journey. But instead of a tour, break it in
 - Prompt (what you suggest next)
 - Support (tooltips, docs, short walkthroughs)
 
-This is where tools like [Qurioos](https://www.qurioos.com/) can shine. You can create reusable content modules for each journey, deploy them across user types, and update them easily as your product evolves.
+This is where tools like [HeaderPath](https://www.headerpath.com/) can shine. You can create reusable content modules for each journey, deploy them across user types, and update them easily as your product evolves.
 
 ### Step 3: Use modular content, not one-off walkthroughs
 
-Think Lego blocks, not walls of code. With modular learning in tools like [Qurioos](https://www.qurioos.com/), you can build once and surface content anywhere—post-signup, in product, via email, or in your help center.
+Think Lego blocks, not walls of code. With modular learning in tools like [HeaderPath](https://www.headerpath.com/), you can build once and surface content anywhere—post-signup, in product, via email, or in your help center.
 
 This makes onboarding fast to build, easy to adapt, and highly scalable—especially for SaaS teams with frequent product updates.
 
@@ -123,8 +123,8 @@ Also useful: Set up alerts for journeys that aren't landing. Want a user activat
 
 It’s no longer enough to build a checkbox tour and call it onboarding. The best AI and software product companies are breaking onboarding into flows that feel human, contextual, and lightweight.
 
-They’re building journeys that activate real users, not just satisfy checklists. With the right structure—and tools like [Qurioos](https://www.qurioos.com/)—you can do the same, at scale, without rebuilding from scratch every time.
+They’re building journeys that activate real users, not just satisfy checklists. With the right structure—and tools like [HeaderPath](https://www.headerpath.com/)—you can do the same, at scale, without rebuilding from scratch every time.
 
 Micro-journeys aren't a trend. They're how users actually learn. They're how teams win adoption. And they're how modern SaaS grows.
 
-[See how Qurioos helps you build onboarding that works](https://www.qurioos.com/).
+[See how HeaderPath helps you build onboarding that works](https://www.headerpath.com/).

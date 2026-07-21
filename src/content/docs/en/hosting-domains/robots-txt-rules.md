@@ -8,11 +8,11 @@ category: "hosting-domains"
 
 A **robots.txt** file tells search engine bots (also called crawlers or spiders) which parts of your site they should or shouldn’t access. It’s commonly used to stop search engines from indexing certain pages or folders.
 
-### How it works in Qurioos
+### How it works in HeaderPath
 
-In Qurioos, if you want to add or update rules:
+In HeaderPath, if you want to add or update rules:
 
-1. Email **support@qurioos.com** with your request.
+1. Email **support@headerpath.com** with your request.
 2. Include the exact rules you’d like added or removed.
 3. Our team will make the changes for you.
 

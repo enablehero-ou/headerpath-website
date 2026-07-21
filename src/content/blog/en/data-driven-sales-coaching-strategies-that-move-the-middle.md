@@ -136,4 +136,4 @@ Key metrics include call quality scores, talk-to-listen ratios, stage conversion
 
 Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals.
 
-[**Get started with Qurioos**](https://www.qurioos.com/)
+[**Get started with HeaderPath**](https://www.headerpath.com/)

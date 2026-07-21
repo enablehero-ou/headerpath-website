@@ -69,21 +69,13 @@ export default function SignupForm() {
   }
 
   async function submit(finalForm: FormData) {
+    // STUB: self-serve signup API is not built yet (app-side — see notes/rebrand-transition.md).
+    // TODO: POST finalForm to the new HeaderPath provisioning API once it ships, then restore error handling.
     setLoading(true);
-    try {
-      const res = await fetch('https://academy.qurioos.com/api/signup-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(finalForm),
-      });
-      if (!res.ok) throw new Error('Failed');
-      clearCookie();
-      setStep('done');
-    } catch {
-      setStep('error');
-    } finally {
-      setLoading(false);
-    }
+    void finalForm;
+    clearCookie();
+    setStep('done');
+    setLoading(false);
   }
 
   const inputStyle: React.CSSProperties = {
@@ -152,7 +144,7 @@ export default function SignupForm() {
           You're on the list
         </h2>
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px' }}>
-          We'll be in touch shortly to get your academy set up.
+          Self-serve signup is opening soon — thanks for your interest.
         </p>
       </div>
     );

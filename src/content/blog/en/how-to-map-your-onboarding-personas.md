@@ -95,7 +95,7 @@ Now that your personas and goals are clear, match the format to their journey. D
 
 Teams like **Asana** and **Loom** nail format matching. **Loom**, for example, uses explainer videos for most flows, but also offers a [dedicated admin onboarding journey](https://www.loom.com/community/8add2a23c4e246a3968fdd86c04af0fc-pg).
 
-**Pro tip:** Use our platform, Qurioos, to manage modular onboarding paths per persona using triggers like role, usage behavior, or access level. [See how](https://www.qurioos.com/).
+**Pro tip:** Use our platform, HeaderPath, to manage modular onboarding paths per persona using triggers like role, usage behavior, or access level. [See how](https://www.headerpath.com/).
 
 ## Tie it all together with a single source of truth
 
@@ -111,4 +111,4 @@ The clearer your persona map, the easier it is to build, test, and improve onboa
 
 Mapping personas doesn’t require re-building your onboarding. It just makes everything you already have more impactful. A few tweaks can dramatically reduce user drop-off and false starts.
 
-Want to start building onboarding content around real personas? [**Try Qurioos**](https://www.qurioos.com/)
+Want to start building onboarding content around real personas? [**Try HeaderPath**](https://www.headerpath.com/)

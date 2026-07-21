@@ -2,6 +2,7 @@ import { brand } from './brand';
 
 export const nav = {
   main: [
+    { label: 'Product', href: '/product' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Blog', href: '/blog' },
     { label: 'Help', href: '/help' },
@@ -11,6 +12,7 @@ export const nav = {
     product: {
       label: 'Product',
       links: [
+        { label: 'Product', href: '/product' },
         { label: 'Pricing', href: '/pricing' },
         { label: 'Help', href: '/help' },
         { label: 'Sign Up', href: brand.signupUrl },

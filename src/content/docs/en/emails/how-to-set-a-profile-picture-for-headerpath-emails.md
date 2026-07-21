@@ -1,12 +1,12 @@
 ---
-title: "How to set a profile picture for Qurioos emails"
-description: "When learners sign up for your academy or receive system emails, you want them to see your company's logo for a professional, branded experience. This guide explains how to make that happen for both email sending options available on Qurioos."
+title: "How to set a profile picture for HeaderPath emails"
+description: "When learners sign up for your academy or receive system emails, you want them to see your company's logo for a professional, branded experience. This guide explains how to make that happen for both email sending options available on HeaderPath."
 category: "emails"
 ---
 
 ### Understanding your email options
 
-Qurioos offers two ways to send system emails (like signup confirmations and password resets):
+HeaderPath offers two ways to send system emails (like signup confirmations and password resets):
 
 ![Example of email with and without brand icon](/images/webflow/690b8de906242e250d950709-scrnli-ohvfw9wl5ak19i.png)
 
@@ -28,7 +28,7 @@ Qurioos offers two ways to send system emails (like signup confirmations and pas
 
 ## Setting up your logo for Standard System Emails
 
-Since `learningnotifications.com` is a shared domain across multiple Qurioos accounts, we we're not able to configure logos centrally. However, you can implement a workaround that makes your logo appear in Gmail, Yahoo, Outlook, Apple, and email clients using Gravatar.
+Since `learningnotifications.com` is a shared domain across multiple HeaderPath accounts, we we're not able to configure logos centrally. However, you can implement a workaround that makes your logo appear in Gmail, Yahoo, Outlook, Apple, and email clients using Gravatar.
 
 ### Method: Link your logo through a Google Account
 
@@ -44,12 +44,12 @@ You can either use an existing Google account or create a new one specifically f
 2. Sign in with your Google account
 3. Click **"Personal info"** in the left sidebar
 
-**Step 3: Add Your Qurioos System Email as an Alternative Email**
+**Step 3: Add Your HeaderPath System Email as an Alternative Email**
 
 1. Scroll to the **"Contact info"** section
 2. Click on **Email**
 3. Select **"Add alternative email"**
-4. Enter your full Qurioos system email: `your-company-name@learningnotifications.com`
+4. Enter your full HeaderPath system email: `your-company-name@learningnotifications.com`
 5. Google will send a verification email to this address (which forwards to your primary inbox)
 6. Click the verification link in the email to confirm
 
@@ -73,17 +73,17 @@ Allow 2-6 hours for the change to propagate across email systems. Some clients m
 
 ## Setting up Custom Branded Email (Custom plans)
 
-If your Qurioos account is on a custom plan, you can use a custom email domain that provides better logo support across all email clients.
+If your HeaderPath account is on a custom plan, you can use a custom email domain that provides better logo support across all email clients.
 
 ### What you'll need
 
-- The subdomain dedicated to your Qurioos accoint (e.g., `academy.yourcompany.com`)
+- The subdomain dedicated to your HeaderPath accoint (e.g., `academy.yourcompany.com`)
 - Access to your domain's DNS settings
 - Email authentication records (SPF, DKIM, DMARC)
 
 ### Setup process
 
-1. Contact Qurioos support to enable custom email domain functionality
+1. Contact HeaderPath support to enable custom email domain functionality
 2. Follow the DNS configuration guide provided to authenticate your sending domain
 3. Configure BIMI (Brand Indicators for Message Identification) if you want verified logo display in supporting email clients (this has an additional cost)
 4. Test deliverability and logo display across different email providers

@@ -1,6 +1,6 @@
 ---
 title: "Localization overview"
-description: "Qurioos lets you create your academy in multiple languages so learners can experience your content in the language that feels most natural to them."
+description: "HeaderPath lets you create your academy in multiple languages so learners can experience your content in the language that feels most natural to them."
 category: "localization"
 ---
 
@@ -35,10 +35,10 @@ category: "localization"
 
 ### Interface and content
 
-In Qurioos, both your **interface** (buttons, menus, navigation) and your **content** (subjects, courses, quizzes) use the same locales. This means:
+In HeaderPath, both your **interface** (buttons, menus, navigation) and your **content** (subjects, courses, quizzes) use the same locales. This means:
 
 - When you activate Spanish for your academy, the interface AND your content can be in Spanish
-- The interface is pre-translated by Qurioos, but your course content requires translation.
+- The interface is pre-translated by HeaderPath, but your course content requires translation.
 - Until you translate your courses, all users will see your content in your primary language (for example English), even if they're using the Spanish interface.
 
 ### Localization steps

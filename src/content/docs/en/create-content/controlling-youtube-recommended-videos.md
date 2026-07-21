@@ -38,4 +38,4 @@ To keep learners focused on your own content, you can limit related videos to yo
 
 - **Use one dedicated channel** for all your learning-related videos.
 - Add `?rel=0` to every embedded video URL.
-- Double-check each video’s embed code before adding it to Qurioos.
+- Double-check each video’s embed code before adding it to HeaderPath.

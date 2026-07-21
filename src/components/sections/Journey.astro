@@ -1,0 +1,185 @@
+---
+import Container from '../ui/Container.astro';
+import JourneyStep from './JourneyStep';
+import type { StageData } from './JourneyStep';
+import { useTranslations } from '../../i18n/translations';
+import type { Locale } from '../../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+
+// Icon glyphs (inner SVG of a 24x24, 1.5 stroke). Shared with the product wall.
+const I = {
+  sparkle: '<path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15.5 10.1 10.9 5.5 9l4.6-1.9z"/><path d="M5 19l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/>',
+  monitor: '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/>',
+  shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  brand: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
+  translate: '<path d="M4 5h7M9 3v2c0 4-2 7-5 8"/><path d="M5 9c0 2 3 4 6 4"/><path d="M14 21l4-9 4 9"/><path d="M15.5 17h5"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  video: '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>',
+  quiz: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/>',
+  users: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  gift: '<polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>',
+  plug: '<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/>',
+  bars: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  message: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  report: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="13" y2="18"/>',
+};
+
+// The five-stage launch journey. Each stage carries a tagline + blurb and a set
+// of capabilities; the JourneyStep island renders a left-hand selector with a
+// detail panel (what it does / best for) on the right.
+const stages: StageData[] = [
+  {
+    number: 'Step 1',
+    title: 'Set up or migrate',
+    tagline: 'Go live, don’t set up.',
+    blurb: 'Stand up a working academy in minutes — or migrate everything you already have. The agent handles setup; you bring the content.',
+    caps: [
+      { label: 'Academy building agent', sub: 'Live in minutes, smart defaults', icon: I.sparkle,
+        what: 'Spins up a complete, working academy with proven layouts and settings — no setup project required.',
+        best: 'Getting from signup to a real, shareable academy on day one.' },
+      { label: 'Custom domain', sub: 'Your URL, SSL included', icon: I.monitor,
+        what: 'Publish on your own domain or subdomain, secured with SSL by default.',
+        best: 'Keeping learners on your brand, not ours.' },
+      { label: 'Migrate your content', sub: 'Bring docs, slides, video', icon: I.doc,
+        what: 'Drop in the material you already have and AI restructures it into clean, editable courses.',
+        best: 'Moving off an old LMS or a pile of files without starting over.' },
+      { label: 'Enterprise security', sub: 'Encrypted, access-controlled', icon: I.shield,
+        what: 'Enterprise-grade encryption and granular access controls protect your content from day one.',
+        best: 'Meeting IT and compliance requirements before you invite anyone.' },
+    ],
+  },
+  {
+    number: 'Step 2',
+    title: 'Customize',
+    tagline: 'Make it unmistakably yours.',
+    blurb: 'Brand, language, and access — configure once and the platform keeps every learner on-brand and in the right version.',
+    caps: [
+      { label: 'Your brand, front and center', sub: 'Learners see you, not us', icon: I.brand,
+        what: 'White-label every surface so the academy feels like a native part of your product.',
+        best: 'Customer and partner academies that must stay on-brand.' },
+      { label: 'Auto-translations', sub: '80+ languages, one click', icon: I.translate,
+        what: 'Translate the entire academy instantly with natural, context-aware AI you can still edit by hand.',
+        best: 'Reaching a global audience without a localization team.' },
+      { label: 'Localization', sub: 'Auto-localized per learner', icon: I.globe,
+        what: 'Learners automatically see the right language and local formats based on where they are.',
+        best: 'One academy serving many regions seamlessly.' },
+      { label: 'Privacy controls', sub: 'Public, invite-only, restricted', icon: I.lock,
+        what: 'Decide exactly who can see what, from fully public to tightly restricted, in a click.',
+        best: 'Mixing open marketing content with gated internal training.' },
+    ],
+  },
+  {
+    number: 'Step 3',
+    title: 'Generate or build courses',
+    tagline: 'Create at the speed of AI.',
+    blurb: 'Let AI draft every course, or build by hand. Either way, you stay in control of what goes live.',
+    caps: [
+      { label: 'Course creation agent', sub: 'Drafted, never blank', icon: I.doc,
+        what: 'AI outlines and drafts complete courses from your goal or material, ready for you to refine.',
+        best: 'Producing a lot of high-quality content fast.' },
+      { label: 'Videos', sub: 'Secure, adaptive playback', icon: I.video,
+        what: 'Upload or embed video with adaptive, secure streaming that stays inside your academy.',
+        best: 'Rich, watchable lessons on any device.' },
+      { label: 'Quizzes', sub: 'Auto-written knowledge checks', icon: I.quiz,
+        what: 'AI writes quizzes straight from your content, with explanations and custom success logic.',
+        best: 'Reinforcing learning and surfacing gaps.' },
+      { label: 'Certifications', sub: 'Branded, shareable credentials', icon: I.award,
+        what: 'Issue branded certificates automatically that learners can download or share to LinkedIn.',
+        best: 'Motivating completion and proving achievement.' },
+    ],
+  },
+  {
+    number: 'Step 4',
+    title: 'Invite users',
+    tagline: 'Get the right people in.',
+    blurb: 'Invite learners by email, link, or QR, with exactly the right access — and the tools to keep them engaged.',
+    caps: [
+      { label: 'Bulk invites & roles', sub: 'Hundreds at once', icon: I.users,
+        what: 'Upload a list to invite learners in bulk and assign the right roles and access in seconds.',
+        best: 'Onboarding whole teams or cohorts at once.' },
+      { label: 'Rewards', sub: 'Incentives that drive completion', icon: I.gift,
+        what: 'Turn progress into real rewards and perks tied to the priorities you set.',
+        best: 'Keeping learners motivated all the way through.' },
+      { label: 'Integrations & SSO', sub: 'CRM, Slack/Teams, SSO', icon: I.plug,
+        what: 'Connect your existing stack and single sign-on so learners get one seamless login.',
+        best: 'Fitting learning into the tools people already use.' },
+    ],
+  },
+  {
+    number: 'Step 5',
+    title: 'Analyze & report',
+    tagline: 'See what’s working.',
+    blurb: 'Track progress, surface drop-off, and tie learning back to real business outcomes.',
+    caps: [
+      { label: 'Track progress', sub: 'Real-time, per learner', icon: I.bars,
+        what: 'See completion and engagement in real time, learner by learner, and spot who’s falling behind.',
+        best: 'Supporting at-risk learners before they drop off.' },
+      { label: 'Measure outcomes', sub: 'Learning → business metrics', icon: I.target,
+        what: 'Connect learning actions to outcomes like clicks, sales, or orders and track them against goals.',
+        best: 'Proving training drives real business results.' },
+      { label: 'Feedback', sub: 'One-click surveys', icon: I.message,
+        what: 'Collect learner feedback inside any course to see what’s working and what to improve.',
+        best: 'Improving courses continuously without guesswork.' },
+      { label: 'AI-native reports', sub: 'Export and query freely', icon: I.report,
+        what: 'Export your data and ask complex questions against it with AI-native reporting.',
+        best: 'Answering ad-hoc questions from leadership fast.' },
+    ],
+  },
+];
+
+---
+
+<section class="bg-bg-primary py-20 lg:py-28">
+  <Container>
+    <div class="mb-12 max-w-2xl">
+      <p class="eyebrow eyebrow--accent mb-5">{t.home.journeyLabel}</p>
+      <h2 class="text-3xl text-text-primary lg:text-[2.75rem]">
+        {t.home.journeyTitle}
+      </h2>
+      <p class="mt-5 text-lg text-text-secondary">
+        {t.home.journeySubtitle}
+      </p>
+    </div>
+
+    {/* Static sections threaded onto a vertical timeline path */}
+    <div class="relative">
+      {/* the path */}
+      <div
+        class="pointer-events-none absolute top-2 bottom-2 left-[7px] w-px bg-border lg:left-[9px]"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="space-y-16 lg:space-y-24">
+        {
+          stages.map((stage) => (
+            <div class="relative pl-9 lg:pl-14">
+              {/* node on the path, aligned with the step heading */}
+              <span
+                class="absolute top-1.5 left-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-accent bg-bg-primary lg:left-[9px] lg:h-4 lg:w-4"
+                aria-hidden="true"
+              />
+
+              <div class="mb-6 flex items-center gap-4">
+                <span class="inline-flex shrink-0 rounded-full bg-bg-tertiary px-3 py-1 text-sm font-medium text-text-secondary">
+                  {stage.number}
+                </span>
+                <h3 class="text-2xl font-semibold text-text-primary lg:text-[2rem]">
+                  {stage.title}
+                </h3>
+              </div>
+
+              <JourneyStep client:visible stage={stage} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

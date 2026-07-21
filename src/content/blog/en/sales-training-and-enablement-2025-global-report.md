@@ -107,4 +107,4 @@ Modern LMS platforms use **learning analytics** to connect training activities w
 
 Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals.
 
-[**Get started with Qurioos**](https://www.qurioos.com/)
+[**Get started with HeaderPath**](https://www.headerpath.com/)

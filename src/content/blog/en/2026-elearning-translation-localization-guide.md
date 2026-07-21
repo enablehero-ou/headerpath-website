@@ -15,7 +15,7 @@ Most companies know translation matters. But few understand that learning locali
 - 69% higher retention
 - Measurably better business outcomes
 
-The challenge has always been cost and complexity. Until now. **Modern 1-click localization** like the one [available by Qurioos](https://www.qurioos.com/) changes the economics entirely, making global training accessible to companies of all sizes.
+The challenge has always been cost and complexity. Until now. **Modern 1-click localization** like the one [available by HeaderPath](https://www.headerpath.com/) changes the economics entirely, making global training accessible to companies of all sizes.
 
 ## The real problem isn't language—it's learning velocity
 

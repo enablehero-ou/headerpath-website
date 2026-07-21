@@ -27,16 +27,20 @@ export const translations = {
       skipToContent: 'Skip to content',
     },
     home: {
-      heroTitle: 'The AI-native academy platform',
-      heroSubtitle:
-        'Launch a branded academy, let AI build the courses, and publish. Train customers, partners, and teams — without instructional designers.',
+      heroTitle: 'Build your online academy',
+      heroSubtitle: 'With the AI-native online learning platform',
       heroCta: 'Get started',
+      heroBadge: 'Supporting thousands of users',
       featuresLabel: 'PRODUCT',
       featuresTitle: 'Everything your academy needs',
       featuresSubtitle:
         'AI does the heavy lifting — from building courses to translating, certifying, and measuring. You stay in control.',
       howItWorksLabel: 'HOW IT WORKS',
       howItWorksTitle: 'From idea to live academy in minutes',
+      journeyLabel: 'HOW IT WORKS',
+      journeyTitle: 'From zero to live academy',
+      journeySubtitle:
+        'Five stages, one flow — set up, customize, create, invite, and measure. AI does the heavy lifting at every step; you stay in control.',
       testimonialsLabel: 'TESTIMONIALS',
       testimonialsTitle: 'Trusted across industries',
       integrationsLabel: 'INTEGRATIONS',
@@ -48,6 +52,15 @@ export const translations = {
       ctaTitle: 'Start your academy today',
       ctaSubtitle: 'Create your account and launch your first academy in minutes.',
       ctaButton: 'Get started',
+    },
+    product: {
+      heroEyebrow: 'THE PRODUCT',
+      heroTitle: 'Everything your academy needs, in one platform',
+      heroSubtitle:
+        'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
+      heroCta: 'Get started',
+      faqLabel: 'PRODUCT FAQ',
+      faqTitle: 'Questions about the platform',
     },
     pillars: {
       internal: {
@@ -135,6 +148,10 @@ export const translations = {
         'La mayoría de las organizaciones saben que necesitan educación para lograr el resultado esperado. Pocas tienen el equipo, el proceso o la plataforma para lograrlo correctamente.',
       howItWorksLabel: 'CÓMO FUNCIONA',
       howItWorksTitle: 'Del inicio a la publicación — en semanas, no meses',
+      journeyLabel: 'HOW IT WORKS',
+      journeyTitle: 'From zero to live academy',
+      journeySubtitle:
+        'Five stages, one flow — set up, customize, create, invite, and measure. AI does the heavy lifting at every step; you stay in control.',
       testimonialsLabel: 'TESTIMONIOS',
       testimonialsTitle: 'Confiado en múltiples industrias',
       faqLabel: 'FAQ',
@@ -142,6 +159,15 @@ export const translations = {
       ctaTitle: '¿Listo para crear educación que funcione?',
       ctaSubtitle: 'Hablemos de tu programa, tu audiencia y cómo se ve el éxito para ti.',
       ctaButton: 'Agendar llamada →',
+    },
+    product: {
+      heroEyebrow: 'THE PRODUCT',
+      heroTitle: 'Everything your academy needs, in one platform',
+      heroSubtitle:
+        'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
+      heroCta: 'Get started',
+      faqLabel: 'PRODUCT FAQ',
+      faqTitle: 'Questions about the platform',
     },
     pillars: {
       internal: {
@@ -236,6 +262,10 @@ export const translations = {
         "La plupart des organisations savent qu'elles ont besoin de formation pour obtenir les résultats attendus. Peu ont l'équipe, le processus ou la plateforme pour y parvenir correctement.",
       howItWorksLabel: 'COMMENT ÇA MARCHE',
       howItWorksTitle: 'Du lancement au live — en semaines, pas en mois',
+      journeyLabel: 'HOW IT WORKS',
+      journeyTitle: 'From zero to live academy',
+      journeySubtitle:
+        'Five stages, one flow — set up, customize, create, invite, and measure. AI does the heavy lifting at every step; you stay in control.',
       testimonialsLabel: 'TÉMOIGNAGES',
       testimonialsTitle: 'Reconnu dans de nombreux secteurs',
       faqLabel: 'FAQ',
@@ -243,6 +273,15 @@ export const translations = {
       ctaTitle: 'Prêt à créer une éducation qui fonctionne ?',
       ctaSubtitle: "Parlons de votre programme, de votre audience et de ce à quoi ressemble le succès pour vous.",
       ctaButton: 'Prendre rendez-vous →',
+    },
+    product: {
+      heroEyebrow: 'THE PRODUCT',
+      heroTitle: 'Everything your academy needs, in one platform',
+      heroSubtitle:
+        'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
+      heroCta: 'Get started',
+      faqLabel: 'PRODUCT FAQ',
+      faqTitle: 'Questions about the platform',
     },
     pillars: {
       internal: {

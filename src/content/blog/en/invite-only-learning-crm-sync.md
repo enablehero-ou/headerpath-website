@@ -91,9 +91,9 @@ Completions and certifications are pushed back into your CRM. You’ll see updat
 
 Rows missing required fields are flagged during QA. Agents can fill in or correct entries before generating links, keeping your invites accurate and avoiding broken sign ups.
 
-### Sync your CRM to your academy with Qurioos
+### Sync your CRM to your academy with HeaderPath
 
-Stop guessing who’s trained and who isn’t. Qurioos lets you run a secure, invite-only learning flow directly from your CRM — and track every learner’s progress at the contact, company, and rep level. If you’re serious about controlling access and proving ROI, it’s time to see Qurioos in action.
+Stop guessing who’s trained and who isn’t. HeaderPath lets you run a secure, invite-only learning flow directly from your CRM — and track every learner’s progress at the contact, company, and rep level. If you’re serious about controlling access and proving ROI, it’s time to see HeaderPath in action.
 
 Turn your CRM into the engine of your enablement strategy!
 

@@ -1,12 +1,12 @@
 ---
-title: "Defining completion in Qurioos"
-description: "Completion in Qurioos tracks progress from each Step up to the full Subject, and only resets if the content structure changes."
+title: "Defining completion in HeaderPath"
+description: "Completion in HeaderPath tracks progress from each Step up to the full Subject, and only resets if the content structure changes."
 category: "progress-tracking"
 ---
 
-### Understanding completion in Qurioos
+### Understanding completion in HeaderPath
 
-Completion in Qurioos reflects how far a user has progressed through a learning experience, from individual Steps to the entire Subject. It’s designed to give both users and admins a clear picture of progress, while ensuring fairness when content changes.
+Completion in HeaderPath reflects how far a user has progressed through a learning experience, from individual Steps to the entire Subject. It’s designed to give both users and admins a clear picture of progress, while ensuring fairness when content changes.
 
 ### How completion is calculated
 
@@ -30,7 +30,7 @@ This means users won’t lose their “Completed” status just because a Step i
 
 If the **structure** of the content changes, meaning the number of Steps, Modules, Paths, or Levels inside a Subject changes, then progress for all users in that Subject is reset to **0%**. This ensures that everyone experiences the updated learning experience from the start.
 
-**Note:** Qurioos does not currently have content versioning. We track the last update date and the user who made the change. Only specific roles, like **Admins**, can update content.
+**Note:** HeaderPath does not currently have content versioning. We track the last update date and the user who made the change. Only specific roles, like **Admins**, can update content.
 
 ### Examples
 

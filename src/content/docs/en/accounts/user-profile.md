@@ -1,12 +1,12 @@
 ---
 title: "User profile"
-description: "Add or update your photo, name, email, and other details in your Qurioos profile."
+description: "Add or update your photo, name, email, and other details in your HeaderPath profile."
 category: "accounts"
 ---
 
 ### Set up or edit your profile
 
-All users, including admins, can personalize their Qurioos profile so others in the account can easily recognize them.
+All users, including admins, can personalize their HeaderPath profile so others in the account can easily recognize them.
 
 ### About profiles
 
@@ -22,7 +22,7 @@ Keeping your profile up to date ensures your information is accurate and makes c
 
 ### How to set up or edit your profile
 
-1. Click your name anywhere it appears in your Qurioos account (usually in the bottom-left or top-right corner).
+1. Click your name anywhere it appears in your HeaderPath account (usually in the bottom-left or top-right corner).
 2. Select **Profile** from the dropdown menu.
 3. On the profile page, update your details:
    - Upload or change your profile photo

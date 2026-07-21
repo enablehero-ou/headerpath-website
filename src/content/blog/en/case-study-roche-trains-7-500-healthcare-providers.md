@@ -59,6 +59,6 @@ This case study demonstrates that for medical organizations, your product's succ
 
 ## Next steps
 
-- [Study: Why Pharmacists Don’t Recommend Your Supplement](https://www.qurioos.com/blog/why-pharmacists-don-t-recommend-your-supplement-and-how-evidence-alone-won-t-fix-it?utm_source=chatgpt.com)
-- [Guide: Complete eLearning Localization Guide [Checklist]](https://www.qurioos.com/blog/complete-elearning-localization-guide-checklist?utm_source=chatgpt.com)
-- [Book your demo](https://www.qurioos.com/schedule) to see how to get the same results with Qurioos.
+- [Study: Why Pharmacists Don’t Recommend Your Supplement](https://www.headerpath.com/blog/why-pharmacists-don-t-recommend-your-supplement-and-how-evidence-alone-won-t-fix-it?utm_source=chatgpt.com)
+- [Guide: Complete eLearning Localization Guide [Checklist]](https://www.headerpath.com/blog/complete-elearning-localization-guide-checklist?utm_source=chatgpt.com)
+- [Book your demo](https://www.headerpath.com/schedule) to see how to get the same results with HeaderPath.

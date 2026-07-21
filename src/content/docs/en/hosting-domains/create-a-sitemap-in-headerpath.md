@@ -4,9 +4,9 @@ description: "Generate your sitemap or provide your own, then submit it to searc
 category: "hosting-domains"
 ---
 
-### About sitemaps in Qurioos
+### About sitemaps in HeaderPath
 
-A **sitemap** is like a table of contents for your site, it lists important pages and helps search engines find and index your content. Search engine crawlers use the sitemap to understand your site’s structure, which can improve how your pages appear in search results. When you host your account with Qurioos, we can automatically generate a sitemap for you, or you can provide your own custom version.
+A **sitemap** is like a table of contents for your site, it lists important pages and helps search engines find and index your content. Search engine crawlers use the sitemap to understand your site’s structure, which can improve how your pages appear in search results. When you host your account with HeaderPath, we can automatically generate a sitemap for you, or you can provide your own custom version.
 
 ### How it works
 
@@ -18,7 +18,7 @@ A **sitemap** is like a table of contents for your site, it lists important page
 
 If you’d like us to generate your sitemap:
 
-1. Email **support@qurioos.com** with your request.
+1. Email **support@headerpath.com** with your request.
 2. We’ll set it up for your account and confirm once it’s live.
 
 **Important:**  
@@ -29,7 +29,7 @@ Make sure you’ve set a **default domain** for your account, as the sitemap wil
 If you prefer to use your own sitemap:
 
 1. Create your custom `sitemap.xml` file.
-2. Email it to **support@qurioos.com** along with instructions to replace the existing sitemap.
+2. Email it to **support@headerpath.com** along with instructions to replace the existing sitemap.
 3. We’ll upload it to your domain for you.
 
 **Note:**  
@@ -37,7 +37,7 @@ If your account supports multiple languages, you’ll need to add hreflang tags 
 
 ### Robots.txt integration
 
-By default, Qurioos will add your sitemap URL to your `robots.txt` file so search engines can find it. If you want to remove this or reference a different sitemap, let our support team know.
+By default, HeaderPath will add your sitemap URL to your `robots.txt` file so search engines can find it. If you want to remove this or reference a different sitemap, let our support team know.
 
 ### Submitting your sitemap to Google
 

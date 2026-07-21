@@ -6,7 +6,7 @@ category: "reports"
 
 ### Exporting and using progress reports
 
-Progress reports in Qurioos give a detailed view of how users are engaging with content, from Subjects down to individual Modules. These reports are designed for both quick analysis and AI-assisted insights.
+Progress reports in HeaderPath give a detailed view of how users are engaging with content, from Subjects down to individual Modules. These reports are designed for both quick analysis and AI-assisted insights.
 
 ### How to export a progress report
 

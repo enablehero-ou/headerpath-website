@@ -41,6 +41,6 @@ By understanding these levers, organizations can stop guessing and start buildin
 
 ## Next steps
 
-- [**Guide:** How to measure real learning impact (not vanity “completions”)](https://www.qurioos.com/blog/coursere-2025-learner-outcomes-report?)
-- [**Study:** Why trust and pharmacy behavior can override clinical intent](https://www.qurioos.com/blog/study-why-pharma-and-supplement-companies-are-losing-millions-at-the-pharmacy-counter?)
-- [**Book your demo**](https://www.qurioos.com/schedule) to see how Qurioos helps you run multi-level HCP education programs (paths, assessments, and rollout analytics) without rebuilding your stack.
+- [**Guide:** How to measure real learning impact (not vanity “completions”)](https://www.headerpath.com/blog/coursere-2025-learner-outcomes-report?)
+- [**Study:** Why trust and pharmacy behavior can override clinical intent](https://www.headerpath.com/blog/study-why-pharma-and-supplement-companies-are-losing-millions-at-the-pharmacy-counter?)
+- [**Book your demo**](https://www.headerpath.com/schedule) to see how HeaderPath helps you run multi-level HCP education programs (paths, assessments, and rollout analytics) without rebuilding your stack.

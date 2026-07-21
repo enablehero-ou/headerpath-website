@@ -1,19 +1,19 @@
 ---
 title: "Right to Left (RTL) languages"
-description: "Qurioos makes it easy to deliver a seamless learning experience in Hebrew and Arabic, with built-in Right-to-Left (RTL) support and smart handling of mixed content."
+description: "HeaderPath makes it easy to deliver a seamless learning experience in Hebrew and Arabic, with built-in Right-to-Left (RTL) support and smart handling of mixed content."
 category: "localization"
 ---
 
 ### Automatic RTL direction
 
-When your course content is set to Hebrew or Arabic, Qurioos automatically applies `dir="rtl"` at the correct container level. This ensures:
+When your course content is set to Hebrew or Arabic, HeaderPath automatically applies `dir="rtl"` at the correct container level. This ensures:
 
 - **Correct punctuation placement** on the right side of words
 - **Proper alignment and reading order** according to Hebrew/Arabic conventions
 
 ### Smart handling of mixed RTL and English/numbers
 
-Many courses mix Hebrew or Arabic with **English words, URLs, or numbers**. Qurioos detects these automatically and wraps them with `dir="ltr"` so they display correctly.
+Many courses mix Hebrew or Arabic with **English words, URLs, or numbers**. HeaderPath detects these automatically and wraps them with `dir="ltr"` so they display correctly.
 
 **Example:** `לחץ על www.example.com להמשך` is displayed correctly, without punctuation flipping sides.
 
@@ -25,7 +25,7 @@ Spaces next to punctuation are automatically converted to **non-breaking spaces 
 
 ### Invisible direction control marks
 
-Qurioos inserts **Left-to-Right Mark (LRM)** and **Right-to-Left Mark (RLM)** characters when needed.
+HeaderPath inserts **Left-to-Right Mark (LRM)** and **Right-to-Left Mark (RLM)** characters when needed.
 
 - They’re invisible to learners
 - They prevent punctuation from attaching to the wrong text segment

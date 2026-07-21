@@ -1,12 +1,12 @@
 ---
-title: "Keep your Qurioos account secure"
-description: "Follow these best practices to protect your Qurioos account and keep your data safe."
+title: "Keep your HeaderPath account secure"
+description: "Follow these best practices to protect your HeaderPath account and keep your data safe."
 category: "accounts"
 ---
 
-### Keep your Qurioos account secure
+### Keep your HeaderPath account secure
 
-At Qurioos, we take security seriously and use a variety of measures to keep your account and data safe. You can also take steps to help protect your account.
+At HeaderPath, we take security seriously and use a variety of measures to keep your account and data safe. You can also take steps to help protect your account.
 
 ### Use a strong account password
 
@@ -21,10 +21,10 @@ A strong, unique password is one of the most important ways to protect your acco
 
 **Pro tip:** Use a password manager to generate and store random, unique passwords securely.
 
-### Don’t share your Qurioos account or email address
+### Don’t share your HeaderPath account or email address
 
-Never share your login details with another person. If others need access, they should be added to your Qurioos account as users with their own credentials.  
-If you suspect someone else has accessed your account, contact **support@qurioos.com** immediately.
+Never share your login details with another person. If others need access, they should be added to your HeaderPath account as users with their own credentials.  
+If you suspect someone else has accessed your account, contact **support@headerpath.com** immediately.
 
 ### Avoid phishing scams
 
@@ -33,8 +33,8 @@ Phishing emails or fake messages attempt to trick you into revealing sensitive i
 **Look out for:**
 
 - Urgent or threatening language (e.g., “Your account will be suspended in 24 hours!”)
-- Suspicious email addresses that don’t match the official Qurioos domain
-- Links that don’t point to official Qurioos sites
+- Suspicious email addresses that don’t match the official HeaderPath domain
+- Links that don’t point to official HeaderPath sites
 
 If you click a suspicious link or download an attachment from an unknown source, change your password immediately and notify our support team.
 
@@ -42,4 +42,4 @@ If you click a suspicious link or download an attachment from an unknown source,
 
 Security updates protect you from known vulnerabilities. Enable automatic updates so you’re always running the latest version of your browser and operating system.
 
-**Need to know:** Qurioos will never email you to request your password or other sensitive information.
+**Need to know:** HeaderPath will never email you to request your password or other sensitive information.

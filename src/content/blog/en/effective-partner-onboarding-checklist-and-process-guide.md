@@ -78,7 +78,7 @@ Adopt these steps to build a repeatable, effective process that puts partners on
 ### 3. Role-based training & enablement
 
 - Ensure partners get training tailored to their roles (sales, technical, marketing)
-- Use microlearning tools like [Qurioos](https://www.qurioos.com/) to offer short modules, videos, and job aids—so they learn fast
+- Use microlearning tools like [HeaderPath](https://www.headerpath.com/) to offer short modules, videos, and job aids—so they learn fast
 - Layer in assessments or certifications to check readiness
 
 ### 4. Access to tools, assets, and support
@@ -120,7 +120,7 @@ Schedule short debriefs at 30- and 90-day marks. Ask: What surprised you? Where 
 
 ### 1-click onboarding journeys
 
-With modern partner enablement platforms like [Qurioos](https://www.qurioos.com/), you can automate delivery of modules, reminders, and resources based on partner role or milestone achieved.
+With modern partner enablement platforms like [HeaderPath](https://www.headerpath.com/), you can automate delivery of modules, reminders, and resources based on partner role or milestone achieved.
 
 ### Real-time analytics
 
@@ -158,6 +158,6 @@ Don’t treat onboarding as a one-time event—sustain momentum through regular 
 
 ## Onboard and educate faster with AI
 
-Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals. Get started with Qurioos
+Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals. Get started with HeaderPath
 
-[**Get started with Qurioos**](https://www.qurioos.com/)
+[**Get started with HeaderPath**](https://www.headerpath.com/)

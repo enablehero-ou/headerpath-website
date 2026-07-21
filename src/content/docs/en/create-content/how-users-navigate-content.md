@@ -12,7 +12,7 @@ Choose if users can go anywhere they want or if they must follow the path step-b
 
 ### **The idea**
 
-Think of Qurioos like a big map with roads.
+Think of HeaderPath like a big map with roads.
 
 - **Flexible mode** = Users can walk, run, or skip to any road they want.
 - **Sequential mode** = Users have to walk the roads in the right order—road 1, then road 2, then road 3.

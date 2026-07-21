@@ -6,13 +6,13 @@ category: "security"
 
 ### Addition of Google reCAPTCHA v3
 
-We’ve integrated [Google reCAPTCHA v3 ↗](https://cloud.google.com/security/products/recaptcha) into Qurioos to help protect your account from spam and automated abuse while keeping the signup experience smooth and frictionless.
+We’ve integrated [Google reCAPTCHA v3 ↗](https://cloud.google.com/security/products/recaptcha) into HeaderPath to help protect your account from spam and automated abuse while keeping the signup experience smooth and frictionless.
 
 ### What is Google reCAPTCHA v3 and why we use it
 
 Google reCAPTCHA v3 runs silently in the background and analyzes user activity to determine whether it’s legitimate—without forcing users to solve puzzles or click checkboxes.
 
-**This helps Qurioos:**
+**This helps HeaderPath:**
 
 - Detect bots or abusive behavior early
 - Prevent spammy signups or malicious activity

@@ -62,6 +62,6 @@ When communication is managed correctly, the tension between patient empowerment
 
 ## Next steps
 
-- [Guide**:** Understanding Coursera’s 2025 Learner Outcomes Report (how to measure outcomes, not vanity completions)](https://www.qurioos.com/blog/coursere-2025-learner-outcomes-report?)
-- [Study**:** The Pharmacy Knowledge Gap Costing Pharma Millions (why trust + education beats “more clinical data”)](https://www.qurioos.com/blog/study-why-pharma-and-supplement-companies-are-losing-millions-at-the-pharmacy-counter?)
-- [Book your demo](https://www.qurioos.com/schedule) to see how Qurioos can help you coordinate your patient and HCP education strategies.
+- [Guide**:** Understanding Coursera’s 2025 Learner Outcomes Report (how to measure outcomes, not vanity completions)](https://www.headerpath.com/blog/coursere-2025-learner-outcomes-report?)
+- [Study**:** The Pharmacy Knowledge Gap Costing Pharma Millions (why trust + education beats “more clinical data”)](https://www.headerpath.com/blog/study-why-pharma-and-supplement-companies-are-losing-millions-at-the-pharmacy-counter?)
+- [Book your demo](https://www.headerpath.com/schedule) to see how HeaderPath can help you coordinate your patient and HCP education strategies.

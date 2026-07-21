@@ -1,14 +1,14 @@
 ---
 title: "Progress tracking overview"
-description: "How progress is tracked and completed in Qurioos from individual Steps to full Subjects and Certifications."
+description: "How progress is tracked and completed in HeaderPath from individual Steps to full Subjects and Certifications."
 category: "progress-tracking"
 ---
 
-### How progress tracking works in Qurioos
+### How progress tracking works in HeaderPath
 
-Qurioos tracks user progress at every level of your content hierarchy, from the smallest unit (a Step) all the way up to Levels and Certifications. This gives users a clear view of where they are, and helps admins measure engagement and results.
+HeaderPath tracks user progress at every level of your content hierarchy, from the smallest unit (a Step) all the way up to Levels and Certifications. This gives users a clear view of where they are, and helps admins measure engagement and results.
 
-Progress is **calculated separately** at each level and then rolled up to the levels above it. Learn [how the Completion status works](/help/defining-completion-in-qurioos).
+Progress is **calculated separately** at each level and then rolled up to the levels above it. Learn [how the Completion status works](/help/defining-completion-in-headerpath).
 
 ### Steps – one small piece of learning
 
@@ -80,7 +80,7 @@ A Level can have a Certification linked to it.
 
 ### Content updates and progress resets
 
-- Qurioos doesn’t store old versions of content, only the most recent version is shown.
+- HeaderPath doesn’t store old versions of content, only the most recent version is shown.
 - Updates can only be made by Admins.
 - If the structure changes (Steps, Modules, Paths, or Levels are added or removed), all user progress remains but gets recalculated based on the new number of Steps.
 

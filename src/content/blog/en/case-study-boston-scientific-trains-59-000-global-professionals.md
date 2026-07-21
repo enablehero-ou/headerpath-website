@@ -60,6 +60,6 @@ For companies in the life sciences, the lesson is clear: If you are gating your 
 
 ## Next Steps
 
-- [**Guide:** Complete eLearning Localization Guide [Checklist]](https://www.qurioos.com/blog/complete-elearning-localization-guide-checklist?)
-- [**Strategy:** Why AI Localization Unlocks Global Education at Scale](https://www.qurioos.com/blog/why-ai-localization-unlocks-global-education-at-scale-1hxjl?)
-- [Book your demo](https://www.qurioos.com/schedule) to start building your own HCP education academy with Qurioos.
+- [**Guide:** Complete eLearning Localization Guide [Checklist]](https://www.headerpath.com/blog/complete-elearning-localization-guide-checklist?)
+- [**Strategy:** Why AI Localization Unlocks Global Education at Scale](https://www.headerpath.com/blog/why-ai-localization-unlocks-global-education-at-scale-1hxjl?)
+- [Book your demo](https://www.headerpath.com/schedule) to start building your own HCP education academy with HeaderPath.

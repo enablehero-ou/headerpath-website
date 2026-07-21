@@ -58,6 +58,6 @@ This hybrid model proves that customer education is no longer just a support fun
 
 ## Next steps
 
-- [**Study:** Understanding Coursera’s 2025 Learner Outcomes Report](https://www.qurioos.com/blog/coursere-2025-learner-outcomes-report?utm_source=chatgpt.com)
-- [**Study:** eLearning Translation is Getting Replaced by AI Localization](https://www.qurioos.com/blog/elearning-translation-is-getting-replaced-by-ai-localization?utm_source=chatgpt.com)
-- [Book your demo](https://www.qurioos.com/schedule) to see how to get the same results with Qurioos.
+- [**Study:** Understanding Coursera’s 2025 Learner Outcomes Report](https://www.headerpath.com/blog/coursere-2025-learner-outcomes-report?utm_source=chatgpt.com)
+- [**Study:** eLearning Translation is Getting Replaced by AI Localization](https://www.headerpath.com/blog/elearning-translation-is-getting-replaced-by-ai-localization?utm_source=chatgpt.com)
+- [Book your demo](https://www.headerpath.com/schedule) to see how to get the same results with HeaderPath.

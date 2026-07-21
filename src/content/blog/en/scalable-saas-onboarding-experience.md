@@ -51,7 +51,7 @@ Instead of long flows, think in terms of short, contextual checkpoints. For exam
 
 ### 3. Build once, reuse everywhere
 
-With platforms like [**Qurioos**](https://www.qurioos.com/), onboarding content is modular. Once you create an journey, you can reuse and embed it anywhere—in app, email, support docs, or even on your homepage. That’s how you escape the trap of reinventing the wheel for every new feature drop.
+With platforms like [**HeaderPath**](https://www.headerpath.com/), onboarding content is modular. Once you create an journey, you can reuse and embed it anywhere—in app, email, support docs, or even on your homepage. That’s how you escape the trap of reinventing the wheel for every new feature drop.
 
 ### 4. Let users self-serve… intelligently
 
@@ -84,6 +84,6 @@ Metrics like time-to-value, module completion, and drop-off points expose fricti
 
 ## The bottom line
 
-Your team can’t keep up with growth using static onboarding. Scalable onboarding isn’t about doing more—it’s about doing it smarter. Less time supporting. More users succeeding faster. That’s the Qurioos way.
+Your team can’t keep up with growth using static onboarding. Scalable onboarding isn’t about doing more—it’s about doing it smarter. Less time supporting. More users succeeding faster. That’s the HeaderPath way.
 
-[**Start**](https://www.qurioos.com/) and see how Qurioos can help you scale onboarding without scaling your headcount.
+[**Start**](https://www.headerpath.com/) and see how HeaderPath can help you scale onboarding without scaling your headcount.

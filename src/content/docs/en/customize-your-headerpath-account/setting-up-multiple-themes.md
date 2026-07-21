@@ -1,12 +1,12 @@
 ---
 title: "Setting up multiple themes"
 description: "Create different versions of your academy for various audiences with unique branding, colors, logos, and more."
-category: "customize-your-qurioos-account"
+category: "customize-your-headerpath-account"
 ---
 
 ### How multiple themes work?
 
-Multiple themes allow you to create customized versions of your Qurioos academy portal for different groups of users. Each theme can have its own logo, colors, fonts, and branding to match specific audiences or regional requirements.
+Multiple themes allow you to create customized versions of your HeaderPath academy portal for different groups of users. Each theme can have its own logo, colors, fonts, and branding to match specific audiences or regional requirements.
 
 ### Example: 3 themes
 
@@ -46,4 +46,4 @@ Every account needs at least one default theme which can't be deleted.
 
 ### **Need many themes?**
 
-**‍**If you need many more themes than your current plan allows, contact our sales team at [sales@qurioos.com](mailto:sales@qurioos.com) for a custom quote.
+**‍**If you need many more themes than your current plan allows, contact our sales team at [sales@headerpath.com](mailto:sales@headerpath.com) for a custom quote.

@@ -116,7 +116,7 @@ Use AI to assess actions in real time:
 - Did they access the same doc multiple times?
 - Are they triggering error messages repeatedly?
 
-Qurioos, for example, lets you train an AI onboarding assistant on your product, docs or help center. It tailors onboarding flows automatically based on behavior and intent—filling in gaps your static flows miss.
+HeaderPath, for example, lets you train an AI onboarding assistant on your product, docs or help center. It tailors onboarding flows automatically based on behavior and intent—filling in gaps your static flows miss.
 
 ### Step 4: Evolve—not replace—human onboarding
 
@@ -135,7 +135,7 @@ Use AI to handle the repetitive stuff—so your humans can focus on high-touch a
 ## Start fast: AI onboarding playbook
 
 1. **Pick 3 critical actions**: Setup, first win, and first team invite.
-2. **Use AI to monitor those steps**: Tools like [Qurioos](https://www.qurioos.com/) help you detect drop-offs.
+2. **Use AI to monitor those steps**: Tools like [HeaderPath](https://www.headerpath.com/) help you detect drop-offs.
 3. **Train your AI assistant**: Feed it your help docs, guides, known bugs and known goals. Let it start auto-resolving repetitive queries.
 4. **Test it manually… then automate**: Start with human-led steps, validate the flow, then layer in AI to scale it out.
 5. **Review weekly**: AI works best when it learns. Assess flows and prompt usage to optimize.
@@ -146,7 +146,7 @@ Use AI to handle the repetitive stuff—so your humans can focus on high-touch a
 
 ### What are the best tools to personalize onboarding with AI?
 
-Tools like [Qurioos](https://www.qurioos.com/), [Appcues](https://www.appcues.com/), [Intercom](https://www.intercom.com/), and [Pendo](https://www.pendo.io/) help build personalized onboarding experiences.
+Tools like [HeaderPath](https://www.headerpath.com/), [Appcues](https://www.appcues.com/), [Intercom](https://www.intercom.com/), and [Pendo](https://www.pendo.io/) help build personalized onboarding experiences.
 
 ### How can you use AI to reduce onboarding churn?
 
@@ -162,7 +162,7 @@ Yes. Start by connecting your product docs, guides, and customer FAQs. Even with
 
 ### How do I train an AI onboarding assistant on my content?
 
-With Qurioos, you can upload docs, pages, and help center content. The assistant learns from this and answers users in-product based on intent and context.
+With HeaderPath, you can upload docs, pages, and help center content. The assistant learns from this and answers users in-product based on intent and context.
 
 ## Ready to onboard smarter?
 
@@ -170,4 +170,4 @@ AI isn’t about removing the human—it’s about removing the friction.
 
 When done right, it helps you onboard customers quickly, reduce support tickets, and drive time-to-value—without spending hours rewriting guides or hand-holding users.
 
-[**Start personalized onboarding with Qurioos**](https://www.qurioos.com/)
+[**Start personalized onboarding with HeaderPath**](https://www.headerpath.com/)

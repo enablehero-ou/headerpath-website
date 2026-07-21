@@ -7,7 +7,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    author: z.string().default('Qurioos Team'),
+    author: z.string().default('HeaderPath Team'),
     category: z.enum([
       'strategy',
       'case-studies',

@@ -1,19 +1,22 @@
 export const brand = {
-  name: 'Qurioos',
+  name: 'HeaderPath',
   tagline: 'The AI-native academy platform',
   description:
-    'Qurioos is the AI-native academy platform. Launch a branded learning academy, let AI build the courses, and publish — no instructional designers required.',
-  domain: 'qurioos.com',
-  websiteUrl: 'https://qurioos.com',
+    'HeaderPath is the AI-native academy platform. Launch a branded learning academy, let AI build the courses, and publish — no instructional designers required.',
+  domain: 'headerpath.com',
+  websiteUrl: 'https://headerpath.com',
+  // Backend/product app stays on qurioos infra until the app itself migrates (see notes/rebrand-transition.md).
   appUrl: 'https://app.qurioos.com',
-  signupUrl: 'https://app.qurioos.com/signup',
-  docsUrl: 'https://help.qurioos.com',
+  // Self-serve signup API not built yet — points at the local stub page.
+  signupUrl: '/signup',
+  docsUrl: '/help',
   email: {
-    support: 'support@qurioos.com',
-    sales: 'sales@qurioos.com',
-    partners: 'partners@qurioos.com',
+    support: 'support@headerpath.com',
+    sales: 'sales@headerpath.com',
+    partners: 'partners@headerpath.com',
   },
   social: {
+    // TODO: rename the LinkedIn company page, then update this handle.
     linkedin: 'https://linkedin.com/company/qurioos',
   },
   stats: [
@@ -24,7 +27,7 @@ export const brand = {
   ],
   pricing: {
     flat: {
-      name: 'Qurioos',
+      name: 'HeaderPath',
       price: '$150',
       period: '/mo',
     },
