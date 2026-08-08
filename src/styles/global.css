@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Light, warm editorial palette (getmodern.ai-inspired) */
+  /* HeaderPath brand palette — cyan accent on deep navy ink */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f7f6f3;
-  --color-bg-tertiary: #efece6;
+  --color-bg-secondary: #f5f8f9;
+  --color-bg-tertiary: #e9eff1;
   --color-bg-card: #ffffff;
-  --color-text-primary: #0d0d0d;
-  --color-text-secondary: #57534e;
-  --color-text-muted: #8c867c;
-  --color-accent: #9fe870;        /* brand green — fills, tints, borders, focus */
-  --color-accent-hover: #8fd165;  /* darker lime for fill hover */
-  --color-accent-subtle: #9fe87024;
-  --color-accent-fg: #141414;     /* dark accent — text/icons + text on lime */
-  --color-border: #e7e3dc;
-  --color-border-subtle: #f0ece5;
+  --color-text-primary: #1f2a39;   /* brand ink */
+  --color-text-secondary: #55606f;
+  --color-text-muted: #8792a1;
+  --color-accent: #5ce1e6;         /* brand cyan — fills, tints, borders, focus */
+  --color-accent-hover: #3ccdd4;   /* deeper cyan for fill hover */
+  --color-accent-subtle: #5ce1e624;
+  --color-accent-fg: #1f2a39;      /* brand ink — text/icons + text on cyan */
+  --color-border: #dfe6ea;
+  --color-border-subtle: #eef3f5;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
@@ -29,9 +29,9 @@
   --radius-full: 9999px;
 
   /* Soft, layered shadows — premium depth instead of flat 1px borders */
-  --shadow-hairline: 0 0 0 1px rgba(13, 13, 13, 0.06);
-  --shadow-soft: 0 0 0 1px rgba(13, 13, 13, 0.05), 0 1px 2px rgba(13, 13, 13, 0.04), 0 4px 12px -4px rgba(13, 13, 13, 0.05);
-  --shadow-lift: 0 0 0 1px rgba(13, 13, 13, 0.07), 0 2px 4px rgba(13, 13, 13, 0.04), 0 18px 40px -16px rgba(13, 13, 13, 0.16);
+  --shadow-hairline: 0 0 0 1px rgba(31, 42, 57, 0.07);
+  --shadow-soft: 0 0 0 1px rgba(31, 42, 57, 0.06), 0 1px 2px rgba(31, 42, 57, 0.04), 0 4px 12px -4px rgba(31, 42, 57, 0.06);
+  --shadow-lift: 0 0 0 1px rgba(31, 42, 57, 0.08), 0 2px 4px rgba(31, 42, 57, 0.04), 0 18px 40px -16px rgba(31, 42, 57, 0.18);
 }
 
 @layer base {
@@ -240,8 +240,8 @@
   /* Atmospheric soft-cloud hero wash */
   .atmosphere {
     background:
-      radial-gradient(60% 50% at 18% 0%, rgba(159, 232, 112, 0.16), transparent 70%),
-      radial-gradient(50% 45% at 85% 5%, rgba(120, 160, 255, 0.08), transparent 70%),
-      radial-gradient(70% 60% at 50% -10%, rgba(255, 214, 163, 0.12), transparent 75%);
+      radial-gradient(60% 50% at 18% 0%, rgba(92, 225, 230, 0.20), transparent 70%),
+      radial-gradient(50% 45% at 85% 5%, rgba(31, 42, 57, 0.07), transparent 70%),
+      radial-gradient(70% 60% at 50% -10%, rgba(92, 225, 230, 0.10), transparent 75%);
   }
 }

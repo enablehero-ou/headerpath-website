@@ -12,7 +12,8 @@
 - **Content:** rebrand *everything* — no visible "Qurioos"/"qurioos" anywhere in copy or slugs.
 - **Signup:** stub the form (no live API yet) — wait for the app-side provisioning API (§4.1).
 - **Emails:** `@headerpath.com` — MX live on Google Workspace, old addresses now aliases (work).
-- **Logo/images:** defer — keep existing Qurioos marks until new assets exist.
+- **Logo:** icon-only mark in `public/images/brand/` (light = cyan disc + ink H; dark = ink disc + cyan H). Wordmark is set in type (Inter semibold) next to the icon, not baked into the asset.
+- **Brand colors:** cyan `#5ce1e6` (accent) + ink `#1f2a39` (text). Tokens in `global.css`.
 - **Local folder + launch agent + Vercel project:** rename now.
 
 ## Coexistence — what STAYS qurioos (per app plan §4.6)
@@ -36,12 +37,16 @@
 
 > Not yet committed — changes are on `dev`, uncommitted. Run `/ship` to open the PR.
 
+## DONE — cutover
+
+- [x] Site LIVE at `https://www.headerpath.com` (PR #1 merged, Vercel prod deployed). www = primary; apex `headerpath.com` → 308 → www. MX intact.
+- [x] Loveable subscription cancelled.
+
 ## PENDING — blocked / needs input or other repos
 
-- [ ] **Signup API** — new provisioning endpoint is app-side (`qurioos-app` §4.1/§4.2). Website signup stays a stub until it exists.
-- [ ] **Logo + icon** — `public/images/qurioos-logo.png`, `qurioos-icon.png` still Qurioos marks. New HeaderPath assets needed.
 - [ ] **Webflow blog asset filenames** — `...-qurioos-com-blog-images.png` (~25 files) keep the old name on disk; visible only in file paths, not copy. Bulk-rename with the logo work.
-- [ ] **Vercel** — cannot rename project or attach `headerpath.com` via the connected MCP (no such tool, no CLI/token). Needs the Vercel dashboard, or give me a `VERCEL_TOKEN` to do it via REST API. Live cutover is deferred anyway (main is still scaffold; DNS on Loveable).
-- [ ] **DNS** — headerpath.com → Vercel attach + records (part of the deferred live cutover).
-- [ ] **LinkedIn** — `linkedin.com/company/qurioos` is an external account; rename in LinkedIn, then update `brand.ts`.
-- [ ] **App-side rebrand** — in-app brand strings, auth/app domains, apex redirect: tracked in the app repo, not here.
+- [ ] **Vercel project rename** — `website` → `headerpath` (cosmetic; updates preview URLs). Dashboard action or a `VERCEL_TOKEN` for me. Domains already attached + working.
+- [ ] **qurioos.com → headerpath.com PERMANENT redirect** — decision D6 now LOCKED as permanent. qurioos.com apex is app/infra-side (not this repo). Needs 301 from qurioos.com → www.headerpath.com. Keep `auth.qurioos.com` untouched.
+- [ ] **Signup form finalization** — wire the stubbed form to the new HeaderPath provisioning API (app-side, `qurioos-app` §4.1/§4.2). Blocked until that API ships.
+- [ ] **LinkedIn + all social profiles** — rename `linkedin.com/company/qurioos` + any other handles, then update `brand.ts`. Do at the very end.
+- [ ] **App-side rebrand** — in-app brand strings, auth/app domains: tracked in the app repo, not here.

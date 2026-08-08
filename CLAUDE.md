@@ -129,19 +129,29 @@ editorial palette** (getmodern.ai-inspired). Components use semantic classes onl
 raw colors — so the theme is reskinnable from one place.
 
 ```
---color-bg-primary    #ffffff      --color-text-primary    #0d0d0d
---color-bg-secondary  #f7f6f3      --color-text-secondary  #57534e
---color-bg-tertiary   #efece6      --color-text-muted      #8c867c
---color-bg-card       #ffffff      --color-accent          #10b981 (green)
---color-border        #e7e3dc      --color-accent-hover    #059669
---color-border-subtle #f0ece5
+--color-bg-primary    #ffffff      --color-text-primary    #1f2a39  (brand ink)
+--color-bg-secondary  #f5f8f9      --color-text-secondary  #55606f
+--color-bg-tertiary   #e9eff1      --color-text-muted      #8792a1
+--color-bg-card       #ffffff      --color-accent          #5ce1e6  (brand cyan)
+--color-border        #dfe6ea      --color-accent-hover    #3ccdd4
+--color-border-subtle #eef3f5      --color-accent-fg       #1f2a39  (text ON cyan)
 ```
+
+**Brand colors are cyan `#5ce1e6` + ink `#1f2a39`.** Cyan is light — it is a *background*
+fill, never a text color on white. Text on a cyan fill is always `--color-accent-fg` (ink).
 
 - **Fonts**: `--font-sans` Inter (UI/body) · `--font-serif` Fraunces (display + h1/h2) · `--font-mono` JetBrains Mono (eyebrows/labels). Loaded in `BaseHead.astro`.
 - **Shadows**: `--shadow-hairline` / `--shadow-soft` / `--shadow-lift` (also `shadow-soft` utility).
 - **Component utilities**: `.eyebrow` (+`.eyebrow--accent`) mono uppercase label · `.surface` (+`.surface-hover`) soft card (hairline ring + layered shadow) · `.grain` faint film-grain overlay (parent must be `relative`) · `.atmosphere` soft hero gradient wash.
 - Headings `h1,h2` are serif via base rule; eyebrows/UI stay sans/mono.
-- Accent is **green** (`#10b981`); switching to getmodern orange is a one-token open decision in `priorities.md`.
+- **Logo**: all marks live in `public/images/brand/`; paths come from `brand.logo`, never hardcoded.
+  - `headerpath-wordmark-light.png` (500×150) — full lockup, icon + "HeaderPath". **Header + footer use this.**
+  - `headerpath-wordmark-dark.png` (500×150) — same lockup for dark surfaces: transparent background, white type. **The default on-dark asset.**
+  - `headerpath-wordmark-dark-solid.png` (500×150) — dark variant with its own ink background baked in (not transparent). Only for self-contained tiles — email, third-party embeds.
+  - `headerpath-icon-light.png` (256×256) — cyan disc + ink H; favicons and square contexts.
+  - `headerpath-icon-dark.png` (256×256) — ink disc + cyan H; square contexts on dark.
+- **Favicon**: `public/favicon.ico` (32px) + the 256px PNG + `apple-touch-icon.png`, all derived from the light mark.
+- **OG image**: `public/images/og/default.png` (1200×630), the default for every page. Regenerate from `notes/og-image-template.html` — substitute `LOGO_SRC` with a `file://` path to the light wordmark, then headless-Chrome screenshot at 1200×630. Needs network for the Google Fonts.
 
 ## Layouts
 
@@ -228,7 +238,7 @@ headerpath-website/
 ├── astro.config.mjs          # static output, vercel adapter, i18n, redirects
 ├── .claude/commands/         # repo-specific skills (ship.md)
 ├── public/
-│   └── images/               # static assets (webflow/ = imported brand assets, qurioos-logo.png)
+│   └── images/               # static assets (brand/ = logo marks, webflow/ = imported assets)
 ├── src/
 │   ├── pages/                # routes (.astro) + sitemap.xml.ts, robots.txt.ts
 │   ├── content/              # content collections (blog, techniques, docs, …) + _archive/
