@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #ffffff;
+    font-family: "Inter", system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  /* atmosphere wash — same recipe as the site hero */
+  .wash {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 55% at 15% 0%, rgba(92, 225, 230, 0.30), transparent 70%),
+      radial-gradient(50% 50% at 88% 8%, rgba(31, 42, 57, 0.07), transparent 70%),
+      radial-gradient(75% 65% at 55% -12%, rgba(92, 225, 230, 0.14), transparent 75%);
+  }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+  .inner {
+    position: relative;
+    height: 100%;
+    padding: 78px 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .lockup img { height: 80px; width: auto; display: block; }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 76px;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    color: #1f2a39;
+    max-width: 15ch;
+  }
+  h1 em { font-style: normal; position: relative; white-space: nowrap; }
+  h1 em::after {
+    content: ""; position: absolute; left: -4px; right: -4px; bottom: -14px; height: 12px;
+    background: #5ce1e6; border-radius: 6px; z-index: -1;
+  }
+  .foot {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 17px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.14em; color: #8792a1;
+  }
+  .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.55; }
+  .url { font-size: 22px; font-weight: 500; color: #55606f; }
+  .rule { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #5ce1e6; }
+</style>
+</head>
+<body class="grain">
+  <div class="wash"></div>
+  <div class="inner">
+    <div class="lockup">
+      <img src="LOGO_SRC" alt="HeaderPath" />
+    </div>
+    <h1>The AI&#8209;native <em>academy platform</em></h1>
+    <div class="foot">
+      <div class="eyebrow">Launch · Publish · Scale</div>
+      <div class="url">headerpath.com</div>
+    </div>
+  </div>
+  <div class="rule"></div>
+</body>
+</html>
