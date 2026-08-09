@@ -35,8 +35,9 @@ const t = useTranslations(locale);
         <Button href={brand.signupUrl} variant="primary" size="lg">
           {t.home.ctaButton}
         </Button>
+        <!-- No price here: the amount lives on /pricing only. -->
         <span class="font-mono text-xs uppercase tracking-wider text-white/40">
-          {brand.pricing.flat.price}{brand.pricing.flat.period} · no credit card
+          No credit card required
         </span>
       </div>
     </div>

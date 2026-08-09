@@ -81,7 +81,7 @@ Traditional localization services charge $0.10 to $0.25 per word for human trans
 
 Add localization services and that number climbs to $1,500-$3,000 per language. For **companies needing content in 10 languages, you're looking at $15,000-$30,000 per course.**
 
-AI-powered localization platforms have collapsed that cost structure. Modern tools can localize courses for $5 per language while maintaining quality that rivals human output. That's not $5 per word or $5 per minute. That's $5 total per language per course.
+AI-powered localization platforms have collapsed that cost structure. Modern tools localize a whole course per language — not per word, not per minute — while maintaining quality that rivals human output.
 
 The math changes everything. Instead of asking "can we afford to localize?" companies can now ask "can we afford not to?"
 
@@ -139,7 +139,7 @@ Measure completion rates by language before and after localization. The data wil
 
 Build localization into your content creation process from the start. Design courses with cultural adaptation in mind. Use universal examples that localize easily. Avoid idioms and cultural references that don't travel. This makes localization faster and more effective.
 
-Partner with platforms that make localization accessible. The difference between $5 per language and $3,000 per language isn't just cost. It's strategic flexibility. It's the ability to test new markets without massive upfront investment. It's keeping training current across every market without project managing dozens of vendors.
+Partner with platforms that make localization accessible. The difference between a per-language line item and $3,000 per language isn't just cost. It's strategic flexibility. It's the ability to test new markets without massive upfront investment. It's keeping training current across every market without project managing dozens of vendors.
 
 **Localization used to be what large enterprises did after they'd conquered English-speaking markets. Now it's what growth-stage companies do to compete globally from day one.**
 
@@ -155,7 +155,7 @@ Research shows localized content generates **12 times higher engagement** than g
 
 ### How much does proper localization cost compared to translation?
 
-Traditional translation services charge $0.08-$0.30 per word, while full localization services typically cost $0.20-$0.50 per word or more due to cultural adaptation work. This meant a typical 5,000-word course could cost $1,500-$3,000 per language to localize. AI-powered localization platforms have reduced this dramatically, with some offering complete course localization for as little as $5 per language while maintaining quality.
+Traditional translation services charge $0.08-$0.30 per word, while full localization services typically cost $0.20-$0.50 per word or more due to cultural adaptation work. This meant a typical 5,000-word course could cost $1,500-$3,000 per language to localize. AI-powered localization platforms have reduced this dramatically, folding complete course localization into a flat subscription while maintaining quality.
 
 ### When should companies use translation versus localization for their education programs?
 

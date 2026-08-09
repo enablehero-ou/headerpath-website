@@ -194,19 +194,14 @@ export const translations = {
     pricing: {
       title: 'Precios simples y transparentes',
       subtitle: 'Comienza de inmediato. Escala a medida que creces.',
-      starter: {
-        name: 'Starter',
-        price: '$99',
-        period: '/mes',
-        description: 'Todo lo que necesitas para lanzar tu primera academia.',
+      // No price literals in translations — the amount comes from
+      // `brand.pricing` and is rendered on /pricing only.
+      flat: {
+        description: 'Todo ilimitado — un único precio mensual.',
         cta: 'Comenzar',
       },
-      custom: {
-        name: 'Personalizado',
-        price: 'Consultar precio',
-        description: 'Para organizaciones con necesidades avanzadas y equipos más grandes.',
-        cta: 'Contáctanos',
-      },
+      fairUsage:
+        'Todo el uso "ilimitado" está sujeto a nuestra política de uso justo.',
     },
     footer: {
       copyright: 'Todos los derechos reservados.',
@@ -308,19 +303,14 @@ export const translations = {
     pricing: {
       title: 'Une tarification simple et transparente',
       subtitle: 'Démarrez immédiatement. Évoluez à votre rythme.',
-      starter: {
-        name: 'Starter',
-        price: '99 $',
-        period: '/mois',
-        description: 'Tout ce dont vous avez besoin pour lancer votre première académie.',
+      // No price literals in translations — the amount comes from
+      // `brand.pricing` and is rendered on /pricing only.
+      flat: {
+        description: 'Tout illimité — un seul prix mensuel.',
         cta: 'Commencer',
       },
-      custom: {
-        name: 'Personnalisé',
-        price: 'Obtenir un devis',
-        description: 'Pour les organisations aux besoins avancés et aux équipes plus grandes.',
-        cta: 'Nous contacter',
-      },
+      fairUsage:
+        "Toute utilisation « illimitée » est soumise à notre politique d'usage raisonnable.",
     },
     footer: {
       copyright: 'Tous droits réservés.',

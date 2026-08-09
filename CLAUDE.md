@@ -31,6 +31,13 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > Brand name is **HeaderPath** (capitalized). Never hardcode it — pull from `brand.ts`.
 > Every user-visible string comes from `src/i18n/translations.ts`, never inline in a
 > component. All brand URLs/emails/pricing from `brand.ts`.
+>
+> **🔴 PRICE RULE — the amount appears on `/pricing` and nowhere else.**
+> `brand.pricing` is the single source and `src/pages/pricing.astro` is the only page that
+> renders it, so the price is changed in exactly one place. Never put a figure in the FAQ,
+> a CTA band, a translation string, or blog copy — say "one flat plan, everything
+> unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
+> fine; a HeaderPath price is not.
 
 GTM-style note: this is a static marketing site, so the "things that run" are pages and
 content, not workflows. The doc below is the reference map for those.
