@@ -4,7 +4,7 @@ description: "A systematic review reveals why doctors yield to patient pressure 
 date: 2026-01-27
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e0d2eb276d7fb57f6dbaa-qurioos-com-blog-changelog-images-2.jpg"
+image: "/images/webflow/696e0d2eb276d7fb57f6dbaa-headerpath-com-blog-changelog-images-2.jpg"
 ---
 
 A [2025 systematic review published in Patient Education and Counseling](https://doi.org/10.1016/j.pec.2025.108747) analyzed over three decades of research to answer a controversial question: Do doctors prescribe medication just because patients ask for it?  

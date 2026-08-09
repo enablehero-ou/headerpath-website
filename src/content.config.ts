@@ -61,29 +61,10 @@ const integrations = defineCollection({
   }),
 });
 
-const features = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/features' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    slug: z.string().optional(),
-    icon: z.string().optional(),
-    image: z.string().optional(),
-    draft: z.boolean().default(false),
-  }),
-});
-
-// Proposals: private, noindex, hard-to-guess URLs
-const proposals = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/proposals' }),
-  schema: z.object({
-    title: z.string(),
-    client: z.string(),
-    date: z.coerce.date(),
-    expiresAt: z.coerce.date().optional(),
-    draft: z.boolean().default(false),
-  }),
-});
+// `features` and `proposals` collections were defined but never populated or
+// queried, so every build warned about them. Removed. `ProposalLayout.astro`,
+// the robots.txt disallow and the sitemap exclusion are all still in place —
+// re-add a collection here when there is actually content to load.
 
 const legal = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/legal' }),
@@ -112,8 +93,6 @@ export const collections = {
   alternatives,
   techniques,
   integrations,
-  features,
-  proposals,
   legal,
   docs,
 };

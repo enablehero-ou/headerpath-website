@@ -4,7 +4,7 @@ description: "This guide gives you a practical, copyable template to prepare for
 date: 2025-11-03
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/6908d9d263eb93947b8f5f28-qurioos-com-blog-images-12.png"
+image: "/images/webflow/6908d9d263eb93947b8f5f28-headerpath-com-blog-images-12.png"
 ---
 
 So you've built an amazing online academy, eLearning program, or course library—and now you're ready to take it global. Congratulations! But before you dive in, you need a solid localization plan. Without one, you risk cultural missteps, technical headaches, and wasted budget.
@@ -115,7 +115,7 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 
 Ready to take your academy global but don't want to navigate this complex process alone? [**HeaderPath** offers end-to-end eLearning localization that drives results](/).
 
-![__wf_reserved_inherit](/images/webflow/6908c9231b5dad6fe8c7b358-qurioos-com-blog-images-1620-x-1080-px-8.png)
+![__wf_reserved_inherit](/images/webflow/6908c9231b5dad6fe8c7b358-headerpath-com-blog-images-1620-x-1080-px-8.png)
 
 ### **Why choose** [**HeaderPath**](/)**?**
 

@@ -4,7 +4,7 @@ description: "What if contract law could be taught more like practicing a sport 
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/687fb7b693902e4cf5d919fc-qurioos-com-blog-images.png"
+image: "/images/webflow/687fb7b693902e4cf5d919fc-headerpath-com-blog-images.png"
 ---
 
 In this episode, I speak with [Charlyn Ho](https://www.linkedin.com/in/charlyn-ho-25977137/), a former Navy Supply Officer, corporate law partner, and now the founder of [Rikka (incl. Rikka Academy)](https://rikkagroup.com/rikkaacademy-homepage/). Charlyn shares how she’s turning years of experience into structured, practical training for early-career lawyers—blending mock negotiations, real-life analogies, and AI feedback loops to close the training gap in legal education.

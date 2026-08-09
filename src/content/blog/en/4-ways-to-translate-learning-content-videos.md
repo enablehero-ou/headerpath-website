@@ -4,7 +4,7 @@ description: "Choosing the right approach for your multilingual content based on
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "tutorials"
-image: "/images/webflow/68da96164e835cd2eb75d522-qurioos-com-blog-images.png"
+image: "/images/webflow/68da96164e835cd2eb75d522-headerpath-com-blog-images.png"
 ---
 
 Expanding your online course into new languages is one of the most effective ways to reach a global audience. But if you've ever tried to translate educational content that includes videos, text, and interactive elements, you know it's more complex than simply running scripts through a translation tool.

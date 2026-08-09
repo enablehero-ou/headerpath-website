@@ -135,10 +135,21 @@ raw colors — so the theme is reskinnable from one place.
 --color-bg-card       #ffffff      --color-accent          #5ce1e6  (brand cyan)
 --color-border        #dfe6ea      --color-accent-hover    #3ccdd4
 --color-border-subtle #eef3f5      --color-accent-fg       #1f2a39  (text ON cyan)
+
+--color-action        #1f2a39      --color-action-hover    #2c3a4d
+--color-action-fg     #ffffff
 ```
 
-**Brand colors are cyan `#5ce1e6` + ink `#1f2a39`.** Cyan is light — it is a *background*
-fill, never a text color on white. Text on a cyan fill is always `--color-accent-fg` (ink).
+**Brand colors are cyan `#5ce1e6` + ink `#1f2a39`, and the two have different jobs:**
+
+- **`accent` (cyan) — decoration.** Gradient washes, tints (`accent/10`), rules,
+  highlights, selected states. Cyan is light: it is a *background* fill, never a text
+  color on white. Text on a cyan fill is always `--color-accent-fg` (ink).
+- **`action` (ink) — interaction.** Every button, CTA, and focus ring. Cyan is too light
+  to carry a solid CTA and reads soft as a primary brand action, so solid buttons are ink
+  with white type (`--color-action-fg`).
+
+Never use `bg-accent` for a button.
 
 - **Fonts**: `--font-sans` Inter (UI/body) · `--font-serif` Fraunces (display + h1/h2) · `--font-mono` JetBrains Mono (eyebrows/labels). Loaded in `BaseHead.astro`.
 - **Shadows**: `--shadow-hairline` / `--shadow-soft` / `--shadow-lift` (also `shadow-soft` utility).

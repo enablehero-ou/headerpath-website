@@ -4,7 +4,7 @@ description: "How investing in education unlocks diagnostic access in underserve
 date: 2026-01-19
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e0569b6fa4f6b18801c3c-qurioos-com-blog-changelog-images-1.png"
+image: "/images/webflow/696e0569b6fa4f6b18801c3c-headerpath-com-blog-changelog-images-1.png"
 ---
 
 According to the [Roche Global Annual Report 2023](https://assets.roche.com/f/174029/x/2fb3fece51/roche-global-annual-report-2023.pdf), the company successfully trained approximately 7,500 healthcare providers (HCPs) and laboratory professionals as part of its commitment to improving diagnostic access in underserved regions. This massive educational initiative highlights a critical shift in the life sciences industry: technology alone cannot solve healthcare challenges. Without skilled professionals to operate advanced diagnostic equipment and interpret results, innovation stalls at the delivery stage.  

@@ -4,7 +4,7 @@ description: "This report highlights four key trends shaping sales training worl
 date: 2025-10-08
 author: "Jonathan Drayl"
 category: "strategy"
-image: "/images/webflow/686ff705d0f26b16a1cc57f0-qurioos-com-blog-images.png"
+image: "/images/webflow/686ff705d0f26b16a1cc57f0-headerpath-com-blog-images.png"
 ---
 
 Sales training and enablement are undergoing a rapid transformation globally. In 2025, sales leaders face new expectations to upskill distributed teams quickly, personalize learning, and tie training directly to performance outcomes.

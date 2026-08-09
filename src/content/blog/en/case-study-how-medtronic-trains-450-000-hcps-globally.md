@@ -4,7 +4,7 @@ description: "How a hybrid approach of digital academies and mobile simulation l
 date: 2026-01-21
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e0a0c85a20627ddb60aca-qurioos-com-blog-changelog-images.jpg"
+image: "/images/webflow/696e0a0c85a20627ddb60aca-headerpath-com-blog-changelog-images.jpg"
 ---
 
 A  [report from Medtronic](https://news.medtronic.com/surgery-is-changing-so-is-the-way-were-teaching-it-newsroom) highlights a massive shift in how medical technology leaders approach customer education. The old adage of medical training—"see one, do one, teach one", is rapidly becoming obsolete. As surgical procedures move toward minimally invasive techniques and robotics, the complexity of the skills required has outpaced traditional apprenticeship models.  

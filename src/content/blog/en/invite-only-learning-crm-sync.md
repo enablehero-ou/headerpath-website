@@ -4,12 +4,12 @@ description: "Turn your CRM into the front door for learning. Control access, ma
 date: 2025-10-07
 author: "Akis Laopodis"
 category: "tutorials"
-image: "/images/webflow/68e0a85789a5744b2cb67aa9-qurioos-com-blog-images-2.png"
+image: "/images/webflow/68e0a85789a5744b2cb67aa9-headerpath-com-blog-images-2.png"
 ---
 
 You don’t need another clunky portal or half-baked “self-serve” sign up. If you already have customer and contact data living in your CRM, you can use it as the single source of truth for learning access. Only people who belong in your database get in. They’re automatically mapped to the right account, agent, or partner — and their progress flows straight back into your CRM. Clean, secure, measurable.
 
-![__wf_reserved_inherit](/images/webflow/68e0a85789a5744b2cb67aa9-qurioos-com-blog-images-2.png)
+![__wf_reserved_inherit](/images/webflow/68e0a85789a5744b2cb67aa9-headerpath-com-blog-images-2.png)
 
 ## Introduction
 
