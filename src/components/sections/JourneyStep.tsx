@@ -64,7 +64,7 @@ export default function JourneyStep({ stage }: Props) {
                   className={[
                     'flex w-full items-center justify-between gap-3 rounded-xl px-4 py-3 text-left transition-colors',
                     on
-                      ? 'bg-accent text-accent-fg shadow-soft'
+                      ? 'bg-action text-action-fg shadow-soft'
                       : 'bg-bg-secondary text-text-primary hover:bg-bg-tertiary',
                   ].join(' ')}
                 >
@@ -73,7 +73,7 @@ export default function JourneyStep({ stage }: Props) {
                     <span
                       className={[
                         'mt-0.5 block text-[0.8rem]',
-                        on ? 'text-accent-fg/70' : 'text-text-muted',
+                        on ? 'text-action-fg/70' : 'text-text-muted',
                       ].join(' ')}
                     >
                       {c.sub}
@@ -85,7 +85,7 @@ export default function JourneyStep({ stage }: Props) {
                     viewBox="0 0 16 16"
                     fill="none"
                     className="shrink-0"
-                    style={{ color: on ? 'var(--color-accent-fg)' : 'var(--color-text-muted)' }}
+                    style={{ color: on ? 'var(--color-action-fg)' : 'var(--color-text-muted)' }}
                   >
                     <path
                       d="M6 3.5l5 4.5-5 4.5"
