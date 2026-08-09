@@ -11,7 +11,6 @@ const staticPages = [
   { path: '/techniques', priority: '0.7', changefreq: 'weekly' },
   { path: '/blog', priority: '0.8', changefreq: 'daily' },
   { path: '/help', priority: '0.7', changefreq: 'weekly' },
-  { path: '/schedule', priority: '0.7', changefreq: 'monthly' },
   { path: '/careers', priority: '0.5', changefreq: 'monthly' },
   { path: '/legal/privacy', priority: '0.3', changefreq: 'yearly' },
   { path: '/legal/services-agreement', priority: '0.3', changefreq: 'yearly' },

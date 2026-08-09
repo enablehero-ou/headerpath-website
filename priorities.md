@@ -23,6 +23,9 @@
       host or the field gets dropped.
 - [ ] `qurioos-app` leftovers (that repo, not this one): 2 `www.qurioos.com` UTM backlinks
       and the `{slug}.qurioos.com` domain hint. The `team@` address is already migrated.
+- [ ] 6 blog case-study posts still link "Book your demo" → `/schedule` (now a 301 to
+      `/pricing`). Decide the new CTA target (`/signup` or `mailto:team@headerpath.com`)
+      and reword.
 - [ ] Per-page OG images — every page currently shares the one default. Consider generating per-post images for blog/techniques.
 - [ ] Nothing on the site uses a dark surface yet, so `wordmarkDark` / `iconDark` are unused. Wire them in if a dark section or dark mode lands.
 

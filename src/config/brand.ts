@@ -25,6 +25,7 @@ export const brand = {
   },
   email: {
     support: 'support@headerpath.com',
+    team: 'team@headerpath.com',
     sales: 'sales@headerpath.com',
     partners: 'partners@headerpath.com',
   },
