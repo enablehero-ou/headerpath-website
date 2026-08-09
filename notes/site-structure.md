@@ -128,9 +128,10 @@ target structure after the rebuild.
 - ✅ Exists; only 1 entry (LearnWorlds) — thin
 - ⚠️ Decide: keep as SEO comparison play or hide until more entries
 
-### `/schedule`, `/signup`, `/careers`
+### `/signup`, `/careers`
 - ✅ All exist
-- `/schedule` = book-a-call (primary CTA) · `/signup` = product signup · `/careers` = company (footer)
+- `/signup` = product signup · `/careers` = company (footer)
+- `/schedule` (book-a-call) removed — 301 → `/pricing`; custom-pricing contact is `team@headerpath.com`
 
 ---
 
