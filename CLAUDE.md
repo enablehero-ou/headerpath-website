@@ -61,10 +61,10 @@ is the **marketing website** only.
 
 | Surface | Role | Details |
 |---|---|---|
-| **Vercel** | Hosting | Project `qurioos-v0/website` (project + preview URL not yet renamed — see `notes/rebrand-transition.md`). Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-qurioos.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
+| **Vercel** | Hosting | Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-qurioos.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
 | **GitHub** | Source / CI | `qurioos-v0/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
 | **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
-| **Signup** | Stubbed | `brand.signupUrl` → local `/signup`; the form is a stub (no live API). Waiting on the app-side provisioning API — see `notes/rebrand-transition.md`. |
+| **Signup** | Stubbed | `brand.signupUrl` → local `/signup`; the form is a stub (no live API). Waiting on the app-side provisioning API. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
 | **Google Fonts** | Webfonts | Inter, Fraunces, JetBrains Mono — loaded in `BaseHead.astro`. |
 | **Webflow / Loveable** | Retiring | Old site (`quriooscom.webflow.io`) was the content + asset source — all assets are now copied into `public/images/` so nothing depends on it. Loveable still serves the live `qurioos.com` until cutover. |
@@ -122,12 +122,8 @@ Defined in `src/content.config.ts`. Content lives in `src/content/[type]/en/` (t
 | `docs` (help) | `content/docs/en/[category]/` | `/help`, `/help/[slug]` | 36 articles, self-hosted help center |
 | `alternatives` | `content/alternatives/en/` | `/alternatives/[slug]` | competitor comparisons |
 | `legal` | `content/legal/en/` | `/legal/[slug]` | privacy, services-agreement, end-user-policy |
-| `proposals` | `content/proposals/en/` | (none) | private; `noindex`; `/proposals` 301s to `/`. Currently empty (build warning). |
-| `features` | `content/features/en/` | (none) | empty (build warning) |
 
-Glob loaders accept `**/*.{md,mdx}` for blog/techniques; `docs` is `en/**/*.md` (the
-`_archive/` tree is excluded). Old hand-written docs are parked in
-`content/docs/_archive/handwritten-en/` pending reconciliation (see priorities).
+Glob loaders accept `**/*.{md,mdx}` for blog/techniques; `docs` is `en/**/*.md`.
 
 ## Design System
 
@@ -260,7 +256,7 @@ headerpath-website/
 │   └── images/               # static assets (brand/ = logo marks, webflow/ = imported assets)
 ├── src/
 │   ├── pages/                # routes (.astro) + sitemap.xml.ts, robots.txt.ts
-│   ├── content/              # content collections (blog, techniques, docs, …) + _archive/
+│   ├── content/              # content collections (blog, techniques, docs, …)
 │   ├── content.config.ts     # collection schemas
 │   ├── components/           # ui/ · sections/ · layout/ · signup/
 │   ├── layouts/              # Page/Base/Content/Blog layouts
@@ -268,8 +264,6 @@ headerpath-website/
 │   ├── i18n/                 # translations.ts
 │   └── styles/global.css     # design tokens + utilities
 ├── notes/                    # reference docs (NOT pages) — site-structure, design refs
-├── csv/                      # one-off Webflow CSV exports + import.py (provenance)
-└── scripts/                  # one-off tooling (download-webflow-images.py)
 ```
 
 **Rule**: anything that **renders** (a page, a content file, a component) lives under `src/`
@@ -300,5 +294,4 @@ Keep the repo root to config + `CLAUDE.md` + `priorities.md` + `README.md`.
 - Zero JS on static content pages — React islands only where interactivity is needed.
 - All user-visible strings via `translations.ts`; all brand data via `brand.ts`.
 - Product positioning only — never service/agency language (see Positioning rule).
-- Proposals: `noindex` + excluded from sitemap; `/proposals` 301s to `/`.
 - `priorities.md` is forward-only and pruned on every `/ship`.

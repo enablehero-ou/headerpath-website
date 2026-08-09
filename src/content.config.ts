@@ -61,11 +61,6 @@ const integrations = defineCollection({
   }),
 });
 
-// `features` and `proposals` collections were defined but never populated or
-// queried, so every build warned about them. Removed. `ProposalLayout.astro`,
-// the robots.txt disallow and the sitemap exclusion are all still in place —
-// re-add a collection here when there is actually content to load.
-
 const legal = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/legal' }),
   schema: z.object({
@@ -76,7 +71,7 @@ const legal = defineCollection({
 });
 
 // Help center / docs — self-hosted. Category derived from folder, e.g.
-// src/content/docs/en/<category>/<slug>.md. _archive is excluded by the glob.
+// src/content/docs/en/<category>/<slug>.md.
 const docs = defineCollection({
   loader: glob({ pattern: 'en/**/*.md', base: './src/content/docs' }),
   schema: z.object({
