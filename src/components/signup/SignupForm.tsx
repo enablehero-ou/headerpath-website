@@ -69,7 +69,7 @@ export default function SignupForm() {
   }
 
   async function submit(finalForm: FormData) {
-    // STUB: self-serve signup API is not built yet (app-side — see notes/rebrand-transition.md).
+    // STUB: the self-serve signup API is not built yet (app-side).
     // TODO: POST finalForm to the new HeaderPath provisioning API once it ships, then restore error handling.
     setLoading(true);
     void finalForm;

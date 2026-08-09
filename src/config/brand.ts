@@ -5,7 +5,7 @@ export const brand = {
     'HeaderPath is the AI-native academy platform. Launch a branded learning academy, let AI build the courses, and publish — no instructional designers required.',
   domain: 'headerpath.com',
   websiteUrl: 'https://headerpath.com',
-  // Backend/product app stays on qurioos infra until the app itself migrates (see notes/rebrand-transition.md).
+  // Backend/product app stays on qurioos infra until the app itself migrates.
   appUrl: 'https://app.qurioos.com',
   // Self-serve signup API not built yet — points at the local stub page.
   signupUrl: '/signup',

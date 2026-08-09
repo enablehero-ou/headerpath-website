@@ -32,7 +32,6 @@ export const GET: APIRoute = async () => {
     getCollection('alternatives', ({ data }) => !data.draft),
     getCollection('techniques', ({ data }) => !data.draft),
     getCollection('docs', ({ data }) => !data.draft),
-    // proposals intentionally excluded
   ]);
 
   const entries = [

@@ -17,7 +17,6 @@ export default defineConfig({
     '/about': { status: 301, destination: '/' },
     '/platform': { status: 301, destination: '/' },
     '/partner': { status: 301, destination: '/' },
-    '/proposals': { status: 301, destination: '/' },
   },
 
   integrations: [mdx(), react()],

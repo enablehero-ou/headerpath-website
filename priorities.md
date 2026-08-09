@@ -31,7 +31,6 @@
       pay-as-you-go "$5 per language", which contradicted the flat unlimited plan). Confirm
       that is correct — if translation is actually metered on top, the copy needs rewording.
 - [ ] Homepage length — 17 fully-detailed feature cards; trim or keep?
-- [ ] Reconcile the 40 archived hand-written docs (`src/content/docs/_archive/handwritten-en/`) vs the 36 imported CSV help articles
 
 ## Infra / ops
 - [ ] Repo-specific `/main` skill (squash-merge to `main` + hard-reset `dev` to `main`); `/ship` is already repo-specific and prunes `priorities.md`
