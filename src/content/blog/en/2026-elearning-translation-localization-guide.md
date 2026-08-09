@@ -61,15 +61,15 @@ This economic reality meant localization became a privilege of scale. Only enter
 
 The hidden cost was opportunity.
 
-## What changes when localization costs $5 and not $50,000 per language
+## What changes when localization stops costing $50,000 per language
 
 Here's what makes 1-click localization transformative: it eliminates the economic barrier entirely.
 
-From English (US) to Spanish (Mexico): $5 one time. From English (US) to Spanish (Mexico) and French (France): $10 one time. Sixty languages available. One click to initiate.
+English (US) to Spanish (Mexico), or to Spanish and French, or to all sixty available languages — one click to initiate, with no per-language invoice attached to the decision.
 
 No project managers needed. No vendor negotiations. No XLIFF exports or reimports. No waiting weeks for translations. This isn't about making localization slightly cheaper. It's about changing what's possible.
 
-**When localization costs $5 instead of $50,000,** it moves from a strategic initiative requiring executive approval to a tactical decision any training manager can make. It becomes something you test, iterate on, and expand—not a massive bet you need to get perfect the first time.
+**When localization stops costing $50,000 per language,** it moves from a strategic initiative requiring executive approval to a tactical decision any training manager can make. It becomes something you test, iterate on, and expand—not a massive bet you need to get perfect the first time.
 
 The implications cascade. **You can support that one enterprise customer in Poland without treating it as a special project.**
 
@@ -99,7 +99,7 @@ This changes your content strategy entirely. You stop thinking "should we create
 
 If localization has been on your roadmap but kept getting deprioritized due to cost or complexity, that calculus just changed. The question isn't whether to localize anymore—it's what to localize first.
 
-Start with your highest-impact training. Which course drives the most value? Which content do new customers, partners, or employees encounter first? Which training directly correlates with retention, product adoption, or revenue? Localize that content into your top three international markets. Cost: $15. Time: one click per language.
+Start with your highest-impact training. Which course drives the most value? Which content do new customers, partners, or employees encounter first? Which training directly correlates with retention, product adoption, or revenue? Localize that content into your top three international markets. Time: one click per language.
 
 **Then measure.**
 
@@ -113,7 +113,7 @@ Behind the scenes, modern AI-powered translation systems analyze your training c
 
 ### **Does machine translation provide the same quality as human translators?**
 
-For the vast majority of training content—especially technical, procedural, and instructional material—modern AI translation delivers professional-grade results. The linguistic accuracy is comparable to human translation, though cultural nuance in highly creative or marketing-focused content may benefit from human review. The key insight: 95% quality at $5 beats 100% quality at $5,000 for most use cases, especially since you can always refine specific sections later if needed.
+For the vast majority of training content—especially technical, procedural, and instructional material—modern AI translation delivers professional-grade results. The linguistic accuracy is comparable to human translation, though cultural nuance in highly creative or marketing-focused content may benefit from human review. The key insight: 95% quality at a fraction of the cost beats 100% quality at $5,000 for most use cases, especially since you can always refine specific sections later if needed.
 
 ### **What happens when I update my training content—do I need to retranslate everything?**
 
@@ -129,7 +129,7 @@ Start strategic, then scale. Localize your highest-impact content first—typica
 
 ### **How do we choose which languages to prioritize for our training?**
 
-Look at three factors: where your customers, partners, or employees actually are (current market presence), where you're planning to expand (growth strategy), and where you see the highest friction in training completion or effectiveness (pain points). If your Spanish-speaking customers have 40% lower training completion than English speakers, that's your answer. If you're expanding into APAC next quarter, get ahead of it with Japanese, Korean, and Mandarin. The beauty of $5 per language is you don't need perfect prioritization—you can test multiple languages and let data guide you.
+Look at three factors: where your customers, partners, or employees actually are (current market presence), where you're planning to expand (growth strategy), and where you see the highest friction in training completion or effectiveness (pain points). If your Spanish-speaking customers have 40% lower training completion than English speakers, that's your answer. If you're expanding into APAC next quarter, get ahead of it with Japanese, Korean, and Mandarin. When adding a language costs you nothing extra, you don't need perfect prioritization—you can test multiple languages and let data guide you.
 
 Learning localization isn't a translation project anymore. It's a growth strategy that multiplies the value of every training investment you make. The companies that understand this first will be the ones operating globally while their competitors are still trying to hire bilingual support staff.
 
