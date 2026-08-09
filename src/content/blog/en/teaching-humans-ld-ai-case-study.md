@@ -4,7 +4,7 @@ description: "A real-world story of how a simple AI initiative sparked big conve
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/686ff88b1c03d226c1b36bf6-qurioos-com-blog-images-3.png"
+image: "/images/webflow/686ff88b1c03d226c1b36bf6-headerpath-com-blog-images-3.png"
 ---
 
 Back in early 2023-2024, just as the world was waking up to ChatGPT, I was working at WeSchool, an education consultancy and learning platform vendor. The founder and CEO came to us with an idea to launch an experiment called **Teaching Humans** with the goal of sparking conversations with learning and development (L&D)  professionals at large organizations and shape together this new L&D+AI space. It became an unexpected growth engine—drawing in over 800 professionals from the L&D space through a unique mix of AI-powered challenges, workshops, and community-sharing. It didn’t just create buzz; it created real business outcomes: discovery calls, partnerships, and conversations with companies we wouldn't have reached otherwise.

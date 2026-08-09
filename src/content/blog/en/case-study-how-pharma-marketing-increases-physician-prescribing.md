@@ -4,7 +4,7 @@ description: "A meta-analysis of 146 studies reveals the exact levers that drive
 date: 2026-01-30
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e0bb295027e80ce2cf708-qurioos-com-blog-changelog-images-1.jpg"
+image: "/images/webflow/696e0bb295027e80ce2cf708-headerpath-com-blog-changelog-images-1.jpg"
 ---
 
 A  [comprehensive 2025 systematic review of](https://doi.org/10.1016/j.healthpol.2025.105415) 146 studies has cracked the code on what actually drives physician prescribing behaviors. For decades, pharmaceutical companies and healthcare leaders have treated the prescribing decision as a black box, a mix of clinical guidelines and individual preference. But new data reveals it is actually a complex interplay of structural, organizational, and social pressures.  

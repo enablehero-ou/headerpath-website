@@ -4,7 +4,7 @@ description: "Upgrade your partner onboarding—from paperwork to partnership—
 date: 2025-10-08
 author: "Jonathan Drayl"
 category: "tutorials"
-image: "/images/webflow/68707f8d89bc7b1972b07e15-qurioos-com-blog-images-7.png"
+image: "/images/webflow/68707f8d89bc7b1972b07e15-headerpath-com-blog-images-7.png"
 ---
 
 If you want to build high-performing partnerships, how you onboard your partners matters—a lot. A structured, tech-enabled partner onboarding process sets partners up faster, reduces churn, and fosters long-term collaboration. In this post, you’ll discover proven steps for effective partner onboarding, common pitfalls to dodge, and how AI-driven systems can help you scale without sacrificing quality.

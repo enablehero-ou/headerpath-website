@@ -11,17 +11,18 @@
 - **D2 domain:** headerpath.com
 - **Content:** rebrand *everything* — no visible "Qurioos"/"qurioos" anywhere in copy or slugs.
 - **Signup:** stub the form (no live API yet) — wait for the app-side provisioning API (§4.1).
-- **Emails:** `@headerpath.com` — MX live on Google Workspace, old addresses now aliases (work).
-- **Logo:** icon-only mark in `public/images/brand/` (light = cyan disc + ink H; dark = ink disc + cyan H). Wordmark is set in type (Inter semibold) next to the icon, not baked into the asset.
+- **Emails:** `@headerpath.com` is a Google Workspace **user alias domain** for qurioos.com — every
+  address mirrors automatically, including alternates. MX/SPF/DKIM/DMARC all published.
+- **Logo:** full wordmark lockups + icon marks in `public/images/brand/` (light, dark, and a solid-background dark variant). Header and footer use the light wordmark.
 - **Brand colors:** cyan `#5ce1e6` (accent) + ink `#1f2a39` (text). Tokens in `global.css`.
 - **Local folder + launch agent + Vercel project:** rename now.
 
 ## Coexistence — what STAYS qurioos (per app plan §4.6)
 
 - `auth.qurioos.com` — custom auth domain, untouched.
-- `app.qurioos.com` — product app / login target, until the app itself migrates.
+- `app.qurioos.com` — product app / login target. Note: currently does not resolve.
 - `academy.qurioos.com` — existing main tenant.
-- `qurioos.com` apex → redirect to headerpath.com **later** (app-plan decision D6).
+- `qurioos.com` + `www` → **301 to `www.headerpath.com`** (D6, done via Cloudflare Redirect Rules).
 
 ## DONE
 
@@ -35,8 +36,6 @@
 - [x] Local folder → `headerpath-website`; launch agent → `com.headerpath.website` (running, dev server 200 on :4321, logs `/tmp/headerpath-website-dev.log`).
 - [x] Production build passes (96 pages) after all renames.
 
-> Not yet committed — changes are on `dev`, uncommitted. Run `/ship` to open the PR.
-
 ## DONE — cutover
 
 - [x] Site LIVE at `https://www.headerpath.com` (PR #1 merged, Vercel prod deployed). www = primary; apex `headerpath.com` → 308 → www. MX intact.
@@ -44,9 +43,12 @@
 
 ## PENDING — blocked / needs input or other repos
 
-- [ ] **Webflow blog asset filenames** — `...-qurioos-com-blog-images.png` (~25 files) keep the old name on disk; visible only in file paths, not copy. Bulk-rename with the logo work.
-- [ ] **Vercel project rename** — `website` → `headerpath` (cosmetic; updates preview URLs). Dashboard action or a `VERCEL_TOKEN` for me. Domains already attached + working.
-- [ ] **qurioos.com → headerpath.com PERMANENT redirect** — decision D6 now LOCKED as permanent. qurioos.com apex is app/infra-side (not this repo). Needs 301 from qurioos.com → www.headerpath.com. Keep `auth.qurioos.com` untouched.
 - [ ] **Signup form finalization** — wire the stubbed form to the new HeaderPath provisioning API (app-side, `qurioos-app` §4.1/§4.2). Blocked until that API ships.
-- [ ] **LinkedIn + all social profiles** — rename `linkedin.com/company/qurioos` + any other handles, then update `brand.ts`. Do at the very end.
-- [ ] **App-side rebrand** — in-app brand strings, auth/app domains: tracked in the app repo, not here.
+- [ ] **LinkedIn + all social profiles** — parked by decision. Rename `linkedin.com/company/qurioos`
+      + any other handles later, then update `brand.ts`.
+- [ ] **App-side rebrand** — lives in `qurioos-app`, not here. Plan: `qurioos-app/docs/rebrand-and-self-serve-plan.md`.
+      Remaining user-visible strings there: two `www.qurioos.com` footer/sidebar
+      UTM backlinks (`app/[locale]/public-footer.tsx`, `app/[locale]/[slug]/course-sidebar.tsx`),
+      and the `{slug}.qurioos.com` domain hint
+      (`app/admin/settings/domain-tab.tsx`). The rest — `lib/sender-email.ts`, `lib/storage.ts`,
+      `app/admin/settings/actions.ts` — is infra plumbing that must NOT be renamed.

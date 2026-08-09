@@ -4,17 +4,25 @@
 > When items ship to `main`, delete them from here — the record lives in the PR
 > and Git history. This is not a changelog.
 
-## Launch / production cutover
-- [ ] Rename the Vercel project `website` → HeaderPath (updates preview URLs) — dashboard/token needed
-- [ ] Remove Vercel deployment protection (preview currently returns 401)
-- [ ] `qurioos.com` → `www.headerpath.com` permanent 301 — infra/app-side, not this repo. Keep `auth.qurioos.com` untouched.
+> Vercel deployment protection stays ON — it is an account-wide setting, so previews
+> will keep returning 401. Not a task; don't re-raise it.
+
+## Email (headerpath.com)
+- [ ] ~9 Aug 2026 +48h: confirm Google is actually signing outbound mail with DKIM
+      (`google._domainkey.headerpath.com` is published and authentication is started).
+- [ ] Then tighten DMARC from `p=none` → `p=quarantine`, and point `rua` at a mailbox
+      that is actually read (currently Cloudflare's aggregator only).
 
 ## Pre-launch fixes
-- [ ] Rebrand tail (do at the very end, once content is final): rename ~25 `*-qurioos-com-*` webflow asset files, LinkedIn handle. Tracker: `notes/rebrand-transition.md`.
-- [ ] es/fr locales render empty (new copy is English-only) — translate or remove `es`/`fr` from `astro.config.mjs` i18n
+- [ ] LinkedIn handle — parked by decision. Rename the company page, then update `brand.ts`.
+- [ ] es/fr locales render empty (new copy is English-only) — translate or remove `es`/`fr` from `astro.config.mjs` i18n. Deferred by decision, still live in the nav.
 - [ ] `/signup` — currently a **stub** (no live API). Wire the form to the new HeaderPath provisioning API when it ships (app-side).
 - [ ] Verify inferred assets: integration icons (`Frame.svg`→Stripe, `Group 11.svg`→Notion), Tim Etherington headshot
-- [ ] Clean the empty `proposals` and `features` collections that throw build warnings
+- [ ] `app.qurioos.com` does not resolve. `brand.appUrl` points at it but nothing on the
+      site references `appUrl`, so it is not user-facing — decide whether the app gets a
+      host or the field gets dropped.
+- [ ] `qurioos-app` leftovers (that repo, not this one): 2 `www.qurioos.com` UTM backlinks
+      and the `{slug}.qurioos.com` domain hint. The `team@` address is already migrated.
 - [ ] Per-page OG images — every page currently shares the one default. Consider generating per-post images for blog/techniques.
 - [ ] Nothing on the site uses a dark surface yet, so `wordmarkDark` / `iconDark` are unused. Wire them in if a dark section or dark mode lands.
 

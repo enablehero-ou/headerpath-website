@@ -4,7 +4,7 @@ description: "The HeaderPath Partners program is designed to help companies work
 date: 2025-11-07
 author: "Akis Laopodis"
 category: "product-updates"
-image: "/images/webflow/690e2229161b0ddd7ca87cdc-qurioos-com-blog-images-16.png"
+image: "/images/webflow/690e2229161b0ddd7ca87cdc-headerpath-com-blog-images-16.png"
 ---
 
 Today, we're excited to announce the launch of [**HeaderPath Partners**](/partners)**,** a carefully curated network of experts who can help you build, scale, and optimize your learning academy.

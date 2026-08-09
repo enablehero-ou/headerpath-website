@@ -4,7 +4,7 @@ description: "Why most sales coaching is wasted — and how to use data to drive
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/686ff7f188cb12e3f32c4c8a-qurioos-com-blog-images-2.png"
+image: "/images/webflow/686ff7f188cb12e3f32c4c8a-headerpath-com-blog-images-2.png"
 ---
 
 Most sales coaching is well-intentioned but misses the mark — too generic, too reactive, and too focused on the wrong people. The real game-changer is targeted, data-driven coaching that actually moves the middle. In this post, we’ll break down actionable sales coaching strategies built on call recordings and conversion metrics, show why middle-tier reps are your greatest ROI lever, and share tips for embedding real behavioral change. Plus, get practical tools you can use right now.

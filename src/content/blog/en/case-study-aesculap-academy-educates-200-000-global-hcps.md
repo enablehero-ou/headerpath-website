@@ -4,7 +4,7 @@ description: "How B. Braun built a global education engine that drives medical e
 date: 2026-02-02
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e10d4aa9b5fc835c1563c-qurioos-com-blog-changelog-images-4.jpg"
+image: "/images/webflow/696e10d4aa9b5fc835c1563c-headerpath-com-blog-changelog-images-4.jpg"
 ---
 
 In the highly regulated, high-stakes world of medical technology, selling a device is only half the battle. The real challenge, and the massive opportunity—lies in ensuring that healthcare professionals (HCPs) know how to use that technology effectively to improve patient outcomes. [The Aesculap Academy](https://www.bbraun.com/en/about-us/media/press-releases/30-years-of-aesculap-academy.html?), founded by B. Braun, realized this nearly three decades ago. What started in 1995 as a small initiative to help hospital staff navigate new reimbursement systems has evolved into a global powerhouse of medical education.  

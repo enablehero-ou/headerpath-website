@@ -4,7 +4,7 @@ description: "Collapsing costs by up to 90% and reducing timelines from 4-6 week
 date: 2025-11-03
 author: "Jonathan Drayl"
 category: "strategy"
-image: "/images/webflow/6908de0486486509c201f2a3-qurioos-com-blog-images-13.png"
+image: "/images/webflow/6908de0486486509c201f2a3-headerpath-com-blog-images-13.png"
 ---
 
 Most companies treat localization as an expensive project for when they "go global." But AI-powered translation changes the equation entirely. By collapsing costs by up to 90% and reducing timelines from **4-6 weeks to days**, modern localization platforms transform education from a fixed asset into scalable infrastructure. The companies winning global markets aren't the ones with the biggest translation budgets—they're the ones who realized that education without borders means revenue without limits.

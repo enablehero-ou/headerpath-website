@@ -9,10 +9,16 @@
   --color-text-primary: #1f2a39;   /* brand ink */
   --color-text-secondary: #55606f;
   --color-text-muted: #8792a1;
-  --color-accent: #5ce1e6;         /* brand cyan — fills, tints, borders, focus */
-  --color-accent-hover: #3ccdd4;   /* deeper cyan for fill hover */
+  --color-accent: #5ce1e6;         /* brand cyan — washes, tints, highlights, rules */
+  --color-accent-hover: #3ccdd4;   /* deeper cyan for cyan fill hover */
   --color-accent-subtle: #5ce1e624;
   --color-accent-fg: #1f2a39;      /* brand ink — text/icons + text on cyan */
+
+  /* Actions (buttons, CTAs, focus). Ink, not cyan — cyan is too light to carry
+     a solid CTA and reads soft as a primary brand action. */
+  --color-action: #1f2a39;
+  --color-action-hover: #2c3a4d;
+  --color-action-fg: #ffffff;
   --color-border: #dfe6ea;
   --color-border-subtle: #eef3f5;
 
@@ -75,7 +81,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-action);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
   }

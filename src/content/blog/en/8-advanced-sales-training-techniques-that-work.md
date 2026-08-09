@@ -4,7 +4,7 @@ description: "Move your sales team beyond scripts—here’s how top organizatio
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/686ff731dddb77a9cb26028f-qurioos-com-blog-images-1.png"
+image: "/images/webflow/686ff731dddb77a9cb26028f-headerpath-com-blog-images-1.png"
 ---
 
 Sales is evolving. The classic “smile and dial” routine just doesn’t cut it for modern buyers, especially in high-stakes B2B. Today’s prospects are discerning, skeptical, and flooded with options. Meanwhile, sales professionals are under relentless pressure to hit aggressive numbers—often while navigating complex products and demanding stakeholders.   

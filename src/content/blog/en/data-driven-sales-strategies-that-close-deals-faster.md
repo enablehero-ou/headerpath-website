@@ -4,7 +4,7 @@ description: "What millions of recorded sales calls reveal about modern sales su
 date: 2025-10-08
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/686ff8c7b3c0bb662b7e08d5-qurioos-com-blog-images-4.png"
+image: "/images/webflow/686ff8c7b3c0bb662b7e08d5-headerpath-com-blog-images-4.png"
 ---
 
 Modern sales is a contact sport—fast, nuanced, and won by teams who let evidence, not guesswork, call the plays. Drawing from millions of recorded sales conversations, data from leaders like Gong reveals the patterns that actually move deals forward.

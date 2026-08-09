@@ -4,7 +4,7 @@ description: "How a digital platform scaled medical education to 145 countries"
 date: 2026-01-30
 author: "Akis Laopodis"
 category: "case-studies"
-image: "/images/webflow/696e0f0814b25c7401c02bd0-qurioos-com-blog-changelog-images-3.jpg"
+image: "/images/webflow/696e0f0814b25c7401c02bd0-headerpath-com-blog-changelog-images-3.jpg"
 ---
 
 According to a [2023 performance report Boston Scientific](https://news.bostonscientific.com/sustainable_progess_2023_performance_report?) successfully engaged more than 59,000 healthcare professionals (HCPs) across 145 countries through their EDUCARE platform. In an industry where access to operating rooms is increasingly restricted and physician schedules are packed, reliance on traditional face-to-face sales meetings is no longer a scalable strategy for complex medical device adoption.  

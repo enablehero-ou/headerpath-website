@@ -4,7 +4,7 @@ description: "Study reveals how healthcare professionals actually make recommend
 date: 2025-11-03
 author: "Akis Laopodis"
 category: "strategy"
-image: "/images/webflow/68e6c01c1f19c30e55ae3f3e-qurioos-com-blog-images-4.png"
+image: "/images/webflow/68e6c01c1f19c30e55ae3f3e-headerpath-com-blog-images-4.png"
 ---
 
 A [2021 cross-sectional study of 102 pharmacists (ResearchGate)](https://www.researchgate.net/publication/349616927_Community_pharmacists'_use_perception_and_knowledge_on_dietary_supplements_A_cross_sectional_study) revealed a counterintuitive problem: pharmacists scored high on dietary supplement knowledge tests, but their recommendation decisions weren't driven by evidence. Instead, personal experience was the strongest predictor.
