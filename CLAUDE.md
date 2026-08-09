@@ -142,14 +142,15 @@ raw colors — so the theme is reskinnable from one place.
 
 **Brand colors are cyan `#5ce1e6` + ink `#1f2a39`, and the two have different jobs:**
 
-- **`accent` (cyan) — decoration.** Gradient washes, tints (`accent/10`), rules,
-  highlights, selected states. Cyan is light: it is a *background* fill, never a text
-  color on white. Text on a cyan fill is always `--color-accent-fg` (ink).
-- **`action` (ink) — interaction.** Every button, CTA, and focus ring. Cyan is too light
-  to carry a solid CTA and reads soft as a primary brand action, so solid buttons are ink
-  with white type (`--color-action-fg`).
+- **`accent` (cyan) — decoration, and only at small scale or low opacity.** Arrows,
+  borders, rules, dots, icon tiles, gradient washes, and faint tints (`accent/5`–`accent/10`).
+  Cyan is light: it is never a text color on white. **Never fill a large element with solid
+  cyan** — a full-strength `bg-accent` block reads washed-out and cheapens the brand. If an
+  element is bigger than an icon or a hairline, it uses ink.
+- **`action` (ink) — interaction and any solid fill.** Every button, CTA, focus ring, and
+  selected/active state. Solid fills are ink with white type (`--color-action-fg`).
 
-Never use `bg-accent` for a button.
+Never use `bg-accent` for a button or for any solid block. `bg-accent/5`–`/10` tints are fine.
 
 - **Fonts**: `--font-sans` Inter (UI/body) · `--font-serif` Fraunces (display + h1/h2) · `--font-mono` JetBrains Mono (eyebrows/labels). Loaded in `BaseHead.astro`.
 - **Shadows**: `--shadow-hairline` / `--shadow-soft` / `--shadow-lift` (also `shadow-soft` utility).
