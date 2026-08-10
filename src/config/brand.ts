@@ -23,6 +23,12 @@ export const brand = {
     wordmarkDark: '/images/brand/headerpath-wordmark-dark.png',
     wordmarkDarkSolid: '/images/brand/headerpath-wordmark-dark-solid.png',
   },
+  // The operating company behind HeaderPath — used in legal copy and the footer line.
+  legalEntity: {
+    name: 'Header Ventures Ltd',
+    address: '71-75 Shelton Street, London, WC2H 9JQ, United Kingdom',
+    country: 'United Kingdom',
+  },
   email: {
     support: 'support@headerpath.com',
     team: 'team@headerpath.com',
@@ -44,6 +50,15 @@ export const brand = {
       name: 'HeaderPath',
       price: '$150',
       period: '/mo',
+    },
+    // Time-boxed intro offer. Set `active: false` to pull it from /pricing —
+    // it renders nowhere else, same as the standard price.
+    promo: {
+      active: true,
+      price: '$99',
+      period: '/mo',
+      months: 3,
+      label: 'Limited time offer',
     },
   },
 } as const;

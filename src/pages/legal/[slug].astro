@@ -25,7 +25,9 @@ const formatted = item.data.lastUpdated.toLocaleDateString('en-US', {
   <Container class="py-16 lg:py-24">
     <div class="mx-auto max-w-3xl">
       <h1 class="text-3xl font-semibold text-text-primary">{item.data.title}</h1>
-      <p class="mt-2 text-sm text-text-muted">Last updated: {formatted}</p>
+      <p class="mt-2 text-sm text-text-muted">
+        {item.data.version && <>Version: {item.data.version} &middot; </>}Last updated: {formatted}
+      </p>
       <div class="prose mt-10">
         <Content />
       </div>

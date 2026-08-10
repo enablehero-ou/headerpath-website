@@ -12,12 +12,11 @@ const t = useTranslations(locale);
 <section class="bg-bg-primary py-20 lg:py-28">
   <Container>
     <div
-      class="grain relative overflow-hidden rounded-[2rem] px-8 py-20 text-center lg:px-16"
-      style="background:#0c0c0c"
+      class="grain relative overflow-hidden rounded-[2rem] bg-action px-8 py-20 text-center lg:px-16"
     >
-      <!-- Accent glow -->
+      <!-- Cyan glow — decoration only, low opacity (never a solid cyan fill). -->
       <div
-        class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_70%_at_50%_115%,rgba(159,232,112,0.30),transparent)]"
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_70%_at_50%_115%,rgba(92,225,230,0.28),transparent)]"
       >
       </div>
       <div
@@ -32,7 +31,7 @@ const t = useTranslations(locale);
         {t.home.ctaSubtitle}
       </p>
       <div class="relative mt-9 flex flex-col items-center gap-3">
-        <Button href={brand.signupUrl} variant="primary" size="lg">
+        <Button href={brand.signupUrl} variant="secondary" size="lg">
           {t.home.ctaButton}
         </Button>
         <!-- No price here: the amount lives on /pricing only. -->

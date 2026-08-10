@@ -38,6 +38,12 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > a CTA band, a translation string, or blog copy — say "one flat plan, everything
 > unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
 > fine; a HeaderPath price is not.
+>
+> **Promotional pricing follows the same rule.** `brand.pricing.promo` is the single source
+> for the time-boxed intro offer and it renders only inside the `/pricing` plan card.
+> **To retire the promo, set `promo.active: false` in `brand.ts` — that one flag removes the
+> offer from the site.** Never delete the block, hardcode the promo figure, or repeat the
+> offer in a CTA band, the FAQ, an email, or blog copy; there is nowhere else to update.
 
 GTM-style note: this is a static marketing site, so the "things that run" are pages and
 content, not workflows. The doc below is the reference map for those.
@@ -80,7 +86,7 @@ contract.)
 
 - **Framework**: Astro 6, `output: 'static'`, `@astrojs/vercel` adapter
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/vite`, tokens in `src/styles/global.css`
-- **Interactive**: React 19 islands (`client:load` / `client:visible`) — mobile nav, FAQ accordion, signup form only
+- **Interactive**: React 19 islands (`client:load` / `client:visible` / `client:idle`) — mobile nav, FAQ accordion, signup form, cookie banner only
 - **Content**: Markdown / MDX content collections (`src/content.config.ts`)
 - **Package manager**: pnpm (`~/.local/bin/pnpm`)
 
@@ -121,7 +127,7 @@ Defined in `src/content.config.ts`. Content lives in `src/content/[type]/en/` (t
 | `techniques` | `content/techniques/en/` | `/techniques`, `/techniques/[slug]` | 17; has `bestFor`, optional `category`, `order` |
 | `docs` (help) | `content/docs/en/[category]/` | `/help`, `/help/[slug]` | 36 articles, self-hosted help center |
 | `alternatives` | `content/alternatives/en/` | `/alternatives/[slug]` | competitor comparisons |
-| `legal` | `content/legal/en/` | `/legal/[slug]` | privacy, services-agreement, end-user-policy |
+| `legal` | `content/legal/en/` | `/legal/[slug]` | privacy, services-agreement, end-user-policy. Optional `version` renders next to "Last updated". Counterparty is **Header Ventures Ltd** (`brand.legalEntity`); all contact routes to `team@headerpath.com` |
 
 Glob loaders accept `**/*.{md,mdx}` for blog/techniques; `docs` is `en/**/*.md`.
 
@@ -179,7 +185,7 @@ Never use `bg-accent` for a button or for any solid block. `bg-accent/5`–`/10`
 
 `src/components/ui/`: `Container` (max-w-7xl wrapper) · `Button` (primary/secondary/ghost,
 pill) · `Card` (uses `.surface`) · `Badge` (accent pill). Sections in
-`src/components/sections/`; layout chrome in `src/components/layout/` (Header, Footer,
+`src/components/sections/`; layout chrome in `src/components/layout/` (Header, Footer, CookieBanner,
 BaseHead, MobileNav, FAQAccordion).
 
 ## Help / Docs Article Conventions
