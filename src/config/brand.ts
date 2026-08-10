@@ -51,14 +51,18 @@ export const brand = {
       price: '$150',
       period: '/mo',
     },
-    // Time-boxed intro offer. Set `active: false` to pull it from /pricing —
-    // it renders nowhere else, same as the standard price.
+    // Time-boxed intro offer. Rendered only by the site-wide PromoBar above the
+    // header — retire it by removing <PromoBar /> from PageLayout/BaseLayout.
+    // `utm` tags the signup link so a submission attributes back to the bar.
     promo: {
-      active: true,
       price: '$99',
       period: '/mo',
       months: 3,
-      label: 'Limited time offer',
+      utm: {
+        source: 'website',
+        medium: 'promo_bar',
+        campaign: 'intro-99-3mo',
+      },
     },
   },
 } as const;

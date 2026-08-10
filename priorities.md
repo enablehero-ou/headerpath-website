@@ -19,6 +19,8 @@
 - [ ] `/signup` — currently a **stub** (no live API). Wire the 4-step form to the new
       HeaderPath provisioning API when it ships (app-side). The final screen already
       promises a verification email, so the API must actually send one before launch.
+- [ ] `/signup` has **no bot/abuse protection** — no CAPTCHA, rate limit, or honeypot. Harmless
+      while the form is a stub, but must land before it posts to a real provisioning API.
 - [ ] Cookie banner writes the same `cookie_consent` cookie the app uses, but the marketing
       site loads no analytics yet, so nothing reads it. Gate any future analytics tag on it,
       and add a "Privacy settings" footer link (`reopenCookieBanner()` is already exported).
@@ -36,9 +38,11 @@
       `wordmarkDark` / `iconDark` are still unused. Wire them in if a dark section or dark mode lands.
 
 ## Open decisions
-- [ ] Intro promo ($99/mo for the first 3 months) has no end date. Decide when it retires and
-      flip `brand.pricing.promo.active` to `false` then — nothing expires it automatically.
-      Also confirm billing can actually honour the 3-month rate before launch.
+- [ ] Intro promo ($99/mo for the first 3 months) runs in the site-wide `PromoBar` and has no
+      end date or on/off flag. Decide when it retires, then remove `<PromoBar />` from
+      `PageLayout.astro` and `signup.astro` — nothing expires it automatically. Also confirm
+      billing can honour the 3-month rate, and that whatever receives the signup payload
+      actually stores the captured `utm_*` fields, or the attribution is lost.
 - [ ] Blog copy now says AI translation is **included in the plan** (it previously advertised
       pay-as-you-go "$5 per language", which contradicted the flat unlimited plan). Confirm
       that is correct — if translation is actually metered on top, the copy needs rewording.

@@ -24,7 +24,7 @@ const formatted = item.data.lastUpdated.toLocaleDateString('en-US', {
 <PageLayout title={item.data.title}>
   <Container class="py-16 lg:py-24">
     <div class="mx-auto max-w-3xl">
-      <h1 class="text-3xl font-semibold text-text-primary">{item.data.title}</h1>
+      <h1 class="text-3xl text-text-primary lg:text-4xl">{item.data.title}</h1>
       <p class="mt-2 text-sm text-text-muted">
         {item.data.version && <>Version: {item.data.version} &middot; </>}Last updated: {formatted}
       </p>
