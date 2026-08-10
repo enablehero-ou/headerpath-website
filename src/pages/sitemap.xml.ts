@@ -10,6 +10,7 @@ const staticPages = [
   { path: '/alternatives', priority: '0.8', changefreq: 'weekly' },
   { path: '/techniques', priority: '0.7', changefreq: 'weekly' },
   { path: '/blog', priority: '0.8', changefreq: 'daily' },
+  { path: '/changelog', priority: '0.6', changefreq: 'weekly' },
   { path: '/help', priority: '0.7', changefreq: 'weekly' },
   { path: '/legal/privacy', priority: '0.3', changefreq: 'yearly' },
   { path: '/legal/services-agreement', priority: '0.3', changefreq: 'yearly' },

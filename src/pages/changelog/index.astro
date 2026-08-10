@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import { formatWeekRange } from '../../lib/changelog';
+
+const entries = (await getCollection('changelog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.weekEnd.valueOf() - a.data.weekEnd.valueOf()
+);
+
+// render() is async, so resolve every entry's body up front and pair it with its data.
+const weeks = await Promise.all(
+  entries.map(async (entry) => ({
+    ...entry.data,
+    id: entry.id,
+    Content: (await render(entry)).Content,
+  }))
+);
+
+const title = 'Changelog';
+const description =
+  'What shipped in HeaderPath each week — new features, improvements, and fixes, in plain language.';
+---
+
+<PageLayout title={title} description={description}>
+  <Container class="py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-4xl text-text-primary lg:text-5xl">{title}</h1>
+      <p class="mt-3 text-lg text-text-secondary">{description}</p>
+
+      {
+        weeks.length === 0 ? (
+          <p class="mt-12 text-text-muted">No updates published yet. Check back Monday.</p>
+        ) : (
+          <div class="mt-12 space-y-16">
+            {weeks.map(({ id, week, year, weekStart, weekEnd, summary, Content }) => (
+              <article id={`w${year}-${week}`} class="scroll-mt-24" data-entry={id}>
+                <header class="border-b border-border pb-5">
+                  <a
+                    href={`#w${year}-${week}`}
+                    class="text-xs font-semibold uppercase tracking-widest text-text-muted no-underline hover:text-text-primary transition-colors"
+                  >
+                    Week {week} · {year}
+                  </a>
+                  <h2 class="mt-2 text-2xl text-text-primary lg:text-3xl leading-tight">
+                    <time datetime={weekEnd.toISOString()}>
+                      {formatWeekRange(weekStart, weekEnd)}
+                    </time>
+                  </h2>
+                  <p class="mt-2 text-base text-text-secondary">{summary}</p>
+                </header>
+
+                <div class="prose mt-6">
+                  <Content />
+                </div>
+              </article>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </Container>
+</PageLayout>

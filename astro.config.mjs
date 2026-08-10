@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://qurioos.com',
+  site: 'https://headerpath.com',
   output: 'static',
   adapter: vercel(),
 

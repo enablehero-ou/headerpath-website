@@ -22,6 +22,7 @@ export const nav = {
       label: 'Resources',
       links: [
         { label: 'Blog', href: '/blog' },
+        { label: 'Changelog', href: '/changelog' },
         { label: 'Techniques', href: '/techniques' },
         { label: 'Alternatives', href: '/alternatives' },
         { label: 'Help', href: '/help' },
