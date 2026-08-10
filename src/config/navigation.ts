@@ -18,12 +18,6 @@ export const nav = {
         { label: 'Sign Up', href: brand.signupUrl },
       ],
     },
-    company: {
-      label: 'Company',
-      links: [
-        { label: 'Careers', href: '/careers' },
-      ],
-    },
     resources: {
       label: 'Resources',
       links: [

@@ -65,6 +65,7 @@ const legal = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/legal' }),
   schema: z.object({
     title: z.string(),
+    version: z.string().optional(),
     lastUpdated: z.coerce.date(),
     effectiveDate: z.coerce.date().optional(),
   }),
