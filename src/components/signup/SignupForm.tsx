@@ -7,6 +7,8 @@ interface FormData {
   sells: string;
   migrating: string;
   migratingFrom: string;
+  /** utm_* params from the landing URL — tells us which campaign (e.g. the promo bar) sent them. */
+  utm: Record<string, string>;
 }
 
 interface Strings {
@@ -76,7 +78,19 @@ export default function SignupForm({ s }: { s: Strings }) {
 
   useEffect(() => {
     const saved = getCookieData();
-    if (saved && Object.keys(saved).length > 0) setForm(saved);
+    // Capture campaign params on landing: the URL only carries them on the first
+    // hit, so persist them alongside the answers and submit them with the form.
+    const params = new URLSearchParams(window.location.search);
+    const utm: Record<string, string> = { ...(saved.utm ?? {}) };
+    params.forEach((value, key) => {
+      if (key.startsWith('utm_') && value) utm[key] = value;
+    });
+
+    const next = { ...saved, ...(Object.keys(utm).length > 0 ? { utm } : {}) };
+    if (Object.keys(next).length > 0) {
+      setForm(next);
+      setCookieData(next);
+    }
   }, []);
 
   function save(update: Partial<FormData>) {
@@ -105,19 +119,28 @@ export default function SignupForm({ s }: { s: Strings }) {
   const stepIndex = step === 'done' ? STEPS.length : STEPS.indexOf(step);
   const progress = ((stepIndex + (step === 'done' ? 0 : 1)) / STEPS.length) * 100;
 
+  // Tiles, not pills: a 2px mid-tone border so the choices read as targets on white,
+  // since a hairline `border-border` all but disappears at this size.
   const optionClass = (selected: boolean) =>
     [
-      'rounded-xl border px-5 py-3 text-sm transition-colors cursor-pointer',
+      'flex min-h-[6.5rem] cursor-pointer items-center justify-center rounded-2xl border-2 px-6 py-5',
+      'text-center text-base transition-all duration-150',
       selected
-        ? 'border-action bg-accent/10 text-text-primary font-medium'
-        : 'border-border bg-bg-card text-text-secondary hover:border-action hover:text-text-primary',
+        ? 'border-action bg-accent/15 font-medium text-text-primary shadow-soft'
+        : 'border-accent/45 bg-accent/5 text-text-primary hover:-translate-y-0.5 hover:border-accent hover:bg-accent/10 hover:shadow-soft',
     ].join(' ');
 
   const headingClass = 'font-serif text-3xl text-text-primary lg:text-4xl';
+  const inputClass =
+    'mt-2 w-full rounded-xl border-2 border-accent/45 bg-bg-primary px-4 py-3.5 text-base text-text-primary outline-none transition-colors placeholder:text-text-muted hover:border-accent focus:border-action';
+  const cardClass = 'surface rounded-3xl p-8 lg:p-10';
+  const submitClass =
+    'mt-8 w-full rounded-full bg-action px-7 py-4 text-base font-medium text-action-fg transition-colors hover:bg-action-hover disabled:opacity-60';
 
   if (step === 'done') {
     return (
-      <div className="mx-auto max-w-lg px-4 py-24 text-center">
+      <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 py-10">
+        <div className={`${cardClass} w-full max-w-2xl text-center`}>
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent/15">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -133,6 +156,7 @@ export default function SignupForm({ s }: { s: Strings }) {
         <h2 className={`${headingClass} mt-6`}>{s.doneTitle}</h2>
         <p className="mt-4 text-base text-text-secondary">{s.doneBody}</p>
         <p className="mt-6 text-sm text-text-muted">{s.doneHint}</p>
+        </div>
       </div>
     );
   }
@@ -140,14 +164,17 @@ export default function SignupForm({ s }: { s: Strings }) {
   return (
     <div>
       {/* Progress bar — sits directly under the sticky header, so it stays visible. */}
-      <div className="h-1 w-full bg-border-subtle">
+      <div className="h-1 w-full bg-accent/15">
         <div
-          className="h-full bg-action transition-[width] duration-300"
+          className="h-full bg-gradient-to-r from-accent to-action transition-[width] duration-300"
           style={{ width: `${progress}%` }}
         />
       </div>
 
-      <div className="mx-auto max-w-lg px-4 py-20">
+      {/* Vertically centred in the viewport below the header + progress bar. */}
+      <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 py-10">
+        <div className="w-full max-w-2xl">
+          <div className={cardClass}>
         {step === 'email' && (
           <form
             onSubmit={(e) => {
@@ -171,7 +198,7 @@ export default function SignupForm({ s }: { s: Strings }) {
                   autoFocus
                   defaultValue={form.email ?? ''}
                   placeholder={s.emailPlaceholder}
-                  className="mt-2 w-full rounded-xl border border-border bg-bg-card px-4 py-3 text-base text-text-primary outline-none focus:border-action"
+                  className={inputClass}
                 />
               </label>
               <label className="block">
@@ -181,13 +208,13 @@ export default function SignupForm({ s }: { s: Strings }) {
                   type="text"
                   defaultValue={form.website ?? ''}
                   placeholder={s.websitePlaceholder}
-                  className="mt-2 w-full rounded-xl border border-border bg-bg-card px-4 py-3 text-base text-text-primary outline-none focus:border-action"
+                  className={inputClass}
                 />
               </label>
             </div>
             <button
               type="submit"
-              className="mt-8 w-full rounded-full bg-action px-7 py-3.5 text-base font-medium text-action-fg transition-colors hover:bg-action-hover"
+              className={submitClass}
             >
               {s.continue}
             </button>
@@ -197,7 +224,7 @@ export default function SignupForm({ s }: { s: Strings }) {
         {step === 'audience' && (
           <div className="text-center">
             <h1 className={headingClass}>{s.audienceTitle}</h1>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
                 ['individual', s.audienceIndividual],
                 ['company', s.audienceCompany],
@@ -222,7 +249,7 @@ export default function SignupForm({ s }: { s: Strings }) {
         {step === 'sells' && (
           <div className="text-center">
             <h1 className={headingClass}>{s.sellTitle}</h1>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
                 ['yes', s.sellYes],
                 ['no', s.sellNo],
@@ -248,7 +275,7 @@ export default function SignupForm({ s }: { s: Strings }) {
           <div className="text-center">
             <p className="eyebrow eyebrow--accent">{s.migrateNote}</p>
             <h1 className={`${headingClass} mt-3`}>{s.migrateTitle}</h1>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={() => save({ migrating: 'yes' })}
@@ -292,13 +319,13 @@ export default function SignupForm({ s }: { s: Strings }) {
                     autoFocus
                     defaultValue={form.migratingFrom ?? ''}
                     placeholder={s.migrateWhichPlaceholder}
-                    className="mt-2 w-full rounded-xl border border-border bg-bg-card px-4 py-3 text-base text-text-primary outline-none focus:border-action"
+                    className={inputClass}
                   />
                 </label>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="mt-6 w-full rounded-full bg-action px-7 py-3.5 text-base font-medium text-action-fg transition-colors hover:bg-action-hover disabled:opacity-60"
+                  className={submitClass}
                 >
                   {s.continue}
                 </button>
@@ -307,8 +334,10 @@ export default function SignupForm({ s }: { s: Strings }) {
           </div>
         )}
 
+          </div>
+
         {/* Legal line — same contract the product app signs people up under. */}
-        <p className="mt-12 text-center text-xs text-text-muted">
+        <p className="mt-8 text-center text-xs text-text-muted">
           {s.legalPrefix}{' '}
           <a href="/legal/services-agreement" className="text-text-secondary underline underline-offset-2">
             {s.legalTerms}
@@ -321,14 +350,17 @@ export default function SignupForm({ s }: { s: Strings }) {
         </p>
 
         {stepIndex > 0 && (
-          <button
-            type="button"
-            onClick={goBack}
-            className="mt-8 inline-flex items-center gap-1.5 text-sm text-text-muted transition-colors hover:text-text-primary"
-          >
-            <span aria-hidden="true">←</span> {s.back}
-          </button>
+          <div className="mt-6 text-center">
+            <button
+              type="button"
+              onClick={goBack}
+              className="inline-flex items-center gap-1.5 text-sm text-text-muted transition-colors hover:text-text-primary"
+            >
+              <span aria-hidden="true">←</span> {s.back}
+            </button>
+          </div>
         )}
+        </div>
       </div>
     </div>
   );

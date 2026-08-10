@@ -32,18 +32,26 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > Every user-visible string comes from `src/i18n/translations.ts`, never inline in a
 > component. All brand URLs/emails/pricing from `brand.ts`.
 >
-> **🔴 PRICE RULE — the amount appears on `/pricing` and nowhere else.**
-> `brand.pricing` is the single source and `src/pages/pricing.astro` is the only page that
-> renders it, so the price is changed in exactly one place. Never put a figure in the FAQ,
-> a CTA band, a translation string, or blog copy — say "one flat plan, everything
+> **🔴 PRICE RULE — the plan price appears on `/pricing` and nowhere else.**
+> `brand.pricing.flat` is the single source and `src/pages/pricing.astro` is the only page
+> that renders it, so the price is changed in exactly one place. Never put a figure in the
+> FAQ, a CTA band, a translation string, or blog copy — say "one flat plan, everything
 > unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
 > fine; a HeaderPath price is not.
 >
-> **Promotional pricing follows the same rule.** `brand.pricing.promo` is the single source
-> for the time-boxed intro offer and it renders only inside the `/pricing` plan card.
-> **To retire the promo, set `promo.active: false` in `brand.ts` — that one flag removes the
-> offer from the site.** Never delete the block, hardcode the promo figure, or repeat the
-> offer in a CTA band, the FAQ, an email, or blog copy; there is nowhere else to update.
+> **The promo bar is the one sanctioned exception, and it is site-wide by design.**
+> `brand.pricing.promo` holds the time-boxed intro offer and `PromoBar.astro` renders it as a
+> strip above the header on every page, so the promo figure legitimately appears everywhere.
+> It does **not** appear in the `/pricing` plan card — the card shows the standard price only.
+> Retire the offer by removing `<PromoBar />` from `PageLayout.astro` and `signup.astro`
+> (the only two mount points); there is no on/off flag. The promo figure still comes from
+> `brand.ts` alone — never hardcode it, and never restate the offer in body copy or the FAQ.
+>
+> The bar's copy lives in `translations.promoBar` as templates with `{price}` / `{months}`
+> placeholders, with a `textShort` variant so the strip never wraps on mobile. Its CTA links
+> to `brand.signupUrl` carrying `brand.pricing.promo.utm` as `utm_*` params; `SignupForm`
+> captures any `utm_*` on landing into the signup cookie and submits them, which is how a
+> signup is attributed to the promo. Change the campaign tag in `brand.ts`, not in the link.
 
 GTM-style note: this is a static marketing site, so the "things that run" are pages and
 content, not workflows. The doc below is the reference map for those.
@@ -185,7 +193,7 @@ Never use `bg-accent` for a button or for any solid block. `bg-accent/5`–`/10`
 
 `src/components/ui/`: `Container` (max-w-7xl wrapper) · `Button` (primary/secondary/ghost,
 pill) · `Card` (uses `.surface`) · `Badge` (accent pill). Sections in
-`src/components/sections/`; layout chrome in `src/components/layout/` (Header, Footer, CookieBanner,
+`src/components/sections/`; layout chrome in `src/components/layout/` (Header, PromoBar, Footer, CookieBanner,
 BaseHead, MobileNav, FAQAccordion).
 
 ## Help / Docs Article Conventions

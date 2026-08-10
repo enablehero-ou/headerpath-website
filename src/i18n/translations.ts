@@ -97,6 +97,12 @@ export const translations = {
     footer: {
       copyright: 'All rights reserved.',
     },
+    promoBar: {
+      label: 'Limited time offer',
+      text: '{price} for your first {months} months',
+      textShort: '{price} for {months} months',
+      cta: 'Claim offer',
+    },
     cookies: {
       message: 'We use cookies to collect data and improve our services.',
       learnMore: 'Learn more',
@@ -125,7 +131,7 @@ export const translations = {
       migrateYes: 'Yes',
       migrateNo: 'No',
       migrateWhichLabel: 'Which one?',
-      migrateWhichPlaceholder: 'e.g. Thinkific, Docebo, TalentLMS',
+      migrateWhichPlaceholder: 'e.g. Teachable, Kajabi, LearnWorlds...',
       doneTitle: 'Verify your email!',
       doneBody:
         "We've sent you an email to verify your account. Click the link inside and your academy will be ready to set up.",
@@ -244,6 +250,12 @@ export const translations = {
     footer: {
       copyright: 'Todos los derechos reservados.',
     },
+    promoBar: {
+      label: 'Oferta por tiempo limitado',
+      text: '{price} los primeros {months} meses',
+      textShort: '{price} por {months} meses',
+      cta: 'Aprovechar',
+    },
     cookies: {
       message: 'Usamos cookies para recopilar datos y mejorar nuestros servicios.',
       learnMore: 'Más información',
@@ -272,7 +284,7 @@ export const translations = {
       migrateYes: 'Sí',
       migrateNo: 'No',
       migrateWhichLabel: '¿Cuál?',
-      migrateWhichPlaceholder: 'p. ej. Thinkific, Docebo, TalentLMS',
+      migrateWhichPlaceholder: 'p. ej. Teachable, Kajabi, LearnWorlds...',
       doneTitle: '¡Verifica tu correo!',
       doneBody:
         'Te hemos enviado un correo para verificar tu cuenta. Haz clic en el enlace y tu academia estará lista para configurar.',
@@ -391,6 +403,12 @@ export const translations = {
     footer: {
       copyright: 'Tous droits réservés.',
     },
+    promoBar: {
+      label: 'Offre à durée limitée',
+      text: '{price} les {months} premiers mois',
+      textShort: '{price} / {months} mois',
+      cta: 'En profiter',
+    },
     cookies: {
       message: 'Nous utilisons des cookies pour collecter des données et améliorer nos services.',
       learnMore: 'En savoir plus',
@@ -419,7 +437,7 @@ export const translations = {
       migrateYes: 'Oui',
       migrateNo: 'Non',
       migrateWhichLabel: 'Laquelle ?',
-      migrateWhichPlaceholder: 'ex. Thinkific, Docebo, TalentLMS',
+      migrateWhichPlaceholder: 'ex. Teachable, Kajabi, LearnWorlds...',
       doneTitle: 'Vérifiez votre e-mail !',
       doneBody:
         "Nous vous avons envoyé un e-mail pour vérifier votre compte. Cliquez sur le lien et votre académie sera prête à configurer.",

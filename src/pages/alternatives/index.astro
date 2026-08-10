@@ -16,7 +16,7 @@ const items = (await getCollection('alternatives', ({ data }) => !data.draft))
 <PageLayout title={t.alternatives.title} description={t.alternatives.subtitle}>
   <Container class="py-16 lg:py-24">
     <div class="mb-12">
-      <h1 class="text-4xl font-semibold text-text-primary">{t.alternatives.title}</h1>
+      <h1 class="text-4xl text-text-primary lg:text-5xl">{t.alternatives.title}</h1>
       <p class="mt-3 text-lg text-text-secondary">{t.alternatives.subtitle}</p>
     </div>
 
