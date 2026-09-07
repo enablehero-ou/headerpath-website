@@ -1,11 +1,9 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Container from '../components/ui/Container.astro';
-import Button from '../components/ui/Button.astro';
 import ProductFeatures from '../components/sections/ProductFeatures.astro';
 import FAQ from '../components/sections/FAQ.astro';
 import CTA from '../components/sections/CTA.astro';
-import { brand } from '../config/brand';
 import { useTranslations } from '../i18n/translations';
 import type { Locale } from '../i18n/translations';
 
@@ -49,33 +47,6 @@ const productFaqs = [
 ---
 
 <PageLayout title={t.product.heroTitle} description={t.product.heroSubtitle}>
-  <!-- Product hero -->
-  <section class="grain relative overflow-hidden bg-bg-primary pt-28 pb-16 lg:pt-36 lg:pb-20">
-    <div class="atmosphere pointer-events-none absolute inset-0"></div>
-    <div
-      class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
-    >
-    </div>
-
-    <Container class="relative">
-      <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <p class="eyebrow eyebrow--accent mb-8">{t.product.heroEyebrow}</p>
-        <h1 class="text-4xl text-text-primary sm:text-5xl lg:text-6xl">
-          {t.product.heroTitle}
-        </h1>
-        <p class="mt-7 max-w-xl text-lg text-text-secondary">
-          {t.product.heroSubtitle}
-        </p>
-        <div class="mt-10 flex flex-col items-center gap-3">
-          <Button href={brand.signupUrl} variant="primary" size="lg">
-            {t.product.heroCta}
-          </Button>
-          <span class="text-xs text-text-muted">No credit card required</span>
-        </div>
-      </div>
-    </Container>
-  </section>
-
   <ProductFeatures />
   <FAQ eyebrow={t.product.faqLabel} title={t.product.faqTitle} items={productFaqs} />
   <CTA />
