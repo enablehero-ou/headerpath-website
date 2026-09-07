@@ -48,9 +48,6 @@
       that is correct — if translation is actually metered on top, the copy needs rewording.
 - [ ] Homepage length — 17 fully-detailed feature cards; trim or keep?
 
-## Infra / ops
-- [ ] Repo-specific `/main` skill (squash-merge to `main` + hard-reset `dev` to `main`); `/ship` is already repo-specific and prunes `priorities.md`
-
 ## Nice-to-have
 - [ ] Add a real product screenshot/visual to the hero when available
 - [ ] Translate blog / techniques / help content for es/fr (only if i18n is kept)

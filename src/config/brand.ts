@@ -37,7 +37,7 @@ export const brand = {
   },
   social: {
     // TODO: rename the LinkedIn company page, then update this handle.
-    linkedin: 'https://linkedin.com/company/qurioos',
+    linkedin: 'https://www.linkedin.com/company/headerpath/',
   },
   stats: [
     { value: '100+', label: 'Programs' },

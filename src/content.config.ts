@@ -84,8 +84,24 @@ const docs = defineCollection({
   }),
 });
 
+// Weekly product changelog — one entry per ISO week, generated from merges to
+// main in headerpath-app and published after human review. Continuous shipping,
+// so entries are dated, never versioned. File name: <year>-w<week>.md
+const changelog = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/changelog' }),
+  schema: z.object({
+    week: z.number().int().min(1).max(53),
+    year: z.number().int(),
+    weekStart: z.coerce.date(),
+    weekEnd: z.coerce.date(),
+    summary: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   blog,
+  changelog,
   alternatives,
   techniques,
   integrations,
