@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface FormData {
   email: string;
@@ -37,6 +37,11 @@ interface Strings {
   doneTitle: string;
   doneBody: string;
   doneHint: string;
+  waitlistTitle: string;
+  waitlistBody: string;
+  errorGeneric: string;
+  errorEmail: string;
+  errorRecaptcha: string;
   legalPrefix: string;
   legalTerms: string;
   legalMiddle: string;
@@ -69,12 +74,48 @@ function clearCookie() {
 }
 
 const STEPS = ['email', 'audience', 'sells', 'migrating'] as const;
-type Step = (typeof STEPS)[number] | 'done';
+type Step = (typeof STEPS)[number] | 'done' | 'waitlisted';
+
+// Step 1 of self-serve signup lives in the product app (platform host). See
+// headerpath-app/docs/self-serve-signup.md.
+const SIGNUP_API = import.meta.env.PUBLIC_SIGNUP_API_URL || 'https://get.headerpath.com/api/signup';
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY as string | undefined;
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+function recaptchaToken(): Promise<string | undefined> {
+  if (!RECAPTCHA_SITE_KEY || !window.grecaptcha) return Promise.resolve(undefined);
+  return new Promise((resolve) => {
+    window.grecaptcha!.ready(async () => {
+      try {
+        resolve(await window.grecaptcha!.execute(RECAPTCHA_SITE_KEY, { action: 'signup' }));
+      } catch {
+        resolve(undefined);
+      }
+    });
+  });
+}
+
+/** The app speaks en/es/he/el; the site's fr falls back to en. */
+function appLocale(): string {
+  const l = document.documentElement.lang || 'en';
+  return ['en', 'es', 'he', 'el'].includes(l) ? l : 'en';
+}
 
 export default function SignupForm({ s }: { s: Strings }) {
   const [step, setStep] = useState<Step>('email');
   const [form, setForm] = useState<Partial<FormData>>({});
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  // Honeypot value captured on the email step (the field is gone from the DOM by the final step).
+  const honeypot = useRef('');
 
   useEffect(() => {
     const saved = getCookieData();
@@ -106,18 +147,49 @@ export default function SignupForm({ s }: { s: Strings }) {
   }
 
   async function submit(finalForm: Partial<FormData>) {
-    // STUB: the self-serve signup API is not built yet (app-side).
-    // TODO: POST finalForm to the HeaderPath provisioning API once it ships,
-    // which is what actually sends the verification email promised below.
     setLoading(true);
-    void finalForm;
-    clearCookie();
-    setStep('done');
-    setLoading(false);
+    setError(null);
+    try {
+      const res = await fetch(SIGNUP_API, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: finalForm.email,
+          website: finalForm.website ?? '',
+          audience: finalForm.audience ?? '',
+          sells: finalForm.sells ?? '',
+          migrating: finalForm.migrating ?? '',
+          migratingFrom: finalForm.migratingFrom ?? '',
+          utm: finalForm.utm ?? {},
+          locale: appLocale(),
+          recaptchaToken: await recaptchaToken(),
+          fax: honeypot.current,
+        }),
+      });
+      const body = (await res.json().catch(() => ({}))) as { ok?: boolean; waitlisted?: boolean; code?: string };
+      if (!res.ok) {
+        if (body.code === 'disposable' || body.code === 'role_address' || body.code === 'no_mx') {
+          setError(s.errorEmail);
+          setStep('email');
+        } else if (body.code === 'recaptcha') {
+          setError(s.errorRecaptcha);
+        } else {
+          setError(s.errorGeneric);
+        }
+        return;
+      }
+      clearCookie();
+      setStep(body.waitlisted ? 'waitlisted' : 'done');
+    } catch {
+      setError(s.errorGeneric);
+    } finally {
+      setLoading(false);
+    }
   }
 
-  const stepIndex = step === 'done' ? STEPS.length : STEPS.indexOf(step);
-  const progress = ((stepIndex + (step === 'done' ? 0 : 1)) / STEPS.length) * 100;
+  const finished = step === 'done' || step === 'waitlisted';
+  const stepIndex = finished ? STEPS.length : STEPS.indexOf(step as (typeof STEPS)[number]);
+  const progress = ((stepIndex + (finished ? 0 : 1)) / STEPS.length) * 100;
 
   // Tiles, not pills: a 2px mid-tone border so the choices read as targets on white,
   // since a hairline `border-border` all but disappears at this size.
@@ -137,7 +209,8 @@ export default function SignupForm({ s }: { s: Strings }) {
   const submitClass =
     'mt-8 w-full rounded-full bg-action px-7 py-4 text-base font-medium text-action-fg transition-colors hover:bg-action-hover disabled:opacity-60';
 
-  if (step === 'done') {
+  if (finished) {
+    const waitlisted = step === 'waitlisted';
     return (
       <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 py-10">
         <div className={`${cardClass} w-full max-w-2xl text-center`}>
@@ -153,9 +226,9 @@ export default function SignupForm({ s }: { s: Strings }) {
             />
           </svg>
         </div>
-        <h2 className={`${headingClass} mt-6`}>{s.doneTitle}</h2>
-        <p className="mt-4 text-base text-text-secondary">{s.doneBody}</p>
-        <p className="mt-6 text-sm text-text-muted">{s.doneHint}</p>
+        <h2 className={`${headingClass} mt-6`}>{waitlisted ? s.waitlistTitle : s.doneTitle}</h2>
+        <p className="mt-4 text-base text-text-secondary">{waitlisted ? s.waitlistBody : s.doneBody}</p>
+        {!waitlisted && <p className="mt-6 text-sm text-text-muted">{s.doneHint}</p>}
         </div>
       </div>
     );
@@ -182,12 +255,22 @@ export default function SignupForm({ s }: { s: Strings }) {
               const fd = new FormData(e.currentTarget);
               const email = (fd.get('email') as string).trim();
               if (!email) return;
+              honeypot.current = ((fd.get('fax') as string | null) ?? '').trim();
               save({ email, website: (fd.get('website') as string).trim() });
               setStep('audience');
             }}
           >
             <h1 className={`${headingClass} text-center`}>{s.title}</h1>
             <p className="mt-3 text-center text-base text-text-secondary">{s.subtitle}</p>
+            {/* Honeypot: off-screen, never filled by people. */}
+            <input
+              name="fax"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute -left-[9999px] h-0 w-0 opacity-0"
+            />
             <div className="mt-8 space-y-4 text-left">
               <label className="block">
                 <span className="text-sm font-medium text-text-primary">{s.emailLabel}</span>
@@ -335,6 +418,12 @@ export default function SignupForm({ s }: { s: Strings }) {
         )}
 
           </div>
+
+        {error && (
+          <p className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-center text-sm text-red-700" role="alert">
+            {error}
+          </p>
+        )}
 
         {/* Legal line — same contract the product app signs people up under. */}
         <p className="mt-8 text-center text-xs text-text-muted">

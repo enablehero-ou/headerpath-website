@@ -136,6 +136,12 @@ export const translations = {
       doneBody:
         "We've sent you an email to verify your account. Click the link inside and your academy will be ready to set up.",
       doneHint: "Didn't get it? Check your spam folder, or write to us and we'll help.",
+      waitlistTitle: "You're on the list",
+      waitlistBody:
+        "We open a limited number of new academies each day and today's are all taken. Your place is saved — we'll email you the setup link as soon as a slot opens, usually within 24 hours.",
+      errorGeneric: 'Something went wrong. Please try again.',
+      errorEmail: 'Please use a real work or personal email address — temporary and role inboxes are not accepted.',
+      errorRecaptcha: "We couldn't verify that you're human. Refresh the page and try again.",
       legalPrefix: 'By signing up, you agree to our',
       legalTerms: 'Services Agreement',
       legalMiddle: 'and acknowledge our',
@@ -289,6 +295,12 @@ export const translations = {
       doneBody:
         'Te hemos enviado un correo para verificar tu cuenta. Haz clic en el enlace y tu academia estará lista para configurar.',
       doneHint: '¿No te ha llegado? Revisa la carpeta de spam o escríbenos y te ayudamos.',
+      waitlistTitle: 'Estás en la lista',
+      waitlistBody:
+        'Abrimos un número limitado de academias nuevas cada día y las de hoy ya están ocupadas. Tu lugar está guardado — te enviaremos el enlace de configuración en cuanto haya un hueco, normalmente en menos de 24 horas.',
+      errorGeneric: 'Algo salió mal. Inténtalo de nuevo.',
+      errorEmail: 'Usa una dirección de correo real de trabajo o personal — no se aceptan buzones temporales ni genéricos.',
+      errorRecaptcha: 'No pudimos verificar que eres humano. Recarga la página e inténtalo de nuevo.',
       legalPrefix: 'Al registrarte, aceptas nuestro',
       legalTerms: 'Acuerdo de Servicios',
       legalMiddle: 'y reconoces nuestra',
@@ -442,6 +454,12 @@ export const translations = {
       doneBody:
         "Nous vous avons envoyé un e-mail pour vérifier votre compte. Cliquez sur le lien et votre académie sera prête à configurer.",
       doneHint: "Rien reçu ? Vérifiez vos spams ou écrivez-nous et nous vous aiderons.",
+      waitlistTitle: 'Vous êtes sur la liste',
+      waitlistBody:
+        "Nous ouvrons un nombre limité de nouvelles académies chaque jour et celles d'aujourd'hui sont toutes prises. Votre place est réservée — nous vous enverrons le lien de configuration dès qu'une place se libère, généralement sous 24 heures.",
+      errorGeneric: "Une erreur s'est produite. Veuillez réessayer.",
+      errorEmail: 'Utilisez une vraie adresse e-mail professionnelle ou personnelle — les boîtes temporaires et génériques ne sont pas acceptées.',
+      errorRecaptcha: "Nous n'avons pas pu vérifier que vous êtes humain. Actualisez la page et réessayez.",
       legalPrefix: 'En vous inscrivant, vous acceptez notre',
       legalTerms: 'Contrat de Services',
       legalMiddle: 'et reconnaissez notre',
