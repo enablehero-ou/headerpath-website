@@ -1,6 +1,6 @@
 ---
 title: "Use a HeaderPath subdomain"
-description: "Start instantly with your free yourname.headerpath.com subdomain and switch to a custom domain whenever you’re ready."
+description: "Start instantly with your free yourname.headerpath.app subdomain and switch to a custom domain whenever you’re ready."
 category: "hosting-domains"
 ---
 
@@ -8,7 +8,7 @@ category: "hosting-domains"
 
 When you create your HeaderPath account, you automatically get a free subdomain in the format:
 
-`yourname.headerpath.com`
+`yourname.headerpath.app`
 
 This address is ready to use immediately, no setup required on your end. You can share it with your learners and start using your account right away.
 
