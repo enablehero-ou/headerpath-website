@@ -18,6 +18,15 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > scaffold and **`qurioos.com` DNS still points at Loveable**, not Vercel. The public
 > cutover is a pending item in `priorities.md`, not done.
 
+> **🔴 HELP-CENTER RULE — read [`HELP-CENTER-GUIDE.md`](HELP-CENTER-GUIDE.md) before
+> touching any article in `src/content/docs/en/`.**
+>
+> Articles are conversion and customer-education assets, not technical documentation.
+> **NEVER mention `superadmin`** or any synonym anywhere customer-facing — roles are
+> admin, manager, learner. **NEVER write articles for** `priorities.md` items, handoff
+> docs, features in progress, internal-facing tooling, or features we have retired.
+> Only what is live for customers today.
+
 > **🔴 POSITIONING RULE — HeaderPath is the product, not a service.**
 >
 > HeaderPath is an **AI-native academy SaaS** — self-serve software that builds and runs
