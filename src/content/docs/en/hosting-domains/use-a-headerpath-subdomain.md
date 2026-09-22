@@ -25,6 +25,10 @@ You can start with your HeaderPath subdomain and change to a custom domain (e.g.
 - This is a one-time setup step that requires admin access and the ability to update your domain’s DNS settings.
 - Once connected, your account will load on your custom domain, and you can choose to keep your HeaderPath subdomain active as well.
 
+### If your academy is removed
+
+Free academies that stay unused for 30 days are removed, and you get an email a week before so nothing disappears by surprise. Your academy name (`yourname.headerpath.app`) is then reserved for you for another 30 days — nobody else can claim it in the meantime. Sign up again with the same email to get it back.
+
 ### Next steps
 
 If you’d like to connect a custom domain, see our guide on [connecting a custom domain](/docs/connect-your-domain) for instructions.
