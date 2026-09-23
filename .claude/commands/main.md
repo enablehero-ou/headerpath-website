@@ -14,4 +14,17 @@ Merge the current branch's open PR to `main`, deploy to production, sync `dev`.
 **After merge:**
 
 6. Confirm the Vercel **production** deployment for `main` started (`vercel` MCP `list_deployments`, or `gh` / the Vercel dashboard). **IF no production deployment appears within ~1 minute** → **THEN** say so explicitly rather than assuming it deployed.
-7. Report the merged PR URL **and** the production deployment URL/status.
+7. Post the **Google Chat summary** below.
+8. Report the merged PR URL, the production deployment URL/status, and `Chat post: sent / failed (<code>)`.
+
+## Google Chat post (space "app.headerpath.com") — after the merge
+
+Post the **final** summary of what actually landed on `main` (read it from the squashed commit, `git show --stat main`, not from the pre-merge PR description — the PR may have changed after `/ship`). Webhook URL: `GOOGLE_CHAT_WEBHOOK_URL` in `~/Documents/CC/headerpath-app/.env.local` (both repos read it from there; never print it).
+
+- Line 1: `✅ Live — <repo> — <PR title>` (title from `gh pr view <n> --json title`).
+- Line 2: `<date> <time> Athens` — `TZ=Europe/Athens date '+%Y-%m-%d %H:%M'`.
+- Then 2–5 bullets "What it includes" (user-visible outcomes, ≤ 12 words each), then the PR URL, then `https://www.headerpath.com`.
+- Write the `{"text": "..."}` body to a scratch file with a heredoc, then:
+  `curl -s -o /dev/null -w "%{http_code}" -X POST -H 'Content-Type: application/json; charset=UTF-8' --data @<file> "$(grep '^GOOGLE_CHAT_WEBHOOK_URL=' ~/Documents/CC/headerpath-app/.env.local | cut -d= -f2- | tr -d '"')"`
+- A non-200 never blocks anything — report `Chat post: failed (<code>)` and move on.
+
