@@ -28,3 +28,18 @@ Post the **final** summary of what actually landed on `main` (read it from the s
   `curl -s -o /dev/null -w "%{http_code}" -X POST -H 'Content-Type: application/json; charset=UTF-8' --data @<file> "$(grep '^GOOGLE_CHAT_WEBHOOK_URL=' ~/Documents/CC/headerpath-app/.env.local | cut -d= -f2- | tr -d '"')"`
 - A non-200 never blocks anything — report `Chat post: failed (<code>)` and move on.
 
+## 👉 NEXT STEP — always the very last thing you print
+
+Print this block last, after everything else, every single time. Plain words, no jargon.
+One command only. If the user must choose, list each case with its own command.
+
+```
+👉 NEXT STEP
+Run:    /<command>
+Where:  <folder, e.g. ~/Documents/CC/headerpath-app — "this folder" if unchanged>
+Why:    <one short sentence>
+```
+
+Cases:
+- Merged → `Run: nothing — cycle done.` The site is live.
+- Guard failed → `Run: /ship` (no PR) or wait for the red check and re-run `/main`.

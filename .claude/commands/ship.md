@@ -37,6 +37,20 @@ The report must be a 1-click checklist: every line a **full, clickable URL** on 
   - `<full url>` — what to look for (≤ 8 words)
   - `<full url>` — …
 - Chat post: `sent` / `failed (<code>)`
-- Then run `/main`.
 
 If Vercel has not finished building yet, say "preview building — URLs valid in ~1 min" above the list; do not wait.
+
+## 👉 NEXT STEP — always the very last thing you print
+
+Print this block last, after everything else, every single time. Plain words, no jargon.
+One command only. If the user must choose, list each case with its own command.
+
+```
+👉 NEXT STEP
+Run:    /<command>
+Where:  <folder, e.g. ~/Documents/CC/headerpath-app — "this folder" if unchanged>
+Why:    <one short sentence>
+```
+
+Cases:
+- PR created → `Run: /main` · Where: this folder · Why: check the URLs above first, then publish.
