@@ -16,11 +16,15 @@
 ## Pre-launch fixes
 - [ ] LinkedIn handle — parked by decision. Rename the company page, then update `brand.ts`.
 - [ ] es/fr locales render empty (new copy is English-only) — translate or remove `es`/`fr` from `astro.config.mjs` i18n. Deferred by decision, still live in the nav.
-- [ ] `/signup` — currently a **stub** (no live API). Wire the 4-step form to the new
-      HeaderPath provisioning API when it ships (app-side). The final screen already
-      promises a verification email, so the API must actually send one before launch.
-- [ ] `/signup` has **no bot/abuse protection** — no CAPTCHA, rate limit, or honeypot. Harmless
-      while the form is a stub, but must land before it posts to a real provisioning API.
+- [ ] `/signup` is wired to the app's self-serve API (on `dev`, 2026-09-14). Before it goes
+      to `main`: set `PUBLIC_RECAPTCHA_SITE_KEY` on the Vercel `website` project (reCAPTCHA v3
+      badge visible, no notice text needed) and ship the app side first.
+- [ ] Legal/UX text pass for self-serve: Services Agreement (free plan limits 1 course / 10
+      learners / 1 video, 30-day deletion of empty academies, daily signup cap, slug policy),
+      Privacy (reCAPTCHA, `pending_signups` retention 24 h / 30 d, sub-processors), rewrite the
+      help article "Google reCAPTCHA v3 on signup" (currently describes the old platform),
+      reword generic "Slack" integration mentions (blog/help), add help articles *Create your
+      academy* / *Free plan limits* / *Inactive academy deletion*. Spec: `headerpath-app/priorities.md`.
 - [ ] Cookie banner writes the same `cookie_consent` cookie the app uses, but the marketing
       site loads no analytics yet, so nothing reads it. Gate any future analytics tag on it,
       and add a "Privacy settings" footer link (`reopenCookieBanner()` is already exported).

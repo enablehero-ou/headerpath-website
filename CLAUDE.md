@@ -18,6 +18,15 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > scaffold and **`qurioos.com` DNS still points at Loveable**, not Vercel. The public
 > cutover is a pending item in `priorities.md`, not done.
 
+> **🔴 HELP-CENTER RULE — read [`HELP-CENTER-GUIDE.md`](HELP-CENTER-GUIDE.md) before
+> touching any article in `src/content/docs/en/`.**
+>
+> Articles are conversion and customer-education assets, not technical documentation.
+> **NEVER mention `superadmin`** or any synonym anywhere customer-facing — roles are
+> admin, manager, learner. **NEVER write articles for** `priorities.md` items, handoff
+> docs, features in progress, internal-facing tooling, or features we have retired.
+> Only what is live for customers today.
+
 > **🔴 POSITIONING RULE — HeaderPath is the product, not a service.**
 >
 > HeaderPath is an **AI-native academy SaaS** — self-serve software that builds and runs
@@ -78,17 +87,18 @@ is the **marketing website** only.
 | **Vercel** | Hosting | Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-qurioos.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
 | **GitHub** | Source / CI | `qurioos-v0/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
 | **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
-| **Signup** | Stubbed | `brand.signupUrl` → local `/signup`; the form is a stub (no live API). Waiting on the app-side provisioning API. |
+| **Signup** | Live | `brand.signupUrl` → local `/signup`; `SignupForm` POSTs to the app's self-serve API (`PUBLIC_SIGNUP_API_URL`, default `https://get.headerpath.com/api/signup`) with a reCAPTCHA v3 token (`PUBLIC_RECAPTCHA_SITE_KEY`). Flow + security: `headerpath-app/docs/self-serve-signup.md`. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
 | **Google Fonts** | Webfonts | Inter, Fraunces, JetBrains Mono — loaded in `BaseHead.astro`. |
 | **Webflow / Loveable** | Retiring | Old site (`quriooscom.webflow.io`) was the content + asset source — all assets are now copied into `public/images/` so nothing depends on it. Loveable still serves the live `qurioos.com` until cutover. |
 
 ## Environment
 
-**No runtime secrets.** This is a fully static site — there is no `.env` needed to build or
-run it. The only external call is the legacy `/signup` form posting to a hardcoded URL.
-Local preview needs nothing beyond `node` + `pnpm`. (See `.env.example` for the — empty —
-contract.)
+**No runtime secrets.** This is a fully static site. The only external call is the `/signup`
+form posting to the product app's self-serve API. Two optional `PUBLIC_*` vars (Vercel project
+env, see `.env.example`): `PUBLIC_RECAPTCHA_SITE_KEY` (reCAPTCHA v3 — without it the form
+skips the captcha and production rejects the request) and `PUBLIC_SIGNUP_API_URL` (override
+for testing against a non-production app host). Local preview needs nothing beyond `node` + `pnpm`.
 
 ## Stack
 

@@ -1,6 +1,6 @@
 ---
 title: "Use a HeaderPath subdomain"
-description: "Start instantly with your free yourname.headerpath.com subdomain and switch to a custom domain whenever you’re ready."
+description: "Start instantly with your free yourname.headerpath.app subdomain and switch to a custom domain whenever you’re ready."
 category: "hosting-domains"
 ---
 
@@ -8,7 +8,7 @@ category: "hosting-domains"
 
 When you create your HeaderPath account, you automatically get a free subdomain in the format:
 
-`yourname.headerpath.com`
+`yourname.headerpath.app`
 
 This address is ready to use immediately, no setup required on your end. You can share it with your learners and start using your account right away.
 
@@ -24,6 +24,10 @@ You can start with your HeaderPath subdomain and change to a custom domain (e.g.
 
 - This is a one-time setup step that requires admin access and the ability to update your domain’s DNS settings.
 - Once connected, your account will load on your custom domain, and you can choose to keep your HeaderPath subdomain active as well.
+
+### If your academy is removed
+
+Free academies that stay unused for 30 days are removed, and you get an email a week before so nothing disappears by surprise. Your academy name (`yourname.headerpath.app`) is then reserved for you for another 30 days — nobody else can claim it in the meantime. Sign up again with the same email to get it back.
 
 ### Next steps
 
