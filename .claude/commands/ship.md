@@ -12,10 +12,10 @@ Then run `git push origin HEAD`. Then run `gh pr create --fill --base main` (or 
 
 The report must be a 1-click checklist: every line a **full, clickable URL** on the `dev` preview. Never report a bare path like `/signup` or a slug.
 
-**Base host:** `https://website-git-dev-qurioos.vercel.app` (Vercel preview of `dev`; deployment protection is ON, so the first open asks for a Vercel login — say so once).
+**Base host:** `https://website-git-dev-headerventures.vercel.app` (Vercel preview of `dev`; deployment protection is ON, so the first open asks for a Vercel login — say so once).
 
 **Derive the URLs from the diff** (`git diff main...HEAD --name-only`), one per changed surface:
-- `src/pages/<path>.astro` → `https://website-git-dev-qurioos.vercel.app/<path>` (`index` → `/`).
+- `src/pages/<path>.astro` → `https://website-git-dev-headerventures.vercel.app/<path>` (`index` → `/`).
 - `src/pages/es/**`, `src/pages/fr/**` → the same with the locale prefix.
 - Content collections (`src/content/<collection>/<slug>.md`, locale prefix stripped) → the rendered page URL per `notes/site-structure.md` (e.g. help articles → `/help/<slug>`, blog → `/blog/<slug>`); for a translated file give the locale URL.
 - Shared components / layouts / `brand.ts` / `navigation.ts` / global CSS → one representative page per affected template (home, one help article, one blog post, `/signup`, `/pricing`) — not every page.
