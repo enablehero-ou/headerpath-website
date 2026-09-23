@@ -265,7 +265,7 @@ taxonomy — see Content Collections.)
 - **Content files**: kebab-case `.md` / `.mdx` under `src/content/<type>/<locale>/`.
 - **Components**: PascalCase `.astro` (or `.tsx` for React islands).
 - **Imported brand assets**: `public/images/webflow/` (kebab-case; `int-*` for integration logos, person-name for headshots).
-- **Changelog help entries** (if used): `src/content/docs/en/changelog/YYYY-MM-DD-short-title.md`.
+- **Changelog entries**: `src/content/changelog/YYYY-wNN.md` — written by the `/changelog` skill in `headerpath-app` at the end of each release cycle, committed on `dev` here; `/ship` + `/main` publish it at `/changelog`.
 
 ## Repo Structure
 
