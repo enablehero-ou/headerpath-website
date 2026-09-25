@@ -85,7 +85,7 @@ is the **marketing website** only.
 | Surface | Role | Details |
 |---|---|---|
 | **Vercel** | Hosting | Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-headerventures.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
-| **GitHub** | Source / CI | `qurioos-v0/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
+| **GitHub** | Source / CI | `enablehero-ou/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
 | **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
 | **Signup** | Live | `brand.signupUrl` → local `/signup`; `SignupForm` POSTs to the app's self-serve API (`PUBLIC_SIGNUP_API_URL`, default `https://get.headerpath.com/api/signup`) with a reCAPTCHA v3 token (`PUBLIC_RECAPTCHA_SITE_KEY`). Flow + security: `headerpath-app/docs/self-serve-signup.md`. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
