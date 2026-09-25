@@ -49,7 +49,7 @@ If a sentence would only make sense to someone who has seen the codebase, cut it
 
 ## 🔴 NEVER write articles for
 
-- **`priorities.md` items** — forward-looking work is not a feature yet
+- **Open project-board tasks** — forward-looking work is not a feature yet
 - **Handoff documents** — internal session state, never customer-facing
 - **Features in progress** — if it is not live for customers, it does not get an article
 - **Anything internal-facing** — ops runbooks, migration notes, admin tooling, internal roles

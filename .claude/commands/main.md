@@ -14,8 +14,9 @@ Merge the current branch's open PR to `main`, deploy to production, sync `dev`.
 **After merge:**
 
 6. Confirm the Vercel **production** deployment for `main` started (`vercel` MCP `list_deployments`, or `gh` / the Vercel dashboard). **IF no production deployment appears within ~1 minute** → **THEN** say so explicitly rather than assuming it deployed.
-7. Post the **Google Chat summary** below.
-8. Report the merged PR URL, the production deployment URL/status, and `Chat post: sent / failed (<code>)`.
+7. **Close the shipped tasks.** For every `Refs #<n>` in the merged PR body: `gh issue close <n>` and set its Status to **Done** on the project board (project #4, same `gh project item-edit` call as `/ship`).
+8. Post the **Google Chat summary** below.
+9. Report the merged PR URL, the production deployment URL/status, and `Chat post: sent / failed (<code>)`.
 
 ## Google Chat post (space "app.headerpath.com") — after the merge
 

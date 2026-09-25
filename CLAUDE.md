@@ -6,9 +6,8 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 >
 > This file holds **infrastructure + system context only**. NO activity logs, fix
 > histories, "added on YYYY-MM-DD" notes, or status updates of any kind. Past work
-> lives in git history; current/forward work lives in [`priorities.md`](priorities.md).
-> When something ships, **delete it from `priorities.md`** — don't strike it through
-> or leave a breadcrumb. Update `priorities.md` every `/ship`.
+> lives in git history; current/forward work lives on the GitHub Project
+> [headerpath-website tasks](https://github.com/orgs/enablehero-ou/projects/4) — see *Task tracking*.
 
 > **🔴 DEPLOY RULE — one writer, one direction: `dev` → PR → `main` → Vercel.**
 >
@@ -16,14 +15,14 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > Vercel production deploy, then hard-resets `dev` to `main`. **Never push to `main`.**
 > Current truth: the rebuild lives on `dev`/preview only — `main` is still the original
 > scaffold and **`qurioos.com` DNS still points at Loveable**, not Vercel. The public
-> cutover is a pending item in `priorities.md`, not done.
+> cutover is a pending task on the project board, not done.
 
 > **🔴 HELP-CENTER RULE — read [`HELP-CENTER-GUIDE.md`](HELP-CENTER-GUIDE.md) before
 > touching any article in `src/content/docs/en/`.**
 >
 > Articles are conversion and customer-education assets, not technical documentation.
 > **NEVER mention `superadmin`** or any synonym anywhere customer-facing — roles are
-> admin, manager, learner. **NEVER write articles for** `priorities.md` items, handoff
+> admin, manager, learner. **NEVER write articles for** open project-board tasks, handoff
 > docs, features in progress, internal-facing tooling, or features we have retired.
 > Only what is live for customers today.
 
@@ -85,7 +84,7 @@ is the **marketing website** only.
 | Surface | Role | Details |
 |---|---|---|
 | **Vercel** | Hosting | Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-headerventures.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
-| **GitHub** | Source / CI | `qurioos-v0/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
+| **GitHub** | Source / CI | `enablehero-ou/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
 | **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
 | **Signup** | Live | `brand.signupUrl` → local `/signup`; `SignupForm` POSTs to the app's self-serve API (`PUBLIC_SIGNUP_API_URL`, default `https://get.headerpath.com/api/signup`) with a reCAPTCHA v3 token (`PUBLIC_RECAPTCHA_SITE_KEY`). Flow + security: `headerpath-app/docs/self-serve-signup.md`. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
@@ -131,7 +130,7 @@ visual checks instead of pushing to preview. Restart:
 - `useTranslations(locale)` returns that locale's object — **no deep-merge**, so render
   values directly (a missing key renders blank, never throws). es/fr are currently
   English-only with untranslated new keys; treat them as effectively inactive until
-  translated (pending decision in `priorities.md`).
+  translated (pending decision on the project board).
 - `Astro.currentLocale` gives the locale in any `.astro` file.
 
 ## Content Collections
@@ -272,7 +271,6 @@ taxonomy — see Content Collections.)
 ```
 headerpath-website/
 ├── CLAUDE.md                 # This file — infrastructure + system context
-├── priorities.md             # Forward-only backlog (no logs); pruned every /ship
 ├── README.md
 ├── astro.config.mjs          # static output, vercel adapter, i18n, redirects
 ├── .claude/commands/         # repo-specific skills (ship.md)
@@ -292,13 +290,19 @@ headerpath-website/
 
 **Rule**: anything that **renders** (a page, a content file, a component) lives under `src/`
 or `public/`. Reference material — plans, design refs, structure maps — lives in `notes/`.
-Keep the repo root to config + `CLAUDE.md` + `priorities.md` + `README.md`.
+Keep the repo root to config + `CLAUDE.md` + `README.md`.
+
+## Task tracking
+
+- All tasks live on the GitHub Project **[headerpath-website tasks](https://github.com/orgs/enablehero-ou/projects/4)** (org `enablehero-ou`, project #4). Create and update every task there — nowhere else.
+- New task = issue in `enablehero-ou/headerpath-website` + `gh project item-add 4 --owner enablehero-ou --url <issue-url>`. Issue rules (assignee, due date, labels) are in the parent CLAUDE.md.
+- Keep Status current: Backlog → To Do → In progress → QA → Done.
 
 ## Git Workflow
 
 - Work on `dev`. `/ship` → commit + push + PR to `main` → Vercel preview. `/main` → squash-merge to `main` (production deploy), then hard-reset `dev` to `main`.
 - **Never push directly to `main`.** Never merge to `main` without an explicit `/main`.
-- **Before every `/ship`**: update `priorities.md` — remove what shipped, add what's new. Don't carry stale state.
+- **Every `/ship`**: move the tasks this branch ships to QA on the project board and open new tasks for follow-ups it surfaced (the `/ship` skill does this).
 
 ## File Conventions
 
@@ -318,4 +322,4 @@ Keep the repo root to config + `CLAUDE.md` + `priorities.md` + `README.md`.
 - Zero JS on static content pages — React islands only where interactivity is needed.
 - All user-visible strings via `translations.ts`; all brand data via `brand.ts`.
 - Product positioning only — never service/agency language (see Positioning rule).
-- `priorities.md` is forward-only and pruned on every `/ship`.
+- Tasks live on the project board only — never in a markdown backlog.
