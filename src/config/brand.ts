@@ -46,8 +46,14 @@ export const brand = {
     { value: '2023', label: 'Founded' },
   ],
   pricing: {
+    // Limits mirror the `free` row of the app's `plans` table.
+    free: {
+      name: 'Free',
+      price: '$0',
+      period: '/forever',
+    },
     flat: {
-      name: 'HeaderPath',
+      name: 'Unlimited',
       price: '$150',
       period: '/mo',
     },

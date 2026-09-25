@@ -41,10 +41,12 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > component. All brand URLs/emails/pricing from `brand.ts`.
 >
 > **🔴 PRICE RULE — the plan price appears on `/pricing` and nowhere else.**
-> `brand.pricing.flat` is the single source and `src/pages/pricing.astro` is the only page
-> that renders it, so the price is changed in exactly one place. Never put a figure in the
-> FAQ, a CTA band, a translation string, or blog copy — say "one flat plan, everything
-> unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
+> `brand.pricing.free` / `brand.pricing.flat` (the **Free** and **Unlimited** plans) are the
+> single source and `src/pages/pricing.astro` is the only page that renders them, so a price
+> is changed in exactly one place. Plan feature lists live in `translations.pricing.<plan>.features`,
+> ordered row-for-row so the two cards compare line by line; Free limits mirror the app's
+> `plans.free` row. Never put a figure in the FAQ, a CTA band, a translation string, or blog
+> copy — say "start free, upgrade to Unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
 > fine; a HeaderPath price is not.
 >
 > **The promo bar is the one sanctioned exception, and it is site-wide by design.**
@@ -68,7 +70,7 @@ content, not workflows. The doc below is the reference map for those.
 
 HeaderPath is the **AI-native academy platform** — organizations launch a branded learning
 academy, AI drafts the courses, and they publish on their own domain. Audiences: customer
-education, partner enablement, employee onboarding/upskilling. One flat plan ($150/mo,
+education, partner enablement, employee onboarding/upskilling. Two plans: **Free** (limits mirror the app's `plans.free` row) and **Unlimited** ($150/mo,
 everything unlimited, fair-usage). The product app lives at `app.qurioos.com`; this repo
 is the **marketing website** only.
 
