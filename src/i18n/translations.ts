@@ -85,11 +85,40 @@ export const translations = {
       },
     },
     pricing: {
-      title: 'Simple, flat pricing',
-      subtitle: 'One plan. Everything unlimited.',
+      title: 'Simple, transparent pricing',
+      subtitle: "Start free. Upgrade to unlimited when you're ready.",
+      popular: 'Popular',
+      free: {
+        description: 'Try HeaderPath with a real academy.',
+        cta: 'Start free',
+        features: [
+          '1 course',
+          '5 users',
+          '2 admins',
+          '2 groups',
+          '1 video',
+          'Certifications',
+          '2 languages',
+          'yourname.headerpath.app subdomain',
+        ],
+      },
       flat: {
         description: 'Everything unlimited — one flat monthly price.',
         cta: 'Get started',
+        features: [
+          'Unlimited courses',
+          'Unlimited users',
+          'Unlimited admins',
+          'Unlimited groups',
+          'Unlimited videos',
+          'Unlimited certifications',
+          '80+ languages, auto-translated',
+          'Custom domain & white-label',
+          'AI course generation',
+          'Integrations',
+          'Analytics & reports',
+          'Security & access controls',
+        ],
       },
       fairUsage:
         'All "unlimited" usage is subject to our fair usage policy.',
@@ -243,12 +272,41 @@ export const translations = {
     },
     pricing: {
       title: 'Precios simples y transparentes',
-      subtitle: 'Comienza de inmediato. Escala a medida que creces.',
+      subtitle: 'Empieza gratis. Pasa a ilimitado cuando quieras.',
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
+      popular: 'Popular',
+      free: {
+        description: 'Prueba HeaderPath con una academia real.',
+        cta: 'Empezar gratis',
+        features: [
+          '1 curso',
+          '5 usuarios',
+          '2 administradores',
+          '2 grupos',
+          '1 vídeo',
+          'Certificaciones',
+          '2 idiomas',
+          'Subdominio tunombre.headerpath.app',
+        ],
+      },
       flat: {
         description: 'Todo ilimitado — un único precio mensual.',
         cta: 'Comenzar',
+        features: [
+          'Cursos ilimitados',
+          'Usuarios ilimitados',
+          'Administradores ilimitados',
+          'Grupos ilimitados',
+          'Vídeos ilimitados',
+          'Certificaciones ilimitadas',
+          'Más de 80 idiomas, traducción automática',
+          'Dominio propio y marca blanca',
+          'Generación de cursos con IA',
+          'Integraciones',
+          'Analíticas e informes',
+          'Seguridad y control de acceso',
+        ],
       },
       fairUsage:
         'Todo el uso "ilimitado" está sujeto a nuestra política de uso justo.',
@@ -402,12 +460,41 @@ export const translations = {
     },
     pricing: {
       title: 'Une tarification simple et transparente',
-      subtitle: 'Démarrez immédiatement. Évoluez à votre rythme.',
+      subtitle: "Commencez gratuitement. Passez à l'illimité quand vous êtes prêt.",
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
+      popular: 'Populaire',
+      free: {
+        description: 'Essayez HeaderPath avec une vraie académie.',
+        cta: 'Commencer gratuitement',
+        features: [
+          '1 cours',
+          '5 utilisateurs',
+          '2 administrateurs',
+          '2 groupes',
+          '1 vidéo',
+          'Certifications',
+          '2 langues',
+          'Sous-domaine votrenom.headerpath.app',
+        ],
+      },
       flat: {
         description: 'Tout illimité — un seul prix mensuel.',
         cta: 'Commencer',
+        features: [
+          'Cours illimités',
+          'Utilisateurs illimités',
+          'Administrateurs illimités',
+          'Groupes illimités',
+          'Vidéos illimitées',
+          'Certifications illimitées',
+          'Plus de 80 langues, traduction automatique',
+          'Domaine personnalisé et marque blanche',
+          'Génération de cours par IA',
+          'Intégrations',
+          'Analyses et rapports',
+          'Sécurité et contrôle des accès',
+        ],
       },
       fairUsage:
         "Toute utilisation « illimitée » est soumise à notre politique d'usage raisonnable.",

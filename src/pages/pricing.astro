@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import Container from '../components/ui/Container.astro';
 import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
 import { brand } from '../config/brand';
 import { useTranslations } from '../i18n/translations';
 import type { Locale } from '../i18n/translations';
@@ -9,18 +10,9 @@ import type { Locale } from '../i18n/translations';
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = useTranslations(locale);
 
-const plan = brand.pricing.flat;
-
-const features = [
-  'Unlimited courses',
-  'Unlimited learners',
-  'AI course generation',
-  'Auto-translations (80+ languages)',
-  'Certifications',
-  'Custom domain & white-label',
-  'Integrations',
-  'Analytics & reports',
-  'Security & access controls',
+const plans = [
+  { ...brand.pricing.free, copy: t.pricing.free, popular: false },
+  { ...brand.pricing.flat, copy: t.pricing.flat, popular: true },
 ];
 ---
 
@@ -31,33 +23,38 @@ const features = [
       <p class="mt-4 text-lg text-text-secondary">{t.pricing.subtitle}</p>
     </div>
 
-    <div class="mx-auto max-w-md">
-      <div class="rounded-2xl border border-accent/30 bg-accent/5 p-8">
-        <h2 class="text-lg font-semibold text-text-primary">{plan.name}</h2>
-        <p class="mt-2 text-sm text-text-secondary">{t.pricing.flat.description}</p>
-        <div class="mt-6 flex items-baseline gap-1">
-          <span class="text-5xl font-semibold text-text-primary">{plan.price}</span>
-          <span class="text-text-muted">{plan.period}</span>
+    <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+      {plans.map((plan) => (
+        <div class:list={['flex flex-col rounded-2xl border border-accent/30 bg-accent/5 p-8', plan.popular && 'order-first md:order-none']}>
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-lg font-semibold text-text-primary">{plan.name}</h2>
+            {plan.popular && <Badge>{t.pricing.popular}</Badge>}
+          </div>
+          <p class="mt-2 text-sm text-text-secondary">{plan.copy.description}</p>
+          <div class="mt-6 flex items-baseline gap-1">
+            <span class="text-5xl font-semibold text-text-primary">{plan.price}</span>
+            <span class="text-text-muted">{plan.period}</span>
+          </div>
+          <Button href={brand.signupUrl} variant="primary" class="mt-6 w-full" size="lg">
+            {plan.copy.cta}
+          </Button>
+          <ul class="mt-8 space-y-3">
+            {plan.copy.features.map((f) => (
+              <li class="flex items-center gap-2.5 text-sm text-text-secondary">
+                <svg class="shrink-0 text-accent-fg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
         </div>
-        <Button href={brand.signupUrl} variant="primary" class="mt-6 w-full" size="lg">
-          {t.pricing.flat.cta}
-        </Button>
-        <ul class="mt-8 space-y-3">
-          {features.map((f) => (
-            <li class="flex items-center gap-2.5 text-sm text-text-secondary">
-              <svg class="shrink-0 text-accent-fg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              {f}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <p class="mt-6 text-center text-xs text-text-muted">
-        {t.pricing.fairUsage}
-      </p>
+      ))}
     </div>
+
+    <p class="mx-auto mt-6 max-w-4xl text-center text-xs text-text-muted">
+      {t.pricing.fairUsage}
+    </p>
 
     <div class="mx-auto mt-10 max-w-md surface p-6 text-center">
       <h2 class="font-serif text-lg text-text-primary">Need something custom?</h2>
