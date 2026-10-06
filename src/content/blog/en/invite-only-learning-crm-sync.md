@@ -97,4 +97,4 @@ Stop guessing who’s trained and who isn’t. HeaderPath lets you run a secure,
 
 Turn your CRM into the engine of your enablement strategy!
 
-[**Book a demo**](/get-started)
+[**Contact us**](/contact)

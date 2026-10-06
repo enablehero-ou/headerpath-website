@@ -1,0 +1,28 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+import { brand } from '../config/brand';
+import { useTranslations } from '../i18n/translations';
+import type { Locale } from '../i18n/translations';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = useTranslations(locale);
+const email = brand.email.team;
+---
+
+<PageLayout title={t.contact.title} description={t.contact.lead}>
+  <section class="grain relative flex min-h-[70svh] items-center overflow-hidden bg-bg-primary py-24">
+    <div class="atmosphere pointer-events-none absolute inset-0"></div>
+    <Container class="relative">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-4xl text-text-primary sm:text-5xl lg:text-6xl">{t.contact.title}</h1>
+        <p class="mt-6 text-lg text-text-secondary">{t.contact.lead}</p>
+        <div class="mt-10 flex flex-col items-center gap-4">
+          <Button href={`mailto:${email}`} variant="primary" size="lg">{t.contact.cta}</Button>
+          <a href={`mailto:${email}`} class="font-serif text-2xl text-text-primary">{email}</a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

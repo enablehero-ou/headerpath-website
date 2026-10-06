@@ -1,13 +1,11 @@
-import { brand } from './brand';
-
 export const nav = {
   main: [
     { label: 'Product', href: '/product' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Blog', href: '/blog' },
     { label: 'Help', href: '/help' },
+    { label: 'Contact', href: '/contact' },
   ],
-  cta: { label: 'Sign up', href: brand.signupUrl },
   footer: {
     product: {
       label: 'Product',
@@ -15,7 +13,7 @@ export const nav = {
         { label: 'Product', href: '/product' },
         { label: 'Pricing', href: '/pricing' },
         { label: 'Help', href: '/help' },
-        { label: 'Sign Up', href: brand.signupUrl },
+        { label: 'Contact', href: '/contact' },
       ],
     },
     resources: {

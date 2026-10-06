@@ -1,15 +1,15 @@
 # HeaderPath — marketing website
 
-The public site at [headerpath.com](https://www.headerpath.com): product pages, pricing,
-blog, techniques, and a self-hosted help center. Static Astro, deployed on Vercel.
+The public site at [headerpath.com](https://www.headerpath.com): product pages, contact,
+blog, techniques, and a self-hosted help center. Static Astro, deployed on GitHub Pages.
 
 This repo is the marketing site only. It does not contain the product application.
 
 ## Stack
 
-- **Astro 6**, `output: 'static'`, Vercel adapter
+- **Astro 6**, `output: 'static'`, GitHub Pages
 - **Tailwind CSS v4** — design tokens in `src/styles/global.css`
-- **React 19** islands for the few interactive pieces (mobile nav, FAQ accordion, signup form)
+- **React 19** islands for the few interactive pieces (mobile nav, FAQ accordion)
 - **Markdown / MDX** content collections
 - **pnpm**
 
@@ -30,7 +30,7 @@ No environment variables are required — see `.env.example`.
 src/
 ├── pages/       # routes, plus sitemap.xml.ts and robots.txt.ts
 ├── content/     # blog, techniques, docs (help), alternatives, legal
-├── components/  # ui/ · sections/ · layout/ · signup/
+├── components/  # ui/ · sections/ · layout/
 ├── layouts/     # page shells
 ├── config/      # brand.ts, navigation.ts
 ├── i18n/        # translations.ts
