@@ -158,6 +158,6 @@ Don’t treat onboarding as a one-time event—sustain momentum through regular 
 
 ## Onboard and educate faster with AI
 
-Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals. Get started with HeaderPath
+Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals.
 
-[**Get started with HeaderPath**](https://www.headerpath.com/)
+[**Contact us**](/contact)

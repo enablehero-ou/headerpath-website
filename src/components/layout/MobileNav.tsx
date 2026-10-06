@@ -13,13 +13,11 @@ interface NavItem {
 
 interface Props {
   navItems: readonly NavItem[];
-  ctaHref: string;
-  ctaLabel: string;
   openLabel: string;
   closeLabel: string;
 }
 
-export default function MobileNav({ navItems, ctaHref, ctaLabel, openLabel, closeLabel }: Props) {
+export default function MobileNav({ navItems, openLabel, closeLabel }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -122,26 +120,6 @@ export default function MobileNav({ navItems, ctaHref, ctaLabel, openLabel, clos
               </li>
             ))}
           </ul>
-
-          <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--color-border)' }}>
-            <a
-              href={ctaHref}
-              onClick={() => setOpen(false)}
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                padding: '12px 20px',
-                background: 'var(--color-accent)',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '9999px',
-                fontWeight: 600,
-                fontSize: '15px',
-              }}
-            >
-              {ctaLabel}
-            </a>
-          </div>
         </div>
       )}
     </div>

@@ -9,13 +9,23 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 > lives in git history; current/forward work lives on the GitHub Project
 > [headerpath-website tasks](https://github.com/orgs/enablehero-ou/projects/4) — see *Task tracking*.
 
-> **🔴 DEPLOY RULE — one writer, one direction: `dev` → PR → `main` → Vercel.**
+> **🔴 DEPLOY RULE — one writer, one direction: `dev` → PR → `main` → GitHub Pages.**
 >
-> Work on `dev`. `/ship` opens a PR to `main`; `/main` squash-merges and triggers the
-> Vercel production deploy, then hard-resets `dev` to `main`. **Never push to `main`.**
-> Current truth: the rebuild lives on `dev`/preview only — `main` is still the original
-> scaffold and **`qurioos.com` DNS still points at Loveable**, not Vercel. The public
-> cutover is a pending task on the project board, not done.
+> Work on `dev`. `/ship` opens a PR to `main`; `/main` squash-merges, which runs
+> `.github/workflows/deploy.yml` (GitHub Pages, custom domain via `public/CNAME`), then
+> hard-resets `dev` to `main`. **Never push to `main`.** The repo is **public** (free Pages);
+> never commit secrets. No per-branch previews — check on `localhost:4321` before `/main`.
+
+> **🔴 HIBERNATION RULE — HeaderPath is hibernating; the site is static brochure only.**
+>
+> No signup, promo bar, cookie banner, forms, or CTAs. `/pricing` shows the plans with **no
+> buttons**. The **only** call to action is the `/contact` page (a `mailto:` to
+> `brand.email.team`), linked from the header nav, the footer, and in-article "Contact us"
+> links. `/signup`, `/schedule` and `/get-started` 301 to `/contact`. Never add a form or
+> signup button. Plan prices live in `brand.pricing` and render on `/pricing` only.
+> The pre-hibernation site is the git tag `archive/vercel-pre-hibernation-2026-10-06`;
+> the relaunch runbook and the removed files live in
+> `headerpath-app/docs/website-relaunch/`; the pause plan is `headerpath-app/docs/hibernation-plan.md`.
 
 > **🔴 HELP-CENTER RULE — read [`HELP-CENTER-GUIDE.md`](HELP-CENTER-GUIDE.md) before
 > touching any article in `src/content/docs/en/`.**
@@ -38,30 +48,7 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 >
 > Brand name is **HeaderPath** (capitalized). Never hardcode it — pull from `brand.ts`.
 > Every user-visible string comes from `src/i18n/translations.ts`, never inline in a
-> component. All brand URLs/emails/pricing from `brand.ts`.
->
-> **🔴 PRICE RULE — the plan price appears on `/pricing` and nowhere else.**
-> `brand.pricing.free` / `brand.pricing.flat` (the **Free** and **Unlimited** plans) are the
-> single source and `src/pages/pricing.astro` is the only page that renders them, so a price
-> is changed in exactly one place. Plan feature lists live in `translations.pricing.<plan>.features`,
-> ordered row-for-row so the two cards compare line by line; Free limits mirror the app's
-> `plans.free` row. Never put a figure in the FAQ, a CTA band, a translation string, or blog
-> copy — say "start free, upgrade to Unlimited" and link to `/pricing`. Competitor and industry benchmarks in blog posts are
-> fine; a HeaderPath price is not.
->
-> **The promo bar is the one sanctioned exception, and it is site-wide by design.**
-> `brand.pricing.promo` holds the time-boxed intro offer and `PromoBar.astro` renders it as a
-> strip above the header on every page, so the promo figure legitimately appears everywhere.
-> It does **not** appear in the `/pricing` plan card — the card shows the standard price only.
-> Retire the offer by removing `<PromoBar />` from `PageLayout.astro` and `signup.astro`
-> (the only two mount points); there is no on/off flag. The promo figure still comes from
-> `brand.ts` alone — never hardcode it, and never restate the offer in body copy or the FAQ.
->
-> The bar's copy lives in `translations.promoBar` as templates with `{price}` / `{months}`
-> placeholders, with a `textShort` variant so the strip never wraps on mobile. Its CTA links
-> to `brand.signupUrl` carrying `brand.pricing.promo.utm` as `utm_*` params; `SignupForm`
-> captures any `utm_*` on landing into the signup cookie and submits them, which is how a
-> signup is attributed to the promo. Change the campaign tag in `brand.ts`, not in the link.
+> component. All brand URLs/emails from `brand.ts`.
 
 GTM-style note: this is a static marketing site, so the "things that run" are pages and
 content, not workflows. The doc below is the reference map for those.
@@ -70,13 +57,13 @@ content, not workflows. The doc below is the reference map for those.
 
 HeaderPath is the **AI-native academy platform** — organizations launch a branded learning
 academy, AI drafts the courses, and they publish on their own domain. Audiences: customer
-education, partner enablement, employee onboarding/upskilling. Two plans: **Free** (limits mirror the app's `plans.free` row) and **Unlimited** ($150/mo,
-everything unlimited, fair-usage). The product app lives at `app.qurioos.com`; this repo
+education, partner enablement, employee onboarding/upskilling. Two plans: **Free** (limits mirror the app's `plans.free` row) and **Unlimited** — both closed
+to new signups while the product hibernates. The product app lives at `app.qurioos.com`; this repo
 is the **marketing website** only.
 
 ## Scope
 
-- **Marketing pages** — homepage (product), pricing, and supporting static pages
+- **Marketing pages** — homepage, product, pricing, contact, and supporting static pages
 - **Content** — blog, techniques, alternatives, and a self-hosted help center (`/help`)
 - **Brand surface** — positioning, design system, and copy for the public site
 - Out of scope: the product app (`app.qurioos.com`), the help CMS (Featurebase), billing
@@ -85,27 +72,23 @@ is the **marketing website** only.
 
 | Surface | Role | Details |
 |---|---|---|
-| **Vercel** | Hosting | Astro static output via `@astrojs/vercel`. Preview on every `dev` push (`website-git-dev-headerventures.vercel.app`); production on `main`. Deployment protection is ON (previews 401 without auth). |
+| **GitHub Pages** | Hosting | `.github/workflows/deploy.yml` (`withastro/action`) builds and deploys on every push to `main`. Custom domain `headerpath.com` via `public/CNAME`. No previews. |
 | **GitHub** | Source / CI | `enablehero-ou/headerpath-website` (private). `dev` → PR → `main`. No CI workflows yet (`.github/workflows` empty). |
 | **app.qurioos.com** | Product app (backend) | Login/product app — stays on qurioos infra until the app migrates. Not built by this repo. |
-| **Signup** | Live | `brand.signupUrl` → local `/signup`; `SignupForm` POSTs to the app's self-serve API (`PUBLIC_SIGNUP_API_URL`, default `https://get.headerpath.com/api/signup`) with a reCAPTCHA v3 token (`PUBLIC_RECAPTCHA_SITE_KEY`). Flow + security: `headerpath-app/docs/self-serve-signup.md`. |
 | **help.qurioos.com** | External help (Featurebase) | The original docs destination. The site now **self-hosts** help at `/help`; footer "Help" points internal. |
 | **Google Fonts** | Webfonts | Inter, Fraunces, JetBrains Mono — loaded in `BaseHead.astro`. |
 | **Webflow / Loveable** | Retiring | Old site (`quriooscom.webflow.io`) was the content + asset source — all assets are now copied into `public/images/` so nothing depends on it. Loveable still serves the live `qurioos.com` until cutover. |
 
 ## Environment
 
-**No runtime secrets.** This is a fully static site. The only external call is the `/signup`
-form posting to the product app's self-serve API. Two optional `PUBLIC_*` vars (Vercel project
-env, see `.env.example`): `PUBLIC_RECAPTCHA_SITE_KEY` (reCAPTCHA v3 — without it the form
-skips the captcha and production rejects the request) and `PUBLIC_SIGNUP_API_URL` (override
-for testing against a non-production app host). Local preview needs nothing beyond `node` + `pnpm`.
+**No env vars, no secrets.** Fully static site with zero external calls; the repo is public.
+Local preview needs nothing beyond `node` + `pnpm`.
 
 ## Stack
 
-- **Framework**: Astro 6, `output: 'static'`, `@astrojs/vercel` adapter
+- **Framework**: Astro 6, `output: 'static'`, no adapter (plain static files for GitHub Pages)
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/vite`, tokens in `src/styles/global.css`
-- **Interactive**: React 19 islands (`client:load` / `client:visible` / `client:idle`) — mobile nav, FAQ accordion, signup form, cookie banner only
+- **Interactive**: React 19 islands (`client:load` / `client:visible` / `client:idle`) — mobile nav, FAQ accordion, journey steps only
 - **Content**: Markdown / MDX content collections (`src/content.config.ts`)
 - **Package manager**: pnpm (`~/.local/bin/pnpm`)
 
@@ -122,8 +105,8 @@ visual checks instead of pushing to preview. Restart:
 
 ## Brand & Config
 
-- **`src/config/brand.ts`** — all brand strings: name, tagline, description, domains, `appUrl`, `signupUrl`, emails, social, stats, flat pricing. Never hardcode brand data elsewhere.
-- **`src/config/navigation.ts`** — header nav, CTA (→ `brand.signupUrl`), footer columns.
+- **`src/config/brand.ts`** — all brand strings: name, tagline, description, domains, `appUrl`, emails, social, stats, plan pricing (`/pricing` only). Never hardcode brand data elsewhere.
+- **`src/config/navigation.ts`** — header nav (last item → `/contact`), footer columns. No CTA button.
 - **`src/i18n/translations.ts`** — all UI strings for en/es/fr + `useTranslations(locale)`.
 
 ## i18n
@@ -204,7 +187,7 @@ Never use `bg-accent` for a button or for any solid block. `bg-accent/5`–`/10`
 
 `src/components/ui/`: `Container` (max-w-7xl wrapper) · `Button` (primary/secondary/ghost,
 pill) · `Card` (uses `.surface`) · `Badge` (accent pill). Sections in
-`src/components/sections/`; layout chrome in `src/components/layout/` (Header, PromoBar, Footer, CookieBanner,
+`src/components/sections/`; layout chrome in `src/components/layout/` (Header, Footer,
 BaseHead, MobileNav, FAQAccordion).
 
 ## Help / Docs Article Conventions
@@ -274,7 +257,7 @@ taxonomy — see Content Collections.)
 headerpath-website/
 ├── CLAUDE.md                 # This file — infrastructure + system context
 ├── README.md
-├── astro.config.mjs          # static output, vercel adapter, i18n, redirects
+├── astro.config.mjs          # static output, i18n, redirects
 ├── .claude/commands/         # repo-specific skills (ship.md)
 ├── public/
 │   └── images/               # static assets (brand/ = logo marks, webflow/ = imported assets)
@@ -282,7 +265,7 @@ headerpath-website/
 │   ├── pages/                # routes (.astro) + sitemap.xml.ts, robots.txt.ts
 │   ├── content/              # content collections (blog, techniques, docs, …)
 │   ├── content.config.ts     # collection schemas
-│   ├── components/           # ui/ · sections/ · layout/ · signup/
+│   ├── components/           # ui/ · sections/ · layout/
 │   ├── layouts/              # Page/Base/Content/Blog layouts
 │   ├── config/               # brand.ts, navigation.ts
 │   ├── i18n/                 # translations.ts
@@ -302,7 +285,7 @@ Keep the repo root to config + `CLAUDE.md` + `README.md`.
 
 ## Git Workflow
 
-- Work on `dev`. `/ship` → commit + push + PR to `main` → Vercel preview. `/main` → squash-merge to `main` (production deploy), then hard-reset `dev` to `main`.
+- Work on `dev`. `/ship` → commit + push + PR to `main`. `/main` → squash-merge to `main` (GitHub Pages deploy), then hard-reset `dev` to `main`.
 - **Never push directly to `main`.** Never merge to `main` without an explicit `/main`.
 - **Every `/ship`**: move the tasks this branch ships to QA on the project board and open new tasks for follow-ups it surfaced (the `/ship` skill does this).
 

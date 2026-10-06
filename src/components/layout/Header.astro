@@ -1,6 +1,5 @@
 ---
 import Container from '../ui/Container.astro';
-import Button from '../ui/Button.astro';
 import MobileNav from './MobileNav';
 import { brand } from '../../config/brand';
 import { nav } from '../../config/navigation';
@@ -78,15 +77,9 @@ const t = useTranslations(locale);
         }
       </ul>
 
-      <!-- Desktop CTA -->
-      <div class="hidden items-center gap-3 lg:flex">
-        <Button href={nav.cta.href} variant="primary" size="sm">
-          {t.nav.signUp}
-        </Button>
-      </div>
 
       <!-- Mobile nav (React island) -->
-      <MobileNav client:load navItems={nav.main} ctaHref={nav.cta.href} ctaLabel={t.nav.signUp} openLabel={t.nav.openMenu} closeLabel={t.nav.closeMenu} />
+      <MobileNav client:load navItems={nav.main} openLabel={t.nav.openMenu} closeLabel={t.nav.closeMenu} />
     </nav>
   </Container>
 </header>

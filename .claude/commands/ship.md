@@ -19,22 +19,22 @@ Then run `git push origin HEAD`. Then run `gh pr create --base main --title "<co
 
 After the PR exists, post a short summary to the space via its incoming webhook. The URL lives only in `~/Documents/CC/headerpath-app/.env.local` as `GOOGLE_CHAT_WEBHOOK_URL` (both repos read it from there; never copy it elsewhere, never print it).
 
-- Build the message: `🚢 <repo> — <PR title>` on line 1, then 2–4 bullets of what shipped (user-visible outcomes, ≤ 12 words each), then the PR URL, then the preview base URL.
+- Build the message: `🚢 <repo> — <PR title>` on line 1, then 2–4 bullets of what shipped (user-visible outcomes, ≤ 12 words each), then the PR URL.
 - Send it with one command; the message is JSON in `{"text": "..."}` (write the body to a scratch file with a heredoc first so quoting never breaks):
   `curl -s -o /dev/null -w "%{http_code}" -X POST -H 'Content-Type: application/json; charset=UTF-8' --data @<file> "$(grep '^GOOGLE_CHAT_WEBHOOK_URL=' ~/Documents/CC/headerpath-app/.env.local | cut -d= -f2- | tr -d '"')"`
 - A non-200 response or a missing env var never blocks the ship — add one line `Chat post: failed (<code>)` to the report and move on.
 
 ## Report — exact URLs to check, nothing else
 
-The report must be a 1-click checklist: every line a **full, clickable URL** on the `dev` preview. Never report a bare path like `/signup` or a slug.
+The report must be a 1-click checklist: every line a **full, clickable URL** on the local preview. Never report a bare path or a slug.
 
-**Base host:** `https://website-git-dev-headerventures.vercel.app` (Vercel preview of `dev`; deployment protection is ON, so the first open asks for a Vercel login — say so once).
+**Base host:** `http://localhost:4321` (the always-on local dev server — GitHub Pages has no per-branch previews; production deploys only from `main`).
 
 **Derive the URLs from the diff** (`git diff main...HEAD --name-only`), one per changed surface:
-- `src/pages/<path>.astro` → `https://website-git-dev-headerventures.vercel.app/<path>` (`index` → `/`).
+- `src/pages/<path>.astro` → `http://localhost:4321/<path>` (`index` → `/`).
 - `src/pages/es/**`, `src/pages/fr/**` → the same with the locale prefix.
 - Content collections (`src/content/<collection>/<slug>.md`, locale prefix stripped) → the rendered page URL per `notes/site-structure.md` (e.g. help articles → `/help/<slug>`, blog → `/blog/<slug>`); for a translated file give the locale URL.
-- Shared components / layouts / `brand.ts` / `navigation.ts` / global CSS → one representative page per affected template (home, one help article, one blog post, `/signup`, `/pricing`) — not every page.
+- Shared components / layouts / `brand.ts` / `navigation.ts` / global CSS → one representative page per affected template (home, one help article, one blog post, `/contact`) — not every page.
 - Redirects in `astro.config.mjs` → the **source** URL, with the expected destination after the dash.
 - i18n string changes → one URL per affected locale.
 
@@ -44,8 +44,6 @@ The report must be a 1-click checklist: every line a **full, clickable URL** on 
   - `<full url>` — what to look for (≤ 8 words)
   - `<full url>` — …
 - Chat post: `sent` / `failed (<code>)`
-
-If Vercel has not finished building yet, say "preview building — URLs valid in ~1 min" above the list; do not wait.
 
 ## 👉 NEXT STEP — always the very last thing you print
 

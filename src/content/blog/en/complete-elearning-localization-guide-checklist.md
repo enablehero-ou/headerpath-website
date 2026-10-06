@@ -11,7 +11,7 @@ So you've built an amazing online academy, eLearning program, or course library�
 
 This guide gives you a practical, copyable template to prepare for, execute, and maintain your eLearning localization project. Whether you're a VP of Learning & Development, a business owner, or a senior manager tackling this for the first time, this checklist will keep you on track.
 
-**Tip:** [**HeaderPath AI localization**](/pricing) **is 100x times cheaper and 1000x faster than human translators.**
+**Tip:** **HeaderPath AI localization** **is 100x times cheaper and 1000x faster than human translators.**
 
 ## Common pitfalls to avoid
 
@@ -106,7 +106,7 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 
 - ‍**Start small:**Begin with one high-value course and one key market. Run a pilot to refine your process before scaling up.**‍**
 - **Don't skip the human touch:**While AI and machine translation are helpful, always have native speakers review content. Automated tools miss cultural nuances that can undermine your message.**‍**
-- **Budget realistically:**If you hire human translators, make sure you understand the full scope. ([**HeaderPath AI localization pricing**](/pricing) is 100x times cheaper and 1000x faster than human translators)
+- **Budget realistically:**If you hire human translators, make sure you understand the full scope. (**HeaderPath AI localization pricing** is 100x times cheaper and 1000x faster than human translators)
 - **Think long term:**Build localization into your content creation process from the start. It's much cheaper to design for localization than to retrofit existing content.**‍**
 - **Measure what matters:** Track engagement and learning outcomes, not just completion rates. The goal is effective learning, not just translated words.**‍**
 - **Keep it updated:**Localization isn't one-and-done. Plan for ongoing updates as content, regulations, and cultural contexts evolve.
@@ -132,6 +132,6 @@ Ready to take your academy global but don't want to navigate this complex proces
 - **Faster time-to-market**: Streamlined workflows and project management expertise that get your content to global learners faster
 - **Measurable ROI**: We track the metrics that matter and provide detailed reporting on engagement, completion rates, and business impact
 
-[**Get started today**](/)
+[**Contact us**](/contact)
 
 Let's discuss your localization goals and create a customized plan for your eLearning program. Whether you're localizing your first course or scaling to new markets, HeaderPath has the expertise and technology to make it seamless.

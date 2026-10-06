@@ -1,12 +1,6 @@
 ---
 import BaseHead from '../components/layout/BaseHead.astro';
-import CookieBanner from '../components/layout/CookieBanner';
-import { useTranslations } from '../i18n/translations';
-import type { Locale } from '../i18n/translations';
 import '../styles/global.css';
-
-const locale = (Astro.currentLocale ?? 'en') as Locale;
-const t = useTranslations(locale);
 
 interface Props {
   title?: string;
@@ -30,13 +24,5 @@ const props = Astro.props;
       {Astro.currentLocale === 'es' ? 'Ir al contenido' : Astro.currentLocale === 'fr' ? 'Aller au contenu' : 'Skip to content'}
     </a>
     <slot />
-    <CookieBanner
-      client:idle
-      privacyUrl="/legal/privacy"
-      message={t.cookies.message}
-      learnMore={t.cookies.learnMore}
-      accept={t.cookies.accept}
-      optOut={t.cookies.optOut}
-    />
   </body>
 </html>

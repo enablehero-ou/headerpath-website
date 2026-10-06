@@ -12,8 +12,7 @@ export const translations = {
       pricing: 'Pricing',
       resources: 'Resources',
       blog: 'Blog',
-      bookCall: 'Book a call',
-      signUp: 'Sign up',
+      contact: 'Contact',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
     },
@@ -29,7 +28,6 @@ export const translations = {
     home: {
       heroTitle: 'Build your online academy',
       heroSubtitle: 'With the AI-native online learning platform',
-      heroCta: 'Get started',
       heroBadge: 'Supporting thousands of users',
       featuresLabel: 'PRODUCT',
       featuresTitle: 'Everything your academy needs',
@@ -49,16 +47,12 @@ export const translations = {
         'Sync your CRM, SSO, analytics, and comms. Your stack stays intact — learners get one login.',
       faqLabel: 'FAQ',
       faqTitle: 'Frequently asked questions',
-      ctaTitle: 'Start your academy today',
-      ctaSubtitle: 'Create your account and launch your first academy in minutes.',
-      ctaButton: 'Get started',
     },
     product: {
       heroEyebrow: 'THE PRODUCT',
       heroTitle: 'Everything your academy needs, in one platform',
       heroSubtitle:
         'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
-      heroCta: 'Get started',
       faqLabel: 'PRODUCT FAQ',
       faqTitle: 'Questions about the platform',
     },
@@ -86,11 +80,10 @@ export const translations = {
     },
     pricing: {
       title: 'Simple, transparent pricing',
-      subtitle: "Start free. Upgrade to unlimited when you're ready.",
+      subtitle: 'Contact us to launch a new academy.',
       popular: 'Popular',
       free: {
         description: 'Try HeaderPath with a real academy.',
-        cta: 'Start free',
         features: [
           '1 course',
           '5 users',
@@ -104,7 +97,6 @@ export const translations = {
       },
       flat: {
         description: 'Everything unlimited — one flat monthly price.',
-        cta: 'Get started',
         features: [
           'Unlimited courses',
           'Unlimited users',
@@ -123,58 +115,14 @@ export const translations = {
       fairUsage:
         'All "unlimited" usage is subject to our fair usage policy.',
     },
+    contact: {
+      title: 'Contact us',
+      lead:
+        "Questions about HeaderPath, a partnership, or your academy — write to us and we'll get back to you within two working days.",
+      cta: 'Email us',
+    },
     footer: {
       copyright: 'All rights reserved.',
-    },
-    promoBar: {
-      label: 'Limited time offer',
-      text: '{price} for your first {months} months',
-      textShort: '{price} for {months} months',
-      cta: 'Claim offer',
-    },
-    cookies: {
-      message: 'We use cookies to collect data and improve our services.',
-      learnMore: 'Learn more',
-      accept: 'Accept',
-      optOut: 'Opt out',
-    },
-    signup: {
-      title: "Let's get you set up",
-      subtitle: "A few quick questions and you'll be on your way.",
-      emailLabel: 'Work email',
-      emailPlaceholder: 'name@company.com',
-      websiteLabel: 'Company website (optional)',
-      websitePlaceholder: 'company.com',
-      continue: 'Continue',
-      back: 'Back',
-      audienceTitle: 'Who do you teach?',
-      audienceIndividual: 'Individual learners',
-      audienceCompany: 'Company employees',
-      audienceOther: 'Other',
-      sellTitle: 'Do you sell your content?',
-      sellYes: 'Yes',
-      sellNo: 'No',
-      sellUnsure: 'Not sure yet',
-      migrateNote: 'We offer free migration support',
-      migrateTitle: 'Are you migrating from another learning platform?',
-      migrateYes: 'Yes',
-      migrateNo: 'No',
-      migrateWhichLabel: 'Which one?',
-      migrateWhichPlaceholder: 'e.g. Teachable, Kajabi, LearnWorlds...',
-      doneTitle: 'Verify your email!',
-      doneBody:
-        "We've sent you an email to verify your account. Click the link inside and your academy will be ready to set up.",
-      doneHint: "Didn't get it? Check your spam folder, or write to us and we'll help.",
-      waitlistTitle: "You're on the list",
-      waitlistBody:
-        "We open a limited number of new academies each day and today's are all taken. Your place is saved — we'll email you the setup link as soon as a slot opens, usually within 24 hours.",
-      errorGeneric: 'Something went wrong. Please try again.',
-      errorEmail: 'Please use a real work or personal email address — temporary and role inboxes are not accepted.',
-      errorRecaptcha: "We couldn't verify that you're human. Refresh the page and try again.",
-      legalPrefix: 'By signing up, you agree to our',
-      legalTerms: 'Services Agreement',
-      legalMiddle: 'and acknowledge our',
-      legalPrivacy: 'Privacy Policy',
     },
     blog: {
       title: 'Blog',
@@ -202,8 +150,7 @@ export const translations = {
       pricing: 'Precios',
       resources: 'Recursos',
       blog: 'Blog',
-      bookCall: 'Agendar llamada',
-      signUp: 'Registrarse',
+      contact: 'Contacto',
       openMenu: 'Abrir menú',
       closeMenu: 'Cerrar menú',
     },
@@ -220,7 +167,6 @@ export const translations = {
       heroTitle: 'Educación que genera resultados reales',
       heroSubtitle:
         'Diseñamos, construimos y gestionamos programas de educación y formación personalizados para organizaciones que necesitan movilizar a las personas.',
-      heroCta: 'Agendar llamada →',
       whatWeDoLabel: 'QUÉ HACEMOS',
       whatWeDoTitle: 'Tu socio educativo',
       whatWeDoSubtitle:
@@ -235,16 +181,12 @@ export const translations = {
       testimonialsTitle: 'Confiado en múltiples industrias',
       faqLabel: 'FAQ',
       faqTitle: 'Preguntas frecuentes',
-      ctaTitle: '¿Listo para crear educación que funcione?',
-      ctaSubtitle: 'Hablemos de tu programa, tu audiencia y cómo se ve el éxito para ti.',
-      ctaButton: 'Agendar llamada →',
     },
     product: {
       heroEyebrow: 'THE PRODUCT',
       heroTitle: 'Everything your academy needs, in one platform',
       heroSubtitle:
         'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
-      heroCta: 'Get started',
       faqLabel: 'PRODUCT FAQ',
       faqTitle: 'Questions about the platform',
     },
@@ -272,13 +214,12 @@ export const translations = {
     },
     pricing: {
       title: 'Precios simples y transparentes',
-      subtitle: 'Empieza gratis. Pasa a ilimitado cuando quieras.',
+      subtitle: 'Contáctanos para lanzar una nueva academia.',
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
       popular: 'Popular',
       free: {
         description: 'Prueba HeaderPath con una academia real.',
-        cta: 'Empezar gratis',
         features: [
           '1 curso',
           '5 usuarios',
@@ -292,7 +233,6 @@ export const translations = {
       },
       flat: {
         description: 'Todo ilimitado — un único precio mensual.',
-        cta: 'Comenzar',
         features: [
           'Cursos ilimitados',
           'Usuarios ilimitados',
@@ -311,58 +251,14 @@ export const translations = {
       fairUsage:
         'Todo el uso "ilimitado" está sujeto a nuestra política de uso justo.',
     },
+    contact: {
+      title: 'Contáctanos',
+      lead:
+        'Preguntas sobre HeaderPath, una colaboración o tu academia — escríbenos y te responderemos en dos días hábiles.',
+      cta: 'Escríbenos',
+    },
     footer: {
       copyright: 'Todos los derechos reservados.',
-    },
-    promoBar: {
-      label: 'Oferta por tiempo limitado',
-      text: '{price} los primeros {months} meses',
-      textShort: '{price} por {months} meses',
-      cta: 'Aprovechar',
-    },
-    cookies: {
-      message: 'Usamos cookies para recopilar datos y mejorar nuestros servicios.',
-      learnMore: 'Más información',
-      accept: 'Aceptar',
-      optOut: 'Rechazar',
-    },
-    signup: {
-      title: 'Vamos a configurar tu cuenta',
-      subtitle: 'Unas preguntas rápidas y estarás listo.',
-      emailLabel: 'Correo de trabajo',
-      emailPlaceholder: 'nombre@empresa.com',
-      websiteLabel: 'Sitio web de la empresa (opcional)',
-      websitePlaceholder: 'empresa.com',
-      continue: 'Continuar',
-      back: 'Atrás',
-      audienceTitle: '¿A quién enseñas?',
-      audienceIndividual: 'Alumnos individuales',
-      audienceCompany: 'Empleados de una empresa',
-      audienceOther: 'Otro',
-      sellTitle: '¿Vendes tu contenido?',
-      sellYes: 'Sí',
-      sellNo: 'No',
-      sellUnsure: 'Aún no lo sé',
-      migrateNote: 'Ofrecemos soporte de migración gratuito',
-      migrateTitle: '¿Estás migrando desde otra plataforma de aprendizaje?',
-      migrateYes: 'Sí',
-      migrateNo: 'No',
-      migrateWhichLabel: '¿Cuál?',
-      migrateWhichPlaceholder: 'p. ej. Teachable, Kajabi, LearnWorlds...',
-      doneTitle: '¡Verifica tu correo!',
-      doneBody:
-        'Te hemos enviado un correo para verificar tu cuenta. Haz clic en el enlace y tu academia estará lista para configurar.',
-      doneHint: '¿No te ha llegado? Revisa la carpeta de spam o escríbenos y te ayudamos.',
-      waitlistTitle: 'Estás en la lista',
-      waitlistBody:
-        'Abrimos un número limitado de academias nuevas cada día y las de hoy ya están ocupadas. Tu lugar está guardado — te enviaremos el enlace de configuración en cuanto haya un hueco, normalmente en menos de 24 horas.',
-      errorGeneric: 'Algo salió mal. Inténtalo de nuevo.',
-      errorEmail: 'Usa una dirección de correo real de trabajo o personal — no se aceptan buzones temporales ni genéricos.',
-      errorRecaptcha: 'No pudimos verificar que eres humano. Recarga la página e inténtalo de nuevo.',
-      legalPrefix: 'Al registrarte, aceptas nuestro',
-      legalTerms: 'Acuerdo de Servicios',
-      legalMiddle: 'y reconoces nuestra',
-      legalPrivacy: 'Política de Privacidad',
     },
     blog: {
       title: 'Blog',
@@ -390,8 +286,7 @@ export const translations = {
       pricing: 'Tarifs',
       resources: 'Ressources',
       blog: 'Blog',
-      bookCall: 'Prendre rendez-vous',
-      signUp: "S'inscrire",
+      contact: 'Contact',
       openMenu: 'Ouvrir le menu',
       closeMenu: 'Fermer le menu',
     },
@@ -408,7 +303,6 @@ export const translations = {
       heroTitle: "Une éducation qui génère de vrais résultats",
       heroSubtitle:
         "Nous concevons, construisons et gérons des programmes de formation personnalisés pour les organisations qui ont besoin de faire agir leurs équipes.",
-      heroCta: 'Prendre rendez-vous →',
       whatWeDoLabel: 'CE QUE NOUS FAISONS',
       whatWeDoTitle: 'Votre partenaire éducatif',
       whatWeDoSubtitle:
@@ -423,16 +317,12 @@ export const translations = {
       testimonialsTitle: 'Reconnu dans de nombreux secteurs',
       faqLabel: 'FAQ',
       faqTitle: 'Questions fréquentes',
-      ctaTitle: 'Prêt à créer une éducation qui fonctionne ?',
-      ctaSubtitle: "Parlons de votre programme, de votre audience et de ce à quoi ressemble le succès pour vous.",
-      ctaButton: 'Prendre rendez-vous →',
     },
     product: {
       heroEyebrow: 'THE PRODUCT',
       heroTitle: 'Everything your academy needs, in one platform',
       heroSubtitle:
         'From building courses to translating, certifying, and measuring outcomes — AI does the heavy lifting while you stay in control.',
-      heroCta: 'Get started',
       faqLabel: 'PRODUCT FAQ',
       faqTitle: 'Questions about the platform',
     },
@@ -460,13 +350,12 @@ export const translations = {
     },
     pricing: {
       title: 'Une tarification simple et transparente',
-      subtitle: "Commencez gratuitement. Passez à l'illimité quand vous êtes prêt.",
+      subtitle: 'Contactez-nous pour lancer une nouvelle académie.',
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
       popular: 'Populaire',
       free: {
         description: 'Essayez HeaderPath avec une vraie académie.',
-        cta: 'Commencer gratuitement',
         features: [
           '1 cours',
           '5 utilisateurs',
@@ -480,7 +369,6 @@ export const translations = {
       },
       flat: {
         description: 'Tout illimité — un seul prix mensuel.',
-        cta: 'Commencer',
         features: [
           'Cours illimités',
           'Utilisateurs illimités',
@@ -499,58 +387,14 @@ export const translations = {
       fairUsage:
         "Toute utilisation « illimitée » est soumise à notre politique d'usage raisonnable.",
     },
+    contact: {
+      title: 'Contactez-nous',
+      lead:
+        'Une question sur HeaderPath, un partenariat ou votre académie — écrivez-nous et nous vous répondrons sous deux jours ouvrés.',
+      cta: 'Écrivez-nous',
+    },
     footer: {
       copyright: 'Tous droits réservés.',
-    },
-    promoBar: {
-      label: 'Offre à durée limitée',
-      text: '{price} les {months} premiers mois',
-      textShort: '{price} / {months} mois',
-      cta: 'En profiter',
-    },
-    cookies: {
-      message: 'Nous utilisons des cookies pour collecter des données et améliorer nos services.',
-      learnMore: 'En savoir plus',
-      accept: 'Accepter',
-      optOut: 'Refuser',
-    },
-    signup: {
-      title: 'Configurons votre compte',
-      subtitle: 'Quelques questions rapides et vous êtes prêt.',
-      emailLabel: 'E-mail professionnel',
-      emailPlaceholder: 'nom@entreprise.com',
-      websiteLabel: "Site web de l'entreprise (facultatif)",
-      websitePlaceholder: 'entreprise.com',
-      continue: 'Continuer',
-      back: 'Retour',
-      audienceTitle: 'Qui formez-vous ?',
-      audienceIndividual: 'Apprenants individuels',
-      audienceCompany: "Employés d'une entreprise",
-      audienceOther: 'Autre',
-      sellTitle: 'Vendez-vous votre contenu ?',
-      sellYes: 'Oui',
-      sellNo: 'Non',
-      sellUnsure: 'Pas encore décidé',
-      migrateNote: 'Nous offrons un accompagnement de migration gratuit',
-      migrateTitle: "Migrez-vous depuis une autre plateforme d'apprentissage ?",
-      migrateYes: 'Oui',
-      migrateNo: 'Non',
-      migrateWhichLabel: 'Laquelle ?',
-      migrateWhichPlaceholder: 'ex. Teachable, Kajabi, LearnWorlds...',
-      doneTitle: 'Vérifiez votre e-mail !',
-      doneBody:
-        "Nous vous avons envoyé un e-mail pour vérifier votre compte. Cliquez sur le lien et votre académie sera prête à configurer.",
-      doneHint: "Rien reçu ? Vérifiez vos spams ou écrivez-nous et nous vous aiderons.",
-      waitlistTitle: 'Vous êtes sur la liste',
-      waitlistBody:
-        "Nous ouvrons un nombre limité de nouvelles académies chaque jour et celles d'aujourd'hui sont toutes prises. Votre place est réservée — nous vous enverrons le lien de configuration dès qu'une place se libère, généralement sous 24 heures.",
-      errorGeneric: "Une erreur s'est produite. Veuillez réessayer.",
-      errorEmail: 'Utilisez une vraie adresse e-mail professionnelle ou personnelle — les boîtes temporaires et génériques ne sont pas acceptées.',
-      errorRecaptcha: "Nous n'avons pas pu vérifier que vous êtes humain. Actualisez la page et réessayez.",
-      legalPrefix: 'En vous inscrivant, vous acceptez notre',
-      legalTerms: 'Contrat de Services',
-      legalMiddle: 'et reconnaissez notre',
-      legalPrivacy: 'Politique de Confidentialité',
     },
     blog: {
       title: 'Blog',

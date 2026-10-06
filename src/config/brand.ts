@@ -7,8 +7,6 @@ export const brand = {
   websiteUrl: 'https://headerpath.com',
   // Backend/product app stays on qurioos infra until the app itself migrates.
   appUrl: 'https://app.qurioos.com',
-  // Self-serve signup API not built yet — points at the local stub page.
-  signupUrl: '/signup',
   docsUrl: '/help',
   // Icon-only marks (256×256). `light` = cyan disc + ink H, for light surfaces.
   // `dark` = ink disc + cyan H, for dark surfaces.
@@ -56,19 +54,6 @@ export const brand = {
       name: 'Unlimited',
       price: '$150',
       period: '/mo',
-    },
-    // Time-boxed intro offer. Rendered only by the site-wide PromoBar above the
-    // header — retire it by removing <PromoBar /> from PageLayout/BaseLayout.
-    // `utm` tags the signup link so a submission attributes back to the bar.
-    promo: {
-      price: '$99',
-      period: '/mo',
-      months: 3,
-      utm: {
-        source: 'website',
-        medium: 'promo_bar',
-        campaign: 'intro-99-3mo',
-      },
     },
   },
 } as const;

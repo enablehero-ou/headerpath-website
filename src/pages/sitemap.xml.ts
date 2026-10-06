@@ -7,6 +7,7 @@ const base = brand.websiteUrl;
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/pricing', priority: '0.9', changefreq: 'monthly' },
+  { path: '/contact', priority: '0.5', changefreq: 'yearly' },
   { path: '/alternatives', priority: '0.8', changefreq: 'weekly' },
   { path: '/techniques', priority: '0.7', changefreq: 'weekly' },
   { path: '/blog', priority: '0.8', changefreq: 'daily' },

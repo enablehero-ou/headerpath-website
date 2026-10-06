@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Container from '../components/ui/Container.astro';
-import Button from '../components/ui/Button.astro';
 import Badge from '../components/ui/Badge.astro';
 import { brand } from '../config/brand';
 import { useTranslations } from '../i18n/translations';
@@ -35,10 +34,7 @@ const plans = [
             <span class="text-5xl font-semibold text-text-primary">{plan.price}</span>
             <span class="text-text-muted">{plan.period}</span>
           </div>
-          <Button href={brand.signupUrl} variant="primary" class="mt-6 w-full" size="lg">
-            {plan.copy.cta}
-          </Button>
-          <ul class="mt-8 space-y-3">
+          <ul class="mt-8 space-y-3 border-t border-border/60 pt-8">
             {plan.copy.features.map((f) => (
               <li class="flex items-center gap-2.5 text-sm text-text-secondary">
                 <svg class="shrink-0 text-accent-fg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -63,10 +59,10 @@ const plans = [
         integrations, procurement, or security reviews.
       </p>
       <a
-        href={`mailto:${brand.email.team}`}
+        href="/contact"
         class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-action no-underline hover:text-action-hover"
       >
-        Contact {brand.email.team}
+        Contact us
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>

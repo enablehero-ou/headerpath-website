@@ -112,4 +112,4 @@ Results depend on your baseline, but typical outcomes include faster ramp time, 
 
 Don't reinvent the wheel. Adopt proven AI-optimized onboarding and education strategies to meet your KPI goals.
 
-[Get started with HeaderPath](https://www.headerpath.com/)
+[Contact us](/contact)
