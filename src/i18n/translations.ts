@@ -81,22 +81,10 @@ export const translations = {
     pricing: {
       title: 'Simple, transparent pricing',
       subtitle: 'Contact us to launch a new academy.',
-      popular: 'Popular',
-      free: {
-        description: 'Try HeaderPath with a real academy.',
-        features: [
-          '1 course',
-          '5 users',
-          '2 admins',
-          '2 groups',
-          '1 video',
-          'Certifications',
-          '2 languages',
-          'yourname.headerpath.app subdomain',
-        ],
-      },
+      startsAt: 'Starts at',
+      contactCta: 'Contact us to learn more',
       flat: {
-        description: 'Everything unlimited — one flat monthly price.',
+        description: 'Everything unlimited, tailored to your academy.',
         features: [
           'Unlimited courses',
           'Unlimited users',
@@ -217,22 +205,10 @@ export const translations = {
       subtitle: 'Contáctanos para lanzar una nueva academia.',
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
-      popular: 'Popular',
-      free: {
-        description: 'Prueba HeaderPath con una academia real.',
-        features: [
-          '1 curso',
-          '5 usuarios',
-          '2 administradores',
-          '2 grupos',
-          '1 vídeo',
-          'Certificaciones',
-          '2 idiomas',
-          'Subdominio tunombre.headerpath.app',
-        ],
-      },
+      startsAt: 'Desde',
+      contactCta: 'Contáctanos para saber más',
       flat: {
-        description: 'Todo ilimitado — un único precio mensual.',
+        description: 'Todo ilimitado, adaptado a tu academia.',
         features: [
           'Cursos ilimitados',
           'Usuarios ilimitados',
@@ -353,22 +329,10 @@ export const translations = {
       subtitle: 'Contactez-nous pour lancer une nouvelle académie.',
       // No price literals in translations — the amount comes from
       // `brand.pricing` and is rendered on /pricing only.
-      popular: 'Populaire',
-      free: {
-        description: 'Essayez HeaderPath avec une vraie académie.',
-        features: [
-          '1 cours',
-          '5 utilisateurs',
-          '2 administrateurs',
-          '2 groupes',
-          '1 vidéo',
-          'Certifications',
-          '2 langues',
-          'Sous-domaine votrenom.headerpath.app',
-        ],
-      },
+      startsAt: 'À partir de',
+      contactCta: 'Contactez-nous pour en savoir plus',
       flat: {
-        description: 'Tout illimité — un seul prix mensuel.',
+        description: 'Tout illimité, adapté à votre académie.',
         features: [
           'Cours illimités',
           'Utilisateurs illimités',

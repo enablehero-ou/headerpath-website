@@ -52,15 +52,13 @@ target structure after the rebuild.
 
 ### `/pricing`
 - ✅ Page exists
-- ⚠️ Verify plan copy matches product-only positioning (Starter/Custom in `brand.ts`)
+- One unnamed plan from `brand.pricing.flat`: "Starts at" price, features, Contact us link
 
 ```
 ┌───────────────────────────────────────────────┐
 │  H1: Pricing                                   │
-│  [ Starter $99/mo ]   [ Custom — Get pricing ] │
-│   · feature list      · feature list           │
-│  FAQ (pricing)                                 │
-│  CTA                                           │
+│  [ Starts at $X/mo · features · Contact us ]  │
+│  Fair-usage note                               │
 └───────────────────────────────────────────────┘
 ```
 

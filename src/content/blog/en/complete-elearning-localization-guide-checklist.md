@@ -65,7 +65,7 @@ This guide gives you a practical, copyable template to prepare for, execute, and
 
 ### **Localize interface**
 
-1. Check if your LMS or online course tool supports multilingual setups ([**HeaderPath**](/) supports unlimited languages for free)
+1. Check if your LMS or online course tool supports multilingual setups ([**HeaderPath**](/) supports 80+ languages, auto-translated)
 2. Activate the languages on your platform
 
 ## Phase 3: Testing and feedback
