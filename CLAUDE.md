@@ -18,8 +18,8 @@ Website-specific guidance. Read alongside the parent CLAUDE.md one level up.
 
 > **🔴 HIBERNATION RULE — HeaderPath is hibernating; the site is static brochure only.**
 >
-> No signup, promo bar, cookie banner, forms, or CTAs. `/pricing` shows the plans with **no
-> buttons**. The **only** call to action is the `/contact` page (a `mailto:` to
+> No signup, promo bar, cookie banner, forms, or CTAs. `/pricing` shows the single plan with **no
+> buttons** (just a "Contact us" link). The **only** call to action is the `/contact` page (a `mailto:` to
 > `brand.email.team`), linked from the header nav, the footer, and in-article "Contact us"
 > links. `/signup`, `/schedule` and `/get-started` 301 to `/contact`. Never add a form or
 > signup button. Plan prices live in `brand.pricing` and render on `/pricing` only.
@@ -57,7 +57,7 @@ content, not workflows. The doc below is the reference map for those.
 
 HeaderPath is the **AI-native academy platform** — organizations launch a branded learning
 academy, AI drafts the courses, and they publish on their own domain. Audiences: customer
-education, partner enablement, employee onboarding/upskilling. Two plans: **Free** (limits mirror the app's `plans.free` row) and **Unlimited** — both closed
+education, partner enablement, employee onboarding/upskilling. One plan, shown unnamed on `/pricing` ("Starts at" price + contact link) — no free plan or trial; closed
 to new signups while the product hibernates. The product app lives at `app.qurioos.com`; this repo
 is the **marketing website** only.
 
